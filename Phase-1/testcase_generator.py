@@ -49,9 +49,18 @@ def euclidean_meters(lat1, lon1, lat2, lon2):
 edges = []
 edge_id = 1000
 
+def simplify_road_type(highway_tag: str) -> str:
+    if highway_tag in ["motorway", "trunk"]:
+        return "expressway"
+    elif highway_tag in ["primary", "trunk_link"]:
+        return "primary"
+    else:
+        return "secondary"
+
 for el in osm["elements"]:
     if el["type"] == "way" and "highway" in el.get("tags", {}):
         road_type = el["tags"]["highway"]
+        road_type=simplify_road_type(road_type)
         oneway = el["tags"].get("oneway", "no") == "yes"
         refs = el.get("nodes", [])
 
@@ -96,7 +105,7 @@ custom_json = {
     "meta": {
         "id": "testcase_1",
         "nodes": len(node_map),
-        "description": "OSM-based testcase (Euclidean distances, m/s speeds)"
+        "description": "OSM-based testcase (Euclidean distances)"
     },
     "nodes": list(node_map.values()),
     "edges": edges
