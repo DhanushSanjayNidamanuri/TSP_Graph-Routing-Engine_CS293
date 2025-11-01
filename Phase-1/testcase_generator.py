@@ -4,12 +4,19 @@ import os
 import math
 import random
 from pathlib import Path
+import random
 #Working directory
 pwd = Path(__file__).parent.resolve()
 os.chdir(pwd)
-query = """
+
+latDOWN=19.12366
+latUP=19.13858
+longLEFT=72.89759
+longRIGHT=72.92671
+
+query = f"""
 [out:json][timeout:25];
-way[highway](19.12366,72.89759,19.13858,72.92671);
+way[highway]({latDOWN},{longLEFT},{latUP},{longRIGHT});
 (._;>;);
 out body;
 """
@@ -22,7 +29,7 @@ osm = response.json()
 node_map = {}
 node_id_map = {}
 node_counter = 0
-
+pois_available=[]
 for element in osm["elements"]:
     if element["type"] == "node":
         tags = element.get("tags", {})
@@ -117,3 +124,65 @@ with open(output_file, "w", encoding="utf-8") as f:
     json.dump(custom_json, f, indent=2)
 
 print(f"✅ Saved {len(node_map)} nodes and {len(edges)} edges to {output_file}")
+
+#query generating
+queries=[]
+queries.append(
+        {
+    "meta": { "id": "qset1" },
+    "events": [ "query"]
+    }
+)
+query_count=0
+for i in range(int(node_counter/20)):
+    source,destination,forbid=random.sample(range(node_counter),3)
+    queries.append({
+        "type":"shortest_path",
+        "id":query_count,
+        "source":f"{source}",
+        "target": f"{destination}",
+        "mode": "distance",
+        "constraints": {
+            "forbidden_nodes": [forbid],
+            "forbidden_road_types": ["primary"] 
+        }
+    })
+    query_count+=1
+
+for i in range(int(node_counter/20)):
+    source,destination,forbid=random.sample(range(node_counter),3)
+    queries.append({
+        "type":"shortest_path",
+        "id":query_count,
+        "source":source,
+        "target":destination,
+        "mode": "time",
+        "constraints": {
+            "forbidden_nodes": [forbid],
+            "forbidden_road_types": ["primary"] 
+        }
+    })
+    query_count+=1
+for i in range(int(node_counter/20)):
+    source=random.sample(range(node_counter),3)
+    k=random.sample(range(int((node_counter/40))),1)
+    lat=random.uniform(latDOWN,latUP)
+    lon=random.uniform(longLEFT,longRIGHT)
+    pois=random.sample(pois_available,1)
+    metric=random.sample(["shortest_path","Euclidian Distance"],1)
+    queries.append({
+        "type": "knn",
+        "id":query_count,
+        "pois" : pois,
+        "query_point": { "lat": lat, "lon": lon },
+        "k": k,
+        "metric": metric
+    })
+    query_count+=1
+
+
+output_file = "testcases/queries_test1.json"
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(queries, f, indent=2)
+
+print(f"✅ Saved {query_count} queries  {output_file}")
