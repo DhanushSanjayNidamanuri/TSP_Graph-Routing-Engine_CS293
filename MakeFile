@@ -1,5 +1,3 @@
-# Makefile for trie program
-
 # temporary makefile for syntax
 SHELL := /bin/bash
 
@@ -10,46 +8,42 @@ CXXFLAGS = -g -Wall -Wextra -std=c++20 -Wno-unused-parameter -Werror
 # Executable name
 EXEC = compare
 
-# Source files
-SOURCES = main.cpp compare.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
+# Phase 1 
+P1_DIR = Phase-1
+P1_OBJ_DIR= Phase-1/obj
+P1_SRCS := $(wildcard $(P1_DIR)/*.cpp)
+P1_OBJS = $(P1_SRCS:$(P1_DIR)/%.cpp=$(P1_OBJ_DIR)/%.o)
+Objects_Phase2 = /obj/graph.o ShortestPath.o KNN.o main.o
 
-# Test configuration
-TCDIR = tests
-NUM_TEST_CASES = 11
 
-# Default target
-all: build runtests
 
-# Build target
-build: $(EXEC)
+phase1: p1_generate_testcases $(P1_OBJS) 
+	@$(CXX) $(CXXFLAGS) -o phase1 $(P1_OBJS)
+	@echo "Phase 1 executable successfully built"
+$(P1_OBJ_DIR)/%.o: $(P1_DIR)/%.cpp $(wildcard $(P1_DIR)/*.h)
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+p1_generate_testcases:
+	@python3 $(P1_DIR)/testcase_generator.py
 
-# Link executable
-$(EXEC): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJECTS)
 
-# Compile object files
-%.o: %.cpp *.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Phase 2
+phase2:
 
-# Run all tests
-runtests: $(EXEC)
-	@echo -e "Running Test Cases"
-	@for i in `seq 1 $(NUM_TEST_CASES)`; do \
-		echo -e "\n\033[0;36mTestcase $$i\033[0m"; \
-		./$(EXEC) < $(TCDIR)/test$$i/input.txt > output.txt; \
-		if diff -Bw output.txt $(TCDIR)/test$$i/output.txt > /dev/null; then \
-			echo -e "\033[0;32mPASSED\033[0m"; \
-		else \
-			echo -e "diff -Bw"; \
-			diff -Bw output.txt $(TCDIR)/test$$i/output.txt; \
-			echo -e "\033[0;31mFAILED\033[0m"; \
-		fi; \
-	done
-	@rm -f output.txt
+
+
+
+# Phase 3
+phase3:
+
+
 
 # Clean target
 clean:
-	rm -f $(EXEC) $(OBJECTS) output.txt
+	rm phase1 phase2 phase3
+	rm $(P1_OBJ_DIR)/*
+	rm $(P2_OBJ_DIR)/*
+	rm $(P3_OBJ_DIR)/*
 
-.PHONY: all build runtests clean
+.PHONY: phase1 phase2 phase3 p1_generate_testcases clean 
+

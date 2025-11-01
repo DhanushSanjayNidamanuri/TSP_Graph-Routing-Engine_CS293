@@ -31,7 +31,8 @@ int main(int argc, char* argv[]) {
     input_graph_file.close();
     //reading nodes
     for(auto x:graph_data["nodes"]){
-        Node temp(x["id"],x["lat"],x["lon"],x["pois"]);
+        std::vector<std::string> pois=x["pois"].get<std::vector<std::string>>();
+        Node temp(x["id"],x["lat"],x["lon"],pois);
         Graph_internal.addNode(temp);
     }
 
