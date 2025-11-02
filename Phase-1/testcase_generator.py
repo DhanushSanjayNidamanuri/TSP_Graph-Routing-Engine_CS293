@@ -9,17 +9,23 @@ import random
 pwd = Path(__file__).parent.resolve()
 os.chdir(pwd)
 
-latDOWN=19.12366
-latUP=19.13858
-longLEFT=72.89759
-longRIGHT=72.92671
+latDOWN=19.069276
+latUP=19.076739
+longLEFT=72.824315
+longRIGHT=72.838874
 
 query = f"""
-[out:json][timeout:25];
-way[highway]({latDOWN},{longLEFT},{latUP},{longRIGHT});
+[out:json][timeout:100];
+(
+  way[highway]({latDOWN},{longLEFT},{latUP},{longRIGHT});   // all roads
+  node[amenity]({latDOWN},{longLEFT},{latUP},{longRIGHT});  // POIs like restaurants, schools, etc.
+  node[shop]({latDOWN},{longLEFT},{latUP},{longRIGHT});     // shops
+  node[tourism]({latDOWN},{longLEFT},{latUP},{longRIGHT});  // tourist POIs
+);
 (._;>;);
 out body;
 """
+
 print("🔍 Fetching data from Overpass API to generate a testcase...")
 response = requests.get("https://overpass-api.de/api/interpreter", params={'data': query})
 response.raise_for_status()
@@ -29,13 +35,14 @@ osm = response.json()
 node_map = {}
 node_id_map = {}
 node_counter = 0
-pois_available=[]
+pois_available=set()
 for element in osm["elements"]:
     if element["type"] == "node":
         tags = element.get("tags", {})
         pois = []
         if "amenity" in tags:
             pois.append(tags["amenity"].title())
+            pois_available.update([tags["amenity"].title()])
         node_map[element["id"]] = {
             "id": node_counter,
             "lat": element["lat"],
@@ -45,6 +52,7 @@ for element in osm["elements"]:
         node_id_map[element["id"]]=node_counter
         node_counter+=1
 
+print(pois_available)
 # Euclidean distance (meters)
 def euclidean_meters(lat1, lon1, lat2, lon2):
     mean_lat = math.radians((lat1 + lat2) / 2)
@@ -52,10 +60,11 @@ def euclidean_meters(lat1, lon1, lat2, lon2):
     dy = (lat2 - lat1) * 111320
     return math.sqrt(dx * dx + dy * dy)
 
-# xtract edges
+# Extract edges
 edges = []
-edge_id = 1000
-
+edge_id = 0
+max_length=0
+min_length=100000
 def simplify_road_type(highway_tag: str) -> str:
     if highway_tag in ["motorway", "trunk"]:
         return "expressway"
@@ -79,7 +88,8 @@ for el in osm["elements"]:
 
                 # Euclidean distance (meters)
                 length = euclidean_meters(u["lat"], u["lon"], v["lat"], v["lon"])
-
+                max_length=max(length,max_length)
+                min_length=min(length,min_length)
                 # Approximate speed (m/s) from google
                 base_speed = {
                     "motorway": 27.8,   
@@ -106,7 +116,7 @@ for el in osm["elements"]:
                     "road_type": road_type
                 })
                 edge_id += 1
-
+edge_id-=1
 #  Final structured JSON
 custom_json = {
     "meta": {
@@ -134,7 +144,8 @@ queries.append(
     }
 )
 query_count=0
-for i in range(int(node_counter/20)):
+no_of_queries_per_type=max(int(node_counter/20),10)
+for i in range(no_of_queries_per_type):
     source,destination,forbid=random.sample(range(node_counter),3)
     queries.append({
         "type":"shortest_path",
@@ -149,7 +160,7 @@ for i in range(int(node_counter/20)):
     })
     query_count+=1
 
-for i in range(int(node_counter/20)):
+for i in range(no_of_queries_per_type):
     source,destination,forbid=random.sample(range(node_counter),3)
     queries.append({
         "type":"shortest_path",
@@ -163,12 +174,12 @@ for i in range(int(node_counter/20)):
         }
     })
     query_count+=1
-for i in range(int(node_counter/20)):
+for i in range(no_of_queries_per_type):
     source=random.sample(range(node_counter),3)
-    k=random.sample(range(int((node_counter/40))),1)
-    lat=random.uniform(latDOWN,latUP)
-    lon=random.uniform(longLEFT,longRIGHT)
-    pois=random.sample(pois_available,1)
+    k=random.sample(range(int(no_of_queries_per_type/2)),1)
+    lat=round(random.uniform(latDOWN,latUP),7)
+    lon=round(random.uniform(longLEFT,longRIGHT),7)
+    pois=random.sample(sorted(pois_available),1)
     metric=random.sample(["shortest_path","Euclidian Distance"],1)
     queries.append({
         "type": "knn",
@@ -179,8 +190,24 @@ for i in range(int(node_counter/20)):
         "metric": metric
     })
     query_count+=1
+for i in range(no_of_queries_per_type):
+    edge=random.sample(range(edge_id),1)
+    queries.append({ 
+        "type": "remove_edge",
+        "edge_id": edge
+    }
+    )
 
-
+for i in range(no_of_queries_per_type):
+    edge=random.sample(range(edge_id),1)
+    new_len=round(random.uniform(int(min_length),int(max_length)),2)
+    queries.append({ 
+        "type": "modify_edge",
+        "edge_id": edge,
+        "patch": { "length": new_len } 
+    }
+    )
+random.shuffle(queries)
 output_file = "testcases/queries_test1.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(queries, f, indent=2)

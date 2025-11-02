@@ -1,471 +1,45 @@
 [
   {
-    "meta": {
-      "id": "qset1"
+    "type": "shortest_path",
+    "id": 9,
+    "source": "625",
+    "target": "839",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        398
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 123,
+    "pois": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0753989,
+      "lon": 72.8273715
     },
-    "events": [
-      "query"
+    "k": [
+      13
+    ],
+    "metric": [
+      "shortest_path"
     ]
   },
   {
     "type": "shortest_path",
-    "id": 0,
-    "source": "266",
-    "target": "103",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        754
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 1,
-    "source": "1447",
-    "target": "956",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1471
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 2,
-    "source": "1538",
-    "target": "1007",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1558
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 3,
-    "source": "1608",
-    "target": "704",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1372
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 4,
-    "source": "1668",
-    "target": "1254",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1671
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
     "id": 5,
-    "source": "1405",
-    "target": "871",
+    "source": "389",
+    "target": "153",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        906
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 6,
-    "source": "40",
-    "target": "581",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        447
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 7,
-    "source": "274",
-    "target": "1047",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        376
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 8,
-    "source": "353",
-    "target": "810",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1468
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 9,
-    "source": "86",
-    "target": "1242",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        361
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 10,
-    "source": "870",
-    "target": "1613",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1549
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 11,
-    "source": "601",
-    "target": "225",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        432
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 12,
-    "source": "337",
-    "target": "1309",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        49
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 13,
-    "source": "229",
-    "target": "998",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        823
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 14,
-    "source": "1329",
-    "target": "234",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1064
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 15,
-    "source": "273",
-    "target": "1332",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1423
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 16,
-    "source": "1579",
-    "target": "743",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1200
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 17,
-    "source": "716",
-    "target": "196",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        2
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 18,
-    "source": "337",
-    "target": "327",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        617
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 19,
-    "source": "1011",
-    "target": "170",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        449
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 20,
-    "source": "510",
-    "target": "20",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1288
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 21,
-    "source": "1573",
-    "target": "609",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1319
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 22,
-    "source": "1004",
-    "target": "1047",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        58
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 23,
-    "source": "697",
-    "target": "1643",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        883
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 24,
-    "source": "1501",
-    "target": "198",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        89
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 25,
-    "source": "256",
-    "target": "879",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1680
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 26,
-    "source": "68",
-    "target": "199",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        24
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 27,
-    "source": "1066",
-    "target": "1359",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        977
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 28,
-    "source": "1346",
-    "target": "1192",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        86
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 29,
-    "source": "447",
-    "target": "897",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        595
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 30,
-    "source": "821",
-    "target": "825",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        261
+        659
       ],
       "forbidden_road_types": [
         "primary"
@@ -475,207 +49,12 @@
   {
     "type": "shortest_path",
     "id": 31,
-    "source": "443",
-    "target": "1423",
+    "source": "293",
+    "target": "304",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        1219
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 32,
-    "source": "325",
-    "target": "547",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        735
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 33,
-    "source": "759",
-    "target": "663",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        33
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 34,
-    "source": "771",
-    "target": "672",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        139
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 35,
-    "source": "1613",
-    "target": "1059",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1251
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 36,
-    "source": "1057",
-    "target": "570",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        178
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 37,
-    "source": "464",
-    "target": "1475",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1511
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 38,
-    "source": "349",
-    "target": "113",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        362
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 39,
-    "source": "278",
-    "target": "181",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        554
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 40,
-    "source": "1539",
-    "target": "781",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        814
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 41,
-    "source": "1294",
-    "target": "615",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        741
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 42,
-    "source": "444",
-    "target": "1575",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1034
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 43,
-    "source": "360",
-    "target": "157",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        191
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 44,
-    "source": "146",
-    "target": "1518",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1641
+        701
       ],
       "forbidden_road_types": [
         "primary"
@@ -685,27 +64,456 @@
   {
     "type": "shortest_path",
     "id": 45,
-    "source": "1046",
-    "target": "1143",
-    "mode": "distance",
+    "source": 400,
+    "target": 747,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        184
+        442
       ],
       "forbidden_road_types": [
         "primary"
       ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 3,
+    "source": "316",
+    "target": "354",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        852
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 64,
+    "source": 864,
+    "target": 285,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        416
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 34,
+    "source": "656",
+    "target": "800",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        686
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 100,
+    "pois": [
+      "Police"
+    ],
+    "query_point": {
+      "lat": 19.0703685,
+      "lon": 72.8354384
+    },
+    "k": [
+      6
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 120,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0712928,
+      "lon": 72.8285072
+    },
+    "k": [
+      8
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      833
+    ],
+    "patch": {
+      "length": 192.87
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 57,
+    "source": 404,
+    "target": 556,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        699
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 1,
+    "source": "661",
+    "target": "36",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        409
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 27,
+    "source": "618",
+    "target": "823",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        405
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      120
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      221
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 33,
+    "source": "33",
+    "target": "525",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        83
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 6,
+    "source": "569",
+    "target": "490",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        809
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      716
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 116,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0725534,
+      "lon": 72.8294962
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 90,
+    "pois": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.073794,
+      "lon": 72.8320046
+    },
+    "k": [
+      19
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 118,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0706631,
+      "lon": 72.8313689
+    },
+    "k": [
+      19
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 86,
+    "source": 706,
+    "target": 523,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        312
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      849
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 122,
+    "pois": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.0706337,
+      "lon": 72.8282298
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 96,
+    "pois": [
+      "School"
+    ],
+    "query_point": {
+      "lat": 19.0712822,
+      "lon": 72.8247345
+    },
+    "k": [
+      2
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      759
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 50,
+    "source": 14,
+    "target": 580,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        713
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 59,
+    "source": 364,
+    "target": 571,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        26
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 98,
+    "pois": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0706119,
+      "lon": 72.8321266
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      351
+    ],
+    "patch": {
+      "length": 139.79
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 72,
+    "source": 559,
+    "target": 605,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        649
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      714
+    ],
+    "patch": {
+      "length": 143.22
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      435
+    ],
+    "patch": {
+      "length": 12.34
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      828
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 8,
+    "source": "34",
+    "target": "706",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        855
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 109,
+    "pois": [
+      "Clinic"
+    ],
+    "query_point": {
+      "lat": 19.0700357,
+      "lon": 72.8328845
+    },
+    "k": [
+      5
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      23
+    ],
+    "patch": {
+      "length": 38.3
     }
   },
   {
     "type": "shortest_path",
     "id": 46,
-    "source": "253",
-    "target": "932",
-    "mode": "distance",
+    "source": 293,
+    "target": 265,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        611
+        242
       ],
       "forbidden_road_types": [
         "primary"
@@ -713,131 +521,20 @@
     }
   },
   {
-    "type": "shortest_path",
-    "id": 47,
-    "source": "468",
-    "target": "541",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1113
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 48,
-    "source": "1288",
-    "target": "928",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1463
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 49,
-    "source": "1074",
-    "target": "943",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1442
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 50,
-    "source": "779",
-    "target": "1312",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        325
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 51,
-    "source": "390",
-    "target": "1180",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        321
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 52,
-    "source": "1587",
-    "target": "1472",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        481
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 53,
-    "source": "1163",
-    "target": "985",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        586
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 54,
-    "source": "1684",
-    "target": "437",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1278
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
+    "type": "modify_edge",
+    "edge_id": [
+      150
+    ],
+    "patch": {
+      "length": 86.68
     }
   },
   {
     "type": "shortest_path",
     "id": 55,
-    "source": "1404",
-    "target": "1475",
-    "mode": "distance",
+    "source": 514,
+    "target": 86,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
         622
@@ -848,89 +545,31 @@
     }
   },
   {
-    "type": "shortest_path",
-    "id": 56,
-    "source": "133",
-    "target": "1041",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1470
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 57,
-    "source": "660",
-    "target": "1117",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1312
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 58,
-    "source": "1305",
-    "target": "730",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        402
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 59,
-    "source": "486",
-    "target": "769",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1544
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 60,
-    "source": "1197",
-    "target": "493",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1062
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
+    "type": "knn",
+    "id": 94,
+    "pois": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.0754735,
+      "lon": 72.8296323
+    },
+    "k": [
+      1
+    ],
+    "metric": [
+      "shortest_path"
+    ]
   },
   {
     "type": "shortest_path",
     "id": 61,
-    "source": "1179",
-    "target": "1395",
-    "mode": "distance",
+    "source": 68,
+    "target": 614,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        667
+        520
       ],
       "forbidden_road_types": [
         "primary"
@@ -939,24 +578,1556 @@
   },
   {
     "type": "shortest_path",
-    "id": 62,
-    "source": "1596",
-    "target": "729",
+    "id": 41,
+    "source": "624",
+    "target": "40",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        272
+        269
       ],
       "forbidden_road_types": [
         "primary"
       ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      580
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      773
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 91,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0739766,
+      "lon": 72.8364629
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      199
+    ],
+    "patch": {
+      "length": 180.99
+    }
+  },
+  {
+    "type": "knn",
+    "id": 106,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0698703,
+      "lon": 72.8305469
+    },
+    "k": [
+      13
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      641
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      64
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 38,
+    "source": "833",
+    "target": "817",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        133
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 21,
+    "source": "770",
+    "target": "214",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        877
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      342
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 60,
+    "source": 866,
+    "target": 683,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        195
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      47
+    ],
+    "patch": {
+      "length": 205.68
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 2,
+    "source": "155",
+    "target": "615",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        147
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      734
+    ],
+    "patch": {
+      "length": 128.24
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      514
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 37,
+    "source": "333",
+    "target": "749",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        863
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 125,
+    "pois": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.0717922,
+      "lon": 72.835294
+    },
+    "k": [
+      10
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      332
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      79
+    ],
+    "patch": {
+      "length": 257.21
+    }
+  },
+  {
+    "type": "knn",
+    "id": 119,
+    "pois": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.0701565,
+      "lon": 72.8356771
+    },
+    "k": [
+      1
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 14,
+    "source": "560",
+    "target": "613",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        245
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 29,
+    "source": "469",
+    "target": "345",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        127
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 10,
+    "source": "393",
+    "target": "293",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        106
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      887
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      100
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 36,
+    "source": "583",
+    "target": "1",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        222
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 76,
+    "source": 82,
+    "target": 543,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        441
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 25,
+    "source": "529",
+    "target": "537",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        23
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 71,
+    "source": 702,
+    "target": 195,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        531
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      366
+    ],
+    "patch": {
+      "length": 10.07
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      27
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 16,
+    "source": "493",
+    "target": "173",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        180
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 101,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0714013,
+      "lon": 72.8276774
+    },
+    "k": [
+      14
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      539
+    ],
+    "patch": {
+      "length": 98.07
+    }
+  },
+  {
+    "type": "knn",
+    "id": 126,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.075419,
+      "lon": 72.8261069
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 65,
+    "source": 798,
+    "target": 837,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        870
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 22,
+    "source": "772",
+    "target": "728",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        464
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 99,
+    "pois": [
+      "Police"
+    ],
+    "query_point": {
+      "lat": 19.0728353,
+      "lon": 72.8248985
+    },
+    "k": [
+      8
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 47,
+    "source": 785,
+    "target": 312,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        33
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 128,
+    "pois": [
+      "Clinic"
+    ],
+    "query_point": {
+      "lat": 19.0732691,
+      "lon": 72.828634
+    },
+    "k": [
+      3
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      292
+    ],
+    "patch": {
+      "length": 95.51
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 17,
+    "source": "283",
+    "target": "42",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        377
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      24
+    ],
+    "patch": {
+      "length": 116.14
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      564
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      328
+    ],
+    "patch": {
+      "length": 129.0
+    }
+  },
+  {
+    "type": "knn",
+    "id": 117,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0706656,
+      "lon": 72.8292044
+    },
+    "k": [
+      11
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 113,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0732512,
+      "lon": 72.8248444
+    },
+    "k": [
+      11
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 12,
+    "source": "535",
+    "target": "27",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        314
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 129,
+    "pois": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0706551,
+      "lon": 72.8321149
+    },
+    "k": [
+      0
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 103,
+    "pois": [
+      "Police"
+    ],
+    "query_point": {
+      "lat": 19.0708634,
+      "lon": 72.8314503
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      850
+    ],
+    "patch": {
+      "length": 32.63
+    }
+  },
+  {
+    "type": "knn",
+    "id": 89,
+    "pois": [
+      "Clinic"
+    ],
+    "query_point": {
+      "lat": 19.0694618,
+      "lon": 72.8334413
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 131,
+    "pois": [
+      "School"
+    ],
+    "query_point": {
+      "lat": 19.0731646,
+      "lon": 72.8374714
+    },
+    "k": [
+      15
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      724
+    ],
+    "patch": {
+      "length": 64.59
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 30,
+    "source": "629",
+    "target": "216",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        526
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 79,
+    "source": 831,
+    "target": 6,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        533
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      493
+    ],
+    "patch": {
+      "length": 64.67
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      63
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      432
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      752
+    ],
+    "patch": {
+      "length": 173.52
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      733
+    ],
+    "patch": {
+      "length": 208.34
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      880
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      536
+    ],
+    "patch": {
+      "length": 75.97
+    }
+  },
+  {
+    "type": "knn",
+    "id": 104,
+    "pois": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0717866,
+      "lon": 72.8266823
+    },
+    "k": [
+      9
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 82,
+    "source": 506,
+    "target": 11,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        355
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 39,
+    "source": "659",
+    "target": "552",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        522
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      75
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      4
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 44,
+    "source": 590,
+    "target": 274,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        705
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 114,
+    "pois": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0754794,
+      "lon": 72.8344076
+    },
+    "k": [
+      9
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 77,
+    "source": 627,
+    "target": 666,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        300
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 93,
+    "pois": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0708846,
+      "lon": 72.8254364
+    },
+    "k": [
+      14
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      574
+    ],
+    "patch": {
+      "length": 113.24
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      616
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      304
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      449
+    ],
+    "patch": {
+      "length": 47.36
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 53,
+    "source": 248,
+    "target": 490,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        453
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 88,
+    "pois": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.07589,
+      "lon": 72.8319664
+    },
+    "k": [
+      5
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      753
+    ],
+    "patch": {
+      "length": 111.46
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 4,
+    "source": "732",
+    "target": "512",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        298
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 105,
+    "pois": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.0731297,
+      "lon": 72.8266879
+    },
+    "k": [
+      21
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      221
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      776
+    ],
+    "patch": {
+      "length": 90.99
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      23
+    ],
+    "patch": {
+      "length": 201.37
     }
   },
   {
     "type": "shortest_path",
     "id": 63,
-    "source": "1176",
-    "target": "1501",
+    "source": 69,
+    "target": 681,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        218
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 68,
+    "source": 360,
+    "target": 724,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        626
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      889
+    ],
+    "patch": {
+      "length": 267.67
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 80,
+    "source": 361,
+    "target": 732,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        565
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      807
+    ],
+    "patch": {
+      "length": 69.93
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      403
+    ],
+    "patch": {
+      "length": 70.11
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 49,
+    "source": 748,
+    "target": 437,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        255
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      552
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      320
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      645
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 18,
+    "source": "312",
+    "target": "186",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        171
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      613
+    ],
+    "patch": {
+      "length": 67.51
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      461
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      155
+    ],
+    "patch": {
+      "length": 142.47
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 78,
+    "source": 266,
+    "target": 478,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        326
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 11,
+    "source": "161",
+    "target": "95",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        870
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 67,
+    "source": 65,
+    "target": 563,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        287
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      129
+    ],
+    "patch": {
+      "length": 287.16
+    }
+  },
+  {
+    "type": "knn",
+    "id": 127,
+    "pois": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0757896,
+      "lon": 72.8312814
+    },
+    "k": [
+      2
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 23,
+    "source": "512",
+    "target": "225",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        580
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 97,
+    "pois": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0750102,
+      "lon": 72.833663
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 108,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0747365,
+      "lon": 72.8315398
+    },
+    "k": [
+      12
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 124,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0696829,
+      "lon": 72.8251953
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 92,
+    "pois": [
+      "Fast_Food"
+    ],
+    "query_point": {
+      "lat": 19.0733786,
+      "lon": 72.8310579
+    },
+    "k": [
+      13
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      362
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      14
+    ],
+    "patch": {
+      "length": 120.4
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 74,
+    "source": 705,
+    "target": 65,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        597
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 15,
+    "source": "378",
+    "target": "608",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        216
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 43,
+    "source": "473",
+    "target": "640",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        291
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 7,
+    "source": "77",
+    "target": "306",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        638
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 70,
+    "source": 722,
+    "target": 447,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        251
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      47
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      374
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      6
+    ],
+    "patch": {
+      "length": 150.35
+    }
+  },
+  {
+    "type": "knn",
+    "id": 107,
+    "pois": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.0741008,
+      "lon": 72.826399
+    },
+    "k": [
+      21
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 42,
+    "source": "292",
+    "target": "413",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        25
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      702
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 20,
+    "source": "649",
+    "target": "809",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        126
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      165
+    ],
+    "patch": {
+      "length": 252.88
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 56,
+    "source": 394,
+    "target": 412,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        295
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 52,
+    "source": 734,
+    "target": 546,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        8
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      686
+    ],
+    "patch": {
+      "length": 183.85
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      883
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      630
+    ],
+    "patch": {
+      "length": 177.6
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 40,
+    "source": "343",
+    "target": "25",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
@@ -969,13 +2140,34 @@
   },
   {
     "type": "shortest_path",
-    "id": 64,
-    "source": "959",
-    "target": "1502",
+    "id": 83,
+    "source": 87,
+    "target": 340,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        380
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      160
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 13,
+    "source": "227",
+    "target": "828",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        1002
+        580
       ],
       "forbidden_road_types": [
         "primary"
@@ -984,28 +2176,55 @@
   },
   {
     "type": "shortest_path",
-    "id": 65,
-    "source": "1372",
-    "target": "734",
-    "mode": "distance",
+    "id": 87,
+    "source": 274,
+    "target": 75,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        1259
+        747
       ],
       "forbidden_road_types": [
         "primary"
       ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      569
+    ],
+    "patch": {
+      "length": 259.67
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      218
+    ],
+    "patch": {
+      "length": 190.05
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      741
+    ],
+    "patch": {
+      "length": 152.76
     }
   },
   {
     "type": "shortest_path",
     "id": 66,
-    "source": "353",
-    "target": "1217",
-    "mode": "distance",
+    "source": 879,
+    "target": 321,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        171
+        325
       ],
       "forbidden_road_types": [
         "primary"
@@ -1014,13 +2233,60 @@
   },
   {
     "type": "shortest_path",
-    "id": 67,
-    "source": "347",
-    "target": "672",
-    "mode": "distance",
+    "id": 85,
+    "source": 536,
+    "target": 513,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        675
+        581
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      418
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      518
+    ],
+    "patch": {
+      "length": 117.41
+    }
+  },
+  {
+    "type": "knn",
+    "id": 130,
+    "pois": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0726182,
+      "lon": 72.8362031
+    },
+    "k": [
+      12
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 54,
+    "source": 605,
+    "target": 47,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        816
       ],
       "forbidden_road_types": [
         "primary"
@@ -1029,13 +2295,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 68,
-    "source": "990",
-    "target": "1173",
-    "mode": "distance",
+    "id": 73,
+    "source": 836,
+    "target": 778,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        1567
+        640
       ],
       "forbidden_road_types": [
         "primary"
@@ -1044,13 +2310,110 @@
   },
   {
     "type": "shortest_path",
-    "id": 69,
-    "source": "846",
-    "target": "569",
+    "id": 24,
+    "source": "65",
+    "target": "561",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        912
+        2
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      769
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 102,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0718896,
+      "lon": 72.8288098
+    },
+    "k": [
+      11
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 112,
+    "pois": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0751541,
+      "lon": 72.827275
+    },
+    "k": [
+      6
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      718
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      119
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      899
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 26,
+    "source": "549",
+    "target": "39",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        826
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      754
+    ],
+    "patch": {
+      "length": 165.09
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 62,
+    "source": 198,
+    "target": 110,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        789
       ],
       "forbidden_road_types": [
         "primary"
@@ -1059,9 +2422,81 @@
   },
   {
     "type": "shortest_path",
-    "id": 70,
-    "source": "1139",
-    "target": "879",
+    "id": 35,
+    "source": "249",
+    "target": "399",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        367
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 111,
+    "pois": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0732124,
+      "lon": 72.8364967
+    },
+    "k": [
+      13
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 115,
+    "pois": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0764409,
+      "lon": 72.8319291
+    },
+    "k": [
+      8
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      523
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 95,
+    "pois": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0724729,
+      "lon": 72.8375055
+    },
+    "k": [
+      15
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 19,
+    "source": "440",
+    "target": "777",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
@@ -1074,13 +2509,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 71,
-    "source": "454",
-    "target": "1228",
+    "id": 28,
+    "source": "811",
+    "target": "438",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        755
+        571
       ],
       "forbidden_road_types": [
         "primary"
@@ -1089,13 +2524,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 72,
-    "source": "93",
-    "target": "569",
+    "id": 32,
+    "source": "215",
+    "target": "604",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        405
+        834
       ],
       "forbidden_road_types": [
         "primary"
@@ -1104,13 +2539,28 @@
   },
   {
     "type": "shortest_path",
-    "id": 73,
-    "source": "1182",
-    "target": "1088",
+    "id": 69,
+    "source": 650,
+    "target": 808,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        441
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 0,
+    "source": "136",
+    "target": "622",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        841
+        384
       ],
       "forbidden_road_types": [
         "primary"
@@ -1118,505 +2568,16 @@
     }
   },
   {
-    "type": "shortest_path",
-    "id": 74,
-    "source": "458",
-    "target": "235",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        254
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
+    "type": "remove_edge",
+    "edge_id": [
+      463
+    ]
   },
   {
     "type": "shortest_path",
-    "id": 75,
-    "source": "927",
-    "target": "314",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        732
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 76,
-    "source": "1480",
-    "target": "1342",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        146
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 77,
-    "source": "1430",
-    "target": "679",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1264
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 78,
-    "source": "645",
-    "target": "1120",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        31
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 79,
-    "source": "142",
-    "target": "214",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1498
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 80,
-    "source": "1297",
-    "target": "84",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        339
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 81,
-    "source": "156",
-    "target": "331",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        432
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 82,
-    "source": "699",
-    "target": "431",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        1672
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 83,
-    "source": "1154",
-    "target": "908",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        265
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 84,
-    "source": 621,
-    "target": 212,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1126
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 85,
-    "source": 1047,
-    "target": 67,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        316
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 86,
-    "source": 70,
-    "target": 1170,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1133
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 87,
-    "source": 369,
-    "target": 126,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1542
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 88,
-    "source": 184,
-    "target": 385,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1212
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 89,
-    "source": 1261,
-    "target": 574,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1471
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 90,
-    "source": 1314,
-    "target": 427,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        529
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 91,
-    "source": 626,
-    "target": 1597,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        175
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 92,
-    "source": 1492,
-    "target": 346,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        87
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 93,
-    "source": 25,
-    "target": 1463,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        570
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 94,
-    "source": 406,
-    "target": 1593,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        142
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 95,
-    "source": 65,
-    "target": 1660,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        829
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 96,
-    "source": 1211,
-    "target": 1562,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1399
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 97,
-    "source": 1304,
-    "target": 431,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        589
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 98,
-    "source": 461,
-    "target": 909,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        782
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 99,
-    "source": 1470,
-    "target": 670,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1405
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 100,
-    "source": 1131,
-    "target": 1573,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        424
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 101,
-    "source": 310,
-    "target": 562,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        868
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 102,
-    "source": 170,
-    "target": 1412,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        314
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 103,
-    "source": 275,
-    "target": 383,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        75
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 104,
-    "source": 884,
-    "target": 331,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        892
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 105,
-    "source": 1337,
-    "target": 1664,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        490
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 106,
-    "source": 827,
-    "target": 1266,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        14
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 107,
-    "source": 1276,
-    "target": 1179,
+    "id": 51,
+    "source": 123,
+    "target": 97,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
@@ -1629,13 +2590,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 108,
-    "source": 565,
-    "target": 408,
+    "id": 75,
+    "source": 877,
+    "target": 646,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        39
+        144
       ],
       "forbidden_road_types": [
         "primary"
@@ -1643,2316 +2604,135 @@
     }
   },
   {
-    "type": "shortest_path",
-    "id": 109,
-    "source": 1192,
-    "target": 1109,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1185
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 110,
-    "source": 506,
-    "target": 1441,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1080
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 111,
-    "source": 503,
-    "target": 114,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1074
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 112,
-    "source": 360,
-    "target": 875,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        605
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 113,
-    "source": 1221,
-    "target": 950,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        562
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 114,
-    "source": 1461,
-    "target": 190,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        766
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 115,
-    "source": 1476,
-    "target": 827,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        869
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 116,
-    "source": 1479,
-    "target": 1384,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        200
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 117,
-    "source": 1169,
-    "target": 895,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        993
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 118,
-    "source": 727,
-    "target": 798,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1450
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 119,
-    "source": 479,
-    "target": 1359,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        690
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 120,
-    "source": 1494,
-    "target": 941,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        89
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 121,
-    "source": 1068,
-    "target": 928,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1654
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 122,
-    "source": 1123,
-    "target": 574,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        616
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 123,
-    "source": 1365,
-    "target": 1210,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1556
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 124,
-    "source": 1104,
-    "target": 652,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1037
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 125,
-    "source": 660,
-    "target": 584,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1395
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 126,
-    "source": 502,
-    "target": 515,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1630
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 127,
-    "source": 528,
-    "target": 453,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1031
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 128,
-    "source": 1628,
-    "target": 275,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        383
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 129,
-    "source": 840,
-    "target": 1671,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        201
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 130,
-    "source": 79,
-    "target": 648,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1126
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 131,
-    "source": 360,
-    "target": 268,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        578
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 132,
-    "source": 272,
-    "target": 1482,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        669
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 133,
-    "source": 326,
-    "target": 740,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1452
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 134,
-    "source": 1096,
-    "target": 1399,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        833
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 135,
-    "source": 8,
-    "target": 1476,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        90
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 136,
-    "source": 1007,
-    "target": 1507,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        92
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 137,
-    "source": 184,
-    "target": 1580,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        282
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 138,
-    "source": 1202,
-    "target": 170,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1465
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 139,
-    "source": 360,
-    "target": 1530,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        724
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 140,
-    "source": 299,
-    "target": 300,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1651
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 141,
-    "source": 1537,
-    "target": 1405,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        759
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 142,
-    "source": 966,
-    "target": 573,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        782
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 143,
-    "source": 831,
-    "target": 1570,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1391
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 144,
-    "source": 1601,
-    "target": 979,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1068
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 145,
-    "source": 1432,
-    "target": 32,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1310
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 146,
-    "source": 1479,
-    "target": 1421,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        951
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 147,
-    "source": 1346,
-    "target": 1486,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        811
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 148,
-    "source": 1013,
-    "target": 766,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        285
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 149,
-    "source": 1335,
-    "target": 200,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1492
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 150,
-    "source": 977,
-    "target": 292,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        323
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 151,
-    "source": 150,
-    "target": 1183,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        799
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 152,
-    "source": 1386,
-    "target": 1038,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        145
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 153,
-    "source": 1606,
-    "target": 1568,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        696
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 154,
-    "source": 492,
-    "target": 37,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        352
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 155,
-    "source": 953,
-    "target": 129,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        854
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 156,
-    "source": 1443,
-    "target": 254,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1009
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 157,
-    "source": 1400,
-    "target": 1466,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        507
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 158,
-    "source": 334,
-    "target": 1566,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1563
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 159,
-    "source": 478,
-    "target": 374,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1139
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 160,
-    "source": 1670,
-    "target": 632,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1041
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 161,
-    "source": 488,
-    "target": 1636,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 162,
-    "source": 230,
-    "target": 861,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        620
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 163,
-    "source": 863,
-    "target": 1681,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1479
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 164,
-    "source": 722,
-    "target": 803,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        200
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 165,
-    "source": 203,
-    "target": 808,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1401
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 166,
-    "source": 577,
-    "target": 1065,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        72
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 167,
-    "source": 1349,
-    "target": 962,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        1683
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 168,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.126886283313876,
-      "lon": 72.91500024488742
-    },
-    "k": [
-      25
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 169,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13806186674756,
-      "lon": 72.90603867078073
-    },
-    "k": [
+    "type": "modify_edge",
+    "edge_id": [
       21
     ],
-    "metric": [
-      "Euclidian Distance"
-    ]
+    "patch": {
+      "length": 112.5
+    }
   },
   {
-    "type": "knn",
-    "id": 170,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13330534913608,
-      "lon": 72.90760867176537
+    "meta": {
+      "id": "qset1"
     },
-    "k": [
-      29
-    ],
-    "metric": [
-      "Euclidian Distance"
+    "events": [
+      "query"
     ]
   },
   {
-    "type": "knn",
-    "id": 171,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.125815131057745,
-      "lon": 72.90516906781832
-    },
-    "k": [
-      30
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
+    "type": "shortest_path",
+    "id": 81,
+    "source": 162,
+    "target": 607,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        69
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 58,
+    "source": 537,
+    "target": 852,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        568
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
   },
   {
     "type": "knn",
-    "id": 172,
+    "id": 110,
     "pois": [
-      "restaurent"
+      "Atm"
     ],
     "query_point": {
-      "lat": 19.13331978727941,
-      "lon": 72.91330994523315
-    },
-    "k": [
-      2
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 173,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13371218683597,
-      "lon": 72.90599988738155
-    },
-    "k": [
-      40
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 174,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.136659011697656,
-      "lon": 72.9035071750787
-    },
-    "k": [
-      15
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 175,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12574335022417,
-      "lon": 72.9002868625386
-    },
-    "k": [
-      2
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 176,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.133923049666517,
-      "lon": 72.92508607839927
-    },
-    "k": [
-      39
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 177,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.131721956370022,
-      "lon": 72.91777456282921
-    },
-    "k": [
-      34
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 178,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.129640958546844,
-      "lon": 72.92280698445609
-    },
-    "k": [
-      8
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 179,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.134561312168447,
-      "lon": 72.91715075996838
-    },
-    "k": [
-      30
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 180,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.132525425797624,
-      "lon": 72.90300807146647
-    },
-    "k": [
-      41
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 181,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13322074301574,
-      "lon": 72.9163878874415
-    },
-    "k": [
-      3
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 182,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13331708604594,
-      "lon": 72.92542824686095
-    },
-    "k": [
-      24
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 183,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13633639922852,
-      "lon": 72.92459474555892
-    },
-    "k": [
-      15
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 184,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.128606350639146,
-      "lon": 72.91306935164685
-    },
-    "k": [
-      37
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 185,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13444037457155,
-      "lon": 72.92027391982148
-    },
-    "k": [
-      30
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 186,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.127564636428918,
-      "lon": 72.89930033757254
-    },
-    "k": [
-      26
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 187,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13114767001442,
-      "lon": 72.91952868315063
-    },
-    "k": [
-      41
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 188,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.128138173947157,
-      "lon": 72.91292611498807
+      "lat": 19.0711672,
+      "lon": 72.8355754
     },
     "k": [
       13
     ],
     "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 189,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124104466906246,
-      "lon": 72.91111027341195
-    },
-    "k": [
-      38
-    ],
-    "metric": [
       "Euclidian Distance"
     ]
   },
   {
-    "type": "knn",
-    "id": 190,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13138754843694,
-      "lon": 72.8977625813103
-    },
-    "k": [
-      39
-    ],
-    "metric": [
-      "shortest_path"
+    "type": "remove_edge",
+    "edge_id": [
+      587
     ]
   },
   {
-    "type": "knn",
-    "id": 191,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.132349607786715,
-      "lon": 72.90034410549201
-    },
-    "k": [
-      31
-    ],
-    "metric": [
-      "shortest_path"
+    "type": "shortest_path",
+    "id": 48,
+    "source": 544,
+    "target": 365,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        147
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      177
     ]
   },
   {
-    "type": "knn",
-    "id": 192,
-    "pois": [
-      "restaurent"
+    "type": "modify_edge",
+    "edge_id": [
+      815
     ],
-    "query_point": {
-      "lat": 19.128576552560826,
-      "lon": 72.90770140292811
-    },
-    "k": [
-      37
-    ],
-    "metric": [
-      "shortest_path"
-    ]
+    "patch": {
+      "length": 252.06
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 84,
+    "source": 875,
+    "target": 458,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        594
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
   },
   {
     "type": "knn",
-    "id": 193,
+    "id": 121,
     "pois": [
-      "restaurent"
+      "Place_Of_Worship"
     ],
     "query_point": {
-      "lat": 19.133368082244868,
-      "lon": 72.91156274546518
-    },
-    "k": [
-      27
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 194,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13620442770944,
-      "lon": 72.89975128674958
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 195,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13042862254619,
-      "lon": 72.92094761066524
-    },
-    "k": [
-      31
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 196,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.125428950433047,
-      "lon": 72.91147311440345
-    },
-    "k": [
-      2
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 197,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.131050540665232,
-      "lon": 72.91333531093005
-    },
-    "k": [
-      37
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 198,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12690437130169,
-      "lon": 72.91813637338521
-    },
-    "k": [
-      25
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 199,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12878818563166,
-      "lon": 72.913370291297
-    },
-    "k": [
-      38
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 200,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.125719128866915,
-      "lon": 72.90150228061056
-    },
-    "k": [
-      30
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 201,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13812405299313,
-      "lon": 72.92521251642145
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 202,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.125007247111693,
-      "lon": 72.92448865640372
-    },
-    "k": [
-      1
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 203,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12725027557427,
-      "lon": 72.9083378815302
-    },
-    "k": [
-      6
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 204,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.130657335789532,
-      "lon": 72.9110261712679
-    },
-    "k": [
-      20
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 205,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124679679497707,
-      "lon": 72.90780077393218
-    },
-    "k": [
-      34
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 206,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12713806109489,
-      "lon": 72.90588216493956
-    },
-    "k": [
-      7
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 207,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.128837219085007,
-      "lon": 72.92498542371088
-    },
-    "k": [
-      30
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 208,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.137859401405777,
-      "lon": 72.91114526239787
-    },
-    "k": [
-      7
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 209,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13363827186885,
-      "lon": 72.90193840694494
-    },
-    "k": [
-      16
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 210,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.130347228501545,
-      "lon": 72.90744867077164
-    },
-    "k": [
-      10
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 211,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.129982833904528,
-      "lon": 72.91572497896982
-    },
-    "k": [
-      8
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 212,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.123947651437124,
-      "lon": 72.92504907705936
-    },
-    "k": [
-      36
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 213,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124569922086923,
-      "lon": 72.90218011975844
-    },
-    "k": [
-      9
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 214,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12852019547493,
-      "lon": 72.90596492696514
-    },
-    "k": [
-      39
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 215,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12988382504214,
-      "lon": 72.91091405675074
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 216,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.130980185319544,
-      "lon": 72.9098055955995
-    },
-    "k": [
-      29
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 217,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124841761230325,
-      "lon": 72.91238266175823
-    },
-    "k": [
-      5
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 218,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.131171876804036,
-      "lon": 72.90209872637132
-    },
-    "k": [
-      27
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 219,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12706745401847,
-      "lon": 72.92121600031471
-    },
-    "k": [
-      25
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 220,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.134477034998838,
-      "lon": 72.91582598910094
-    },
-    "k": [
-      29
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 221,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.131374787780633,
-      "lon": 72.91263145411642
-    },
-    "k": [
-      33
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 222,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12429773757371,
-      "lon": 72.91521633079374
-    },
-    "k": [
-      16
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 223,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.136195814362686,
-      "lon": 72.91006318016782
-    },
-    "k": [
-      5
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 224,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124707093836925,
-      "lon": 72.91677651962569
-    },
-    "k": [
-      31
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 225,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.129003821587894,
-      "lon": 72.92626683992768
-    },
-    "k": [
-      34
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 226,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.134556549616498,
-      "lon": 72.9189811256779
-    },
-    "k": [
-      25
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 227,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.135401514577357,
-      "lon": 72.90920320399933
-    },
-    "k": [
-      19
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 228,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.1372928873591,
-      "lon": 72.90858526697227
-    },
-    "k": [
-      26
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 229,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.123789956533123,
-      "lon": 72.91051700969398
-    },
-    "k": [
-      30
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 230,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.133662945186057,
-      "lon": 72.91226100317748
-    },
-    "k": [
-      27
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 231,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.131381514610855,
-      "lon": 72.90743476237868
-    },
-    "k": [
-      22
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 232,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.132388048792706,
-      "lon": 72.91111403059404
-    },
-    "k": [
-      11
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 233,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124194984223934,
-      "lon": 72.89840503517709
-    },
-    "k": [
-      8
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 234,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.1374490884962,
-      "lon": 72.91945284285262
-    },
-    "k": [
-      20
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 235,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.134455952492768,
-      "lon": 72.92195288022694
-    },
-    "k": [
-      24
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 236,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12698802155109,
-      "lon": 72.90578234177202
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 237,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.133465929060648,
-      "lon": 72.9125621757855
-    },
-    "k": [
-      25
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 238,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.128085278887813,
-      "lon": 72.90442362500005
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 239,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12818791465907,
-      "lon": 72.91945301618937
-    },
-    "k": [
-      19
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 240,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.13334343850366,
-      "lon": 72.91483097384457
-    },
-    "k": [
-      20
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 241,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.124079951364365,
-      "lon": 72.90566535978277
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 242,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.134898985032294,
-      "lon": 72.92034697955094
-    },
-    "k": [
-      13
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 243,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12580251301918,
-      "lon": 72.91470197090733
-    },
-    "k": [
-      17
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 244,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.137002583211814,
-      "lon": 72.90587871668416
-    },
-    "k": [
-      40
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 245,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.137304365437206,
-      "lon": 72.91726215152332
-    },
-    "k": [
-      3
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 246,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.129353404115896,
-      "lon": 72.91566959816677
-    },
-    "k": [
-      0
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 247,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.131502680211256,
-      "lon": 72.91976829296706
-    },
-    "k": [
-      7
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 248,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.128229955180426,
-      "lon": 72.90862236001952
-    },
-    "k": [
-      3
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 249,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12979158564769,
-      "lon": 72.91266023951582
-    },
-    "k": [
-      31
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 250,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.12547869137805,
-      "lon": 72.90280262643851
+      "lat": 19.075884,
+      "lon": 72.8295508
     },
     "k": [
       9
     ],
     "metric": [
       "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 251,
-    "pois": [
-      "restaurent"
-    ],
-    "query_point": {
-      "lat": 19.134235115167886,
-      "lon": 72.92092180376243
-    },
-    "k": [
-      26
-    ],
-    "metric": [
-      "Euclidian Distance"
     ]
   }
 ]
