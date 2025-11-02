@@ -52,7 +52,6 @@ for element in osm["elements"]:
         node_id_map[element["id"]]=node_counter
         node_counter+=1
 
-print(pois_available)
 # Euclidean distance (meters)
 def euclidean_meters(lat1, lon1, lat2, lon2):
     mean_lat = math.radians((lat1 + lat2) / 2)
@@ -66,12 +65,16 @@ edge_id = 0
 max_length=0
 min_length=100000
 def simplify_road_type(highway_tag: str) -> str:
-    if highway_tag in ["motorway", "trunk"]:
+    if highway_tag in ["motorway", "trunk", "motorway_link"]:
         return "expressway"
-    elif highway_tag in ["primary", "trunk_link"]:
+    elif highway_tag in ["primary", "primary_link"]:
         return "primary"
-    else:
+    elif highway_tag in ["secondary", "secondary_link"]:
         return "secondary"
+    elif highway_tag in ["tertiary", "tertiary_link"]:
+        return "tertiary"
+    else:
+        return "local"
 
 for el in osm["elements"]:
     if el["type"] == "way" and "highway" in el.get("tags", {}):
@@ -184,7 +187,7 @@ for i in range(no_of_queries_per_type):
     queries.append({
         "type": "knn",
         "id":query_count,
-        "pois" : pois,
+        "poi" : pois,
         "query_point": { "lat": lat, "lon": lon },
         "k": k,
         "metric": metric

@@ -20,12 +20,16 @@ int main(int argc, char* argv[]) {
         Add your graph reading and processing code here
         Initialize any classes and data structures needed for query processing
     */
+
+
+    ///////-------> MODIFIED FROM HERE <------------//////
     Graph Graph_internal;
     std::ifstream input_graph_file(argv[1]);
     if (!input_graph_file.is_open()) {
         std::cerr << "Failed to open " << argv[1] << std::endl;
         return 1;
-    }  
+    }
+    
     json graph_data;
     input_graph_file>>graph_data;
     input_graph_file.close();
@@ -41,6 +45,7 @@ int main(int argc, char* argv[]) {
         Edge temp(x["id"],x["u"],x["v"],x["length"],x["average_time"],speed_profile,x["oneway"],x["road_type"]);
         Graph_internal.addEdge(temp);
     }
+    ////////-------> UPTO HERE <-----------///////////////
 
     // Read queries from second file
     std::ifstream queries_file(argv[2]);

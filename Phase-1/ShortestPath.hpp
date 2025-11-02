@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-class Result {
+class ShoretestPath_Result {
 public:
     int id;
     bool possible;
@@ -16,7 +16,7 @@ public:
 
 class ShortestPath {
 public:
-    Result findShortestPath(const Graph& graph, int id, int source, int target, const std::string& mode, const std::vector<int>& forbidden_nodes,
+    ShoretestPath_Result findShortestPath(const Graph& graph, int id, int source, int target, const std::string& mode, const std::vector<int>& forbidden_nodes,
         const std::vector<std::string>& forbidden_road_types);
 };
 
