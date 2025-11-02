@@ -38,7 +38,7 @@ public:
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
     Node removeNode(int id);
-    Edge removeEdge(int id);
-    Edge modifyEdge(int id, double length);
+    void removeEdge(int id);
+    void modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
 };
 #endif
