@@ -23,17 +23,17 @@ int main(int argc, char* argv[]) {
 
 
     ///////-------> MODIFIED FROM HERE <------------//////
-    Graph Graph_internal;
+
     std::ifstream input_graph_file(argv[1]);
     if (!input_graph_file.is_open()) {
         std::cerr << "Failed to open " << argv[1] << std::endl;
         return 1;
     }
-    
     json graph_data;
     input_graph_file>>graph_data;
     input_graph_file.close();
     //reading nodes
+    Graph Graph_internal(graph_data["nodes"].size());
     for(auto x:graph_data["nodes"]){
         std::vector<std::string> pois=x["pois"].get<std::vector<std::string>>();
         Node temp(x["id"],x["lat"],x["lon"],pois);

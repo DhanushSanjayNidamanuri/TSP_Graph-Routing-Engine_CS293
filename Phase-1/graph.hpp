@@ -8,10 +8,10 @@
 class Node{
 public:
     int id;
-    bool isValid;
+    bool isValid;    
     double lat, lon;
     std::vector<std::string> pois;
-    Node(int id, double lat, double lon, std::vector<std::string> pois) : id(id), isValid(1), lat(lat), lon(lon), pois(pois) {};
+    Node(int id, double lat, double lon, std::vector<std::string> pois) : id(id),isValid(1), lat(lat), lon(lon), pois(pois) {};
 };
 
 class Edge{
@@ -26,12 +26,14 @@ public:
 };
 
 class Graph{
-    std::unordered_map<int,Node> node_list;
-    std::unordered_map<int,std::unordered_map<int,std::unordered_map<int,Edge>>> adjacency_list;
+    std::vector<Node> node_list;
+    int node_count;
+    std::vector<std::unordered_map<int,Edge>> adjacency_list;
     std::unordered_map<int,Edge> edge_list;
 
 public:
     friend class ShortestPath;
+    Graph(int node_count=0): node_count(node_count){};
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
     Node removeNode(int id);
