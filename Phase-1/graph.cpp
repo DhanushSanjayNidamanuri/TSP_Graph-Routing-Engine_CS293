@@ -38,6 +38,28 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     else{
         if(query["type"]=="remove_edge"){
             bool done=removeEdge(query["edge_id"]);
+            out["done"]=done;
+            return out;
+        }
+        else if(query["type"]=="modify_edge"){
+            int length=edge_list[query["edge_id"]].length;
+            if(query["patch"].find("length")!=query["patch"].end()){
+                length=query["patch"]["length"];
+            }
+            std::vector<double> speed_profile=edge_list[query["edge_id"]].speed_profile;
+            if(query["patch"].find("speed_profile")!=query["patch"].end()){
+                length=query["patch"]["speed_profile"];
+            }
+            double average_time=edge_list[query["average_time"]].average_time;
+            if(query["patch"].find("average_time")!=query["patch"].end()){
+                length=query["patch"]["average_time"];
+            }
+            bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile);
+            out["done"]=done;
+            return out;
+        }
+        else{
+            return out;
         }
     }   
 }
