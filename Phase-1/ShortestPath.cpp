@@ -1,4 +1,4 @@
-#include<ShortestPath.hpp>
+#include "ShortestPath.hpp"
 bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>& visited, std::unordered_map<std::string,bool>& fb_types){
     if(!destination.isValid)return false;
     if(!edge.isOpen)return false;
@@ -28,80 +28,62 @@ int ShortestPath::Expected_time(Edge& edge,int start_time){
     return start_time+travesal_time;
 };
 
+std::vector<int> ShortestPath::Backtrack(int u,std::vector<int>& parent){
+    std::vector<int> path;
+    while(parent[u]!=u){
+        path.push_back(u);
+        u=parent[u];
+    }
+    path.push_back(u);
+    std::reverse(path.begin(),path.end());
+    return path;
+};
+
 ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int source, int target,
      const std::string& mode, const std::vector<int>& forbidden_nodes,
         const std::vector<std::string>& forbidden_road_types){
+
+            /////------->  INITIALISATION  <------/////
             for(auto fb_id:forbidden_nodes){
                 graph.node_list[fb_id].isValid=false;
             }
-            if(mode=="time"){
-                int node_count=graph.node_list.size();
-                std::priority_queue<std::tuple<int,int,int>> pq;
-                pq.push(std::make_tuple(0,source,source));
-                std::vector<bool> visited(node_count,false);
-                std::unordered_map<std::string,bool> fb_types;
-                std::vector<int> parent(node_count,0);
-                for(auto s:forbidden_road_types){
+            std::unordered_map<std::string,bool> fb_types;
+            for(auto s:forbidden_road_types){
                     fb_types[s]=true;
-                }
+            }
+            std::priority_queue<std::tuple<int,int,int>> pq;
+            pq.push(std::make_tuple(0,source,source));
+            int node_count=graph.node_list.size();
+            std::vector<bool> visited(node_count,false);
+            std::vector<int> parent(node_count,0);
+            /////--------------------------------/////
+
+            if(mode=="time"){
                 while(!pq.empty()){
                     auto [neg_time,u,par]=pq.top();pq.pop();
                     if(visited[u]==true)continue;
                     visited[u]=true;
                     parent[u]=par;
                     if(u==target){
-                        ShortestPath_Result Out;
-                        Out.id=id;
-                        Out.possible=true;
-                        Out.min_time=-neg_time;
-                        std::vector<int> path;
-                        while(parent[u]!=u){
-                            path.push_back(u);
-                            u=parent[u];
-                        }
-                        path.push_back(u);
-                        Out.path=path;
+                        ShortestPath_Result Out(id,true,-neg_time,Backtrack(u,parent));
                         return Out;
                     }
                     for(auto& p:graph.adjacency_list[u]){
                         if(Is_Usable_Now(graph.node_list[p.first],p.second,visited,fb_types)){
                             int expected_time_to_travel=Expected_time(p.second,-neg_time);
-                            pq.push(std::make_tuple(expected_time_to_travel,p.first,u));
+                            pq.push(std::make_tuple(-expected_time_to_travel,p.first,u));
                         }
                     }
                 }
-                ShortestPath_Result Out;
-                Out.id=id;
-                Out.possible=false;
-                return Out;
             }
             else if(mode=="distance"){
-                int node_count=graph.node_list.size();
-                std::priority_queue<std::tuple<int,int,int>> pq;
-                pq.push(std::make_tuple(0,source,source));
-                std::vector<bool> visited(node_count,false);
-                std::unordered_map<std::string,bool> fb_types;
-                std::vector<int> parent(node_count,0);
-                for(auto s:forbidden_road_types){
-                    fb_types[s]=true;
-                }
                 while(!pq.empty()){
                     auto [neg_dist,u,par]=pq.top();pq.pop();
                     if(visited[u]==true)continue;
                     visited[u]=true;
                     parent[u]=par;
                     if(u==target){
-                        ShortestPath_Result Out;
-                        Out.id=id;
-                        Out.possible=true;
-                        Out.min_distance=-neg_dist;
-                        std::vector<int> path;
-                        while(parent[u]!=u){
-                            path.push_back(u);
-                            u=parent[u];
-                        }
-                        path.push_back(u);
-                        Out.path=path;
+                        ShortestPath_Result Out(id,true,-neg_dist,Backtrack(u,parent));
                         return Out;
                     }
                     for(auto p:graph.adjacency_list[u]){
@@ -110,11 +92,9 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                         }
                     }
                 }
-                ShortestPath_Result Out;
-                Out.id=id;
-                Out.possible=false;
-                return Out;
             }
+            ShortestPath_Result Out(id,false);
+            return Out;
             for(auto fb_id:forbidden_nodes){
                 graph.node_list[fb_id].isValid=true;
             }
