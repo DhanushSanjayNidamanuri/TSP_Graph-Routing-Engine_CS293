@@ -1,4 +1,33 @@
 #include<ShortestPath.hpp>
+bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>& visited, std::unordered_map<std::string,bool>& fb_types){
+    if(!destination.isValid)return false;
+    if(!edge.isOpen)return false;
+    if(edge.oneway && destination.id==edge.u)return false;
+    if(visited[destination.id])return false;
+    if(fb_types[edge.road_type])return false;
+    return true;
+}
+
+int ShortestPath::Expected_time(Edge& edge,int start_time){
+    if(edge.speed_profile.size()==0){
+        return start_time+edge.average_time;
+    }
+    int present_speed_profile_id=int(start_time/900)%96;
+    int travesal_time=0;
+    int distance=edge.length;
+    while(distance>0){
+        if(900*edge.speed_profile[present_speed_profile_id]>=distance){
+            distance-=900*edge.speed_profile[present_speed_profile_id];
+            travesal_time+=900;present_speed_profile_id++;
+            present_speed_profile_id%=96;continue;
+        }
+        else{
+            travesal_time+=distance/edge.speed_profile[present_speed_profile_id];break;
+        }
+    }
+    return start_time+travesal_time;
+};
+
 ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int source, int target,
      const std::string& mode, const std::vector<int>& forbidden_nodes,
         const std::vector<std::string>& forbidden_road_types){
@@ -34,26 +63,10 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                         Out.path=path;
                         return Out;
                     }
-                    for(auto p:graph.adjacency_list[u]){
-                        if(p.second.isOpen==true && visited[p.second.v]==false && graph.node_list[p.second.v].isValid==true && fb_types[p.second.road_type]==false){
-                            if(p.second.speed_profile.size()==0){
-                                pq.push(std::make_tuple(neg_time-p.second.average_time,p.second.v,u));continue;
-                            }
-                            int present_time=-(neg_time);
-                            int present_speed_profile_id=int(present_time/900)%96;
-                            int travesal_time=0;
-                            int distance=p.second.length;
-                            while(distance>0){
-                                if(900*p.second.speed_profile[present_speed_profile_id]>=distance){
-                                    distance-=900*p.second.speed_profile[present_speed_profile_id];
-                                    travesal_time+=900;present_speed_profile_id++;
-                                    present_speed_profile_id%=96;continue;
-                                }
-                                else{
-                                    travesal_time+=distance/p.second.speed_profile[present_speed_profile_id];break;
-                                }
-                            }
-                            pq.push(std::make_tuple(neg_time-travesal_time,p.second.v,u));
+                    for(auto& p:graph.adjacency_list[u]){
+                        if(Is_Usable_Now(graph.node_list[p.first],p.second,visited,fb_types)){
+                            int expected_time_to_travel=Expected_time(p.second,-neg_time);
+                            pq.push(std::make_tuple(expected_time_to_travel,p.first,u));
                         }
                     }
                 }
@@ -92,8 +105,8 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                         return Out;
                     }
                     for(auto p:graph.adjacency_list[u]){
-                        if(p.second.isOpen==true && visited[p.second.v]==false && graph.node_list[p.second.v].isValid==true && fb_types[p.second.road_type]==false){
-                            pq.push(std::make_tuple(neg_dist-p.second.length,p.second.v,u));
+                        if(Is_Usable_Now(graph.node_list[p.first],p.second,visited,fb_types)){
+                            pq.push(std::make_tuple(neg_dist-p.second.length,p.first,u));
                         }
                     }
                 }
