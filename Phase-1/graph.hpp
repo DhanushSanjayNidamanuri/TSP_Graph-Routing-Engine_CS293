@@ -37,9 +37,8 @@ public:
     Graph(int node_count=0): node_count(node_count){};
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
-    Node removeNode(int id);
-    void removeEdge(int id);
-    void modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
+    bool removeEdge(int id);
+    bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif

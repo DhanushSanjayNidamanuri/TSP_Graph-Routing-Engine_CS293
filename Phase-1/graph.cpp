@@ -10,14 +10,14 @@ void Graph::addEdge(const Edge& edge) {
     if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
 }
 
-void Graph::removeEdge(int id) {
+bool Graph::removeEdge(int id) {
     Edge edge=edge_list[id];
     adjacency_list[edge.u][id].isOpen=false;
     if(!edge.oneway) adjacency_list[edge.v][id].isOpen=false;
     edge_list[id].isOpen=false;
 }
 
-void Graph::modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile) {
+bool Graph::modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile) {
     if(edge_list.find(id)==edge_list.end()) return;
     Edge edge=edge_list[id];
     edge.isOpen=true;
@@ -32,9 +32,12 @@ void Graph::modifyEdge(int id, double length, double average_time, std::vector<d
     if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
 }
 
-nlohmann::json query_handler(nlohmann::json& query){
+nlohmann::json Graph::query_handler(const nlohmann::json& query){
+    nlohmann::json out;
     if(query.find("meta")!=query.end())return query;
     else{
-        
-    }
+        if(query["type"]=="remove_edge"){
+            bool done=removeEdge(query["edge_id"]);
+        }
+    }   
 }
