@@ -1,45 +1,19 @@
 [
   {
-    "type": "shortest_path",
-    "id": 9,
-    "source": "625",
-    "target": "839",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        398
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 123,
-    "pois": [
-      "Bar"
-    ],
-    "query_point": {
-      "lat": 19.0753989,
-      "lon": 72.8273715
-    },
-    "k": [
-      13
-    ],
-    "metric": [
-      "shortest_path"
+    "type": "remove_edge",
+    "edge_id": [
+      262
     ]
   },
   {
     "type": "shortest_path",
-    "id": 5,
-    "source": "389",
-    "target": "153",
+    "id": 11,
+    "source": "23",
+    "target": "755",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        659
+        134
       ],
       "forbidden_road_types": [
         "primary"
@@ -48,28 +22,69 @@
   },
   {
     "type": "shortest_path",
-    "id": 31,
-    "source": "293",
-    "target": "304",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        701
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 45,
-    "source": 400,
-    "target": 747,
+    "id": 55,
+    "source": 814,
+    "target": 259,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        442
+        446
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      417
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      430
+    ],
+    "patch": {
+      "length": 136.97
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      61
+    ],
+    "patch": {
+      "length": 180.24
+    }
+  },
+  {
+    "type": "knn",
+    "id": 120,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.070929,
+      "lon": 72.837073
+    },
+    "k": [
+      10
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 50,
+    "source": 182,
+    "target": 481,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        841
       ],
       "forbidden_road_types": [
         "primary"
@@ -78,9 +93,226 @@
   },
   {
     "type": "shortest_path",
-    "id": 3,
-    "source": "316",
-    "target": "354",
+    "id": 28,
+    "source": "502",
+    "target": "306",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        302
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 34,
+    "source": "30",
+    "target": "613",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        144
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      727
+    ],
+    "patch": {
+      "length": 10.2
+    }
+  },
+  {
+    "type": "knn",
+    "id": 91,
+    "poi": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0697697,
+      "lon": 72.8294613
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      64
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 122,
+    "poi": [
+      "Fast_Food"
+    ],
+    "query_point": {
+      "lat": 19.0759399,
+      "lon": 72.8298604
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 70,
+    "source": 460,
+    "target": 865,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        279
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      0
+    ],
+    "patch": {
+      "length": 57.7
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 68,
+    "source": 873,
+    "target": 111,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        869
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 37,
+    "source": "329",
+    "target": "376",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        652
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 47,
+    "source": 232,
+    "target": 115,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        794
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      632
+    ],
+    "patch": {
+      "length": 110.85
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      906
+    ],
+    "patch": {
+      "length": 268.53
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 46,
+    "source": 616,
+    "target": 197,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        573
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 56,
+    "source": 576,
+    "target": 432,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        29
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 60,
+    "source": 616,
+    "target": 171,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        699
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      557
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 33,
+    "source": "367",
+    "target": "653",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
@@ -93,143 +325,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 64,
-    "source": 864,
-    "target": 285,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        416
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 34,
-    "source": "656",
-    "target": "800",
+    "id": 42,
+    "source": "510",
+    "target": "760",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        686
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 100,
-    "pois": [
-      "Police"
-    ],
-    "query_point": {
-      "lat": 19.0703685,
-      "lon": 72.8354384
-    },
-    "k": [
-      6
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 120,
-    "pois": [
-      "Cafe"
-    ],
-    "query_point": {
-      "lat": 19.0712928,
-      "lon": 72.8285072
-    },
-    "k": [
-      8
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      833
-    ],
-    "patch": {
-      "length": 192.87
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 57,
-    "source": 404,
-    "target": 556,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        699
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 1,
-    "source": "661",
-    "target": "36",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        409
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 27,
-    "source": "618",
-    "target": "823",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        405
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      120
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      221
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 33,
-    "source": "33",
-    "target": "525",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        83
+        96
       ],
       "forbidden_road_types": [
         "primary"
@@ -239,12 +341,12 @@
   {
     "type": "shortest_path",
     "id": 6,
-    "source": "569",
-    "target": "490",
+    "source": "229",
+    "target": "152",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        809
+        824
       ],
       "forbidden_road_types": [
         "primary"
@@ -252,1792 +354,45 @@
     }
   },
   {
-    "type": "remove_edge",
+    "type": "modify_edge",
     "edge_id": [
-      716
-    ]
+      704
+    ],
+    "patch": {
+      "length": 190.75
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 57,
+    "source": 40,
+    "target": 558,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        762
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
   },
   {
     "type": "knn",
-    "id": 116,
-    "pois": [
+    "id": 100,
+    "poi": [
       "Restaurant"
     ],
     "query_point": {
-      "lat": 19.0725534,
-      "lon": 72.8294962
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 90,
-    "pois": [
-      "Ice_Cream"
-    ],
-    "query_point": {
-      "lat": 19.073794,
-      "lon": 72.8320046
-    },
-    "k": [
-      19
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 118,
-    "pois": [
-      "Restaurant"
-    ],
-    "query_point": {
-      "lat": 19.0706631,
-      "lon": 72.8313689
-    },
-    "k": [
-      19
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 86,
-    "source": 706,
-    "target": 523,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        312
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      849
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 122,
-    "pois": [
-      "Hospital"
-    ],
-    "query_point": {
-      "lat": 19.0706337,
-      "lon": 72.8282298
-    },
-    "k": [
-      16
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 96,
-    "pois": [
-      "School"
-    ],
-    "query_point": {
-      "lat": 19.0712822,
-      "lon": 72.8247345
-    },
-    "k": [
-      2
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      759
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 50,
-    "source": 14,
-    "target": 580,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        713
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 59,
-    "source": 364,
-    "target": 571,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        26
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 98,
-    "pois": [
-      "Place_Of_Worship"
-    ],
-    "query_point": {
-      "lat": 19.0706119,
-      "lon": 72.8321266
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      351
-    ],
-    "patch": {
-      "length": 139.79
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 72,
-    "source": 559,
-    "target": 605,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        649
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      714
-    ],
-    "patch": {
-      "length": 143.22
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      435
-    ],
-    "patch": {
-      "length": 12.34
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      828
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 8,
-    "source": "34",
-    "target": "706",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        855
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 109,
-    "pois": [
-      "Clinic"
-    ],
-    "query_point": {
-      "lat": 19.0700357,
-      "lon": 72.8328845
-    },
-    "k": [
-      5
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      23
-    ],
-    "patch": {
-      "length": 38.3
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 46,
-    "source": 293,
-    "target": 265,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        242
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      150
-    ],
-    "patch": {
-      "length": 86.68
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 55,
-    "source": 514,
-    "target": 86,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        622
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 94,
-    "pois": [
-      "Hospital"
-    ],
-    "query_point": {
-      "lat": 19.0754735,
-      "lon": 72.8296323
-    },
-    "k": [
-      1
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 61,
-    "source": 68,
-    "target": 614,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        520
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 41,
-    "source": "624",
-    "target": "40",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        269
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      580
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      773
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 91,
-    "pois": [
-      "Restaurant"
-    ],
-    "query_point": {
-      "lat": 19.0739766,
-      "lon": 72.8364629
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      199
-    ],
-    "patch": {
-      "length": 180.99
-    }
-  },
-  {
-    "type": "knn",
-    "id": 106,
-    "pois": [
-      "Cafe"
-    ],
-    "query_point": {
-      "lat": 19.0698703,
-      "lon": 72.8305469
-    },
-    "k": [
-      13
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      641
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      64
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 38,
-    "source": "833",
-    "target": "817",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        133
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 21,
-    "source": "770",
-    "target": "214",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        877
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      342
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 60,
-    "source": 866,
-    "target": 683,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        195
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      47
-    ],
-    "patch": {
-      "length": 205.68
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 2,
-    "source": "155",
-    "target": "615",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        147
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      734
-    ],
-    "patch": {
-      "length": 128.24
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      514
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 37,
-    "source": "333",
-    "target": "749",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        863
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 125,
-    "pois": [
-      "Ice_Cream"
-    ],
-    "query_point": {
-      "lat": 19.0717922,
-      "lon": 72.835294
-    },
-    "k": [
-      10
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      332
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      79
-    ],
-    "patch": {
-      "length": 257.21
-    }
-  },
-  {
-    "type": "knn",
-    "id": 119,
-    "pois": [
-      "Ice_Cream"
-    ],
-    "query_point": {
-      "lat": 19.0701565,
-      "lon": 72.8356771
-    },
-    "k": [
-      1
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 14,
-    "source": "560",
-    "target": "613",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        245
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 29,
-    "source": "469",
-    "target": "345",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        127
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 10,
-    "source": "393",
-    "target": "293",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        106
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      887
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      100
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 36,
-    "source": "583",
-    "target": "1",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        222
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 76,
-    "source": 82,
-    "target": 543,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        441
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 25,
-    "source": "529",
-    "target": "537",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        23
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 71,
-    "source": 702,
-    "target": 195,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        531
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      366
-    ],
-    "patch": {
-      "length": 10.07
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      27
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 16,
-    "source": "493",
-    "target": "173",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        180
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 101,
-    "pois": [
-      "Cafe"
-    ],
-    "query_point": {
-      "lat": 19.0714013,
-      "lon": 72.8276774
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      539
-    ],
-    "patch": {
-      "length": 98.07
-    }
-  },
-  {
-    "type": "knn",
-    "id": 126,
-    "pois": [
-      "Restaurant"
-    ],
-    "query_point": {
-      "lat": 19.075419,
-      "lon": 72.8261069
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 65,
-    "source": 798,
-    "target": 837,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        870
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 22,
-    "source": "772",
-    "target": "728",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        464
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 99,
-    "pois": [
-      "Police"
-    ],
-    "query_point": {
-      "lat": 19.0728353,
-      "lon": 72.8248985
-    },
-    "k": [
-      8
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 47,
-    "source": 785,
-    "target": 312,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        33
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 128,
-    "pois": [
-      "Clinic"
-    ],
-    "query_point": {
-      "lat": 19.0732691,
-      "lon": 72.828634
-    },
-    "k": [
-      3
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      292
-    ],
-    "patch": {
-      "length": 95.51
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 17,
-    "source": "283",
-    "target": "42",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        377
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      24
-    ],
-    "patch": {
-      "length": 116.14
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      564
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      328
-    ],
-    "patch": {
-      "length": 129.0
-    }
-  },
-  {
-    "type": "knn",
-    "id": 117,
-    "pois": [
-      "Cafe"
-    ],
-    "query_point": {
-      "lat": 19.0706656,
-      "lon": 72.8292044
+      "lat": 19.0712329,
+      "lon": 72.8358201
     },
     "k": [
       11
     ],
     "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 113,
-    "pois": [
-      "Cafe"
-    ],
-    "query_point": {
-      "lat": 19.0732512,
-      "lon": 72.8248444
-    },
-    "k": [
-      11
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 12,
-    "source": "535",
-    "target": "27",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        314
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 129,
-    "pois": [
-      "Place_Of_Worship"
-    ],
-    "query_point": {
-      "lat": 19.0706551,
-      "lon": 72.8321149
-    },
-    "k": [
-      0
-    ],
-    "metric": [
       "Euclidian Distance"
     ]
-  },
-  {
-    "type": "knn",
-    "id": 103,
-    "pois": [
-      "Police"
-    ],
-    "query_point": {
-      "lat": 19.0708634,
-      "lon": 72.8314503
-    },
-    "k": [
-      16
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      850
-    ],
-    "patch": {
-      "length": 32.63
-    }
-  },
-  {
-    "type": "knn",
-    "id": 89,
-    "pois": [
-      "Clinic"
-    ],
-    "query_point": {
-      "lat": 19.0694618,
-      "lon": 72.8334413
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 131,
-    "pois": [
-      "School"
-    ],
-    "query_point": {
-      "lat": 19.0731646,
-      "lon": 72.8374714
-    },
-    "k": [
-      15
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      724
-    ],
-    "patch": {
-      "length": 64.59
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 30,
-    "source": "629",
-    "target": "216",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        526
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 79,
-    "source": 831,
-    "target": 6,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        533
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      493
-    ],
-    "patch": {
-      "length": 64.67
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      63
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      432
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      752
-    ],
-    "patch": {
-      "length": 173.52
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      733
-    ],
-    "patch": {
-      "length": 208.34
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      880
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      536
-    ],
-    "patch": {
-      "length": 75.97
-    }
-  },
-  {
-    "type": "knn",
-    "id": 104,
-    "pois": [
-      "Place_Of_Worship"
-    ],
-    "query_point": {
-      "lat": 19.0717866,
-      "lon": 72.8266823
-    },
-    "k": [
-      9
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 82,
-    "source": 506,
-    "target": 11,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        355
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 39,
-    "source": "659",
-    "target": "552",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        522
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      75
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      4
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 44,
-    "source": 590,
-    "target": 274,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        705
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 114,
-    "pois": [
-      "Bank"
-    ],
-    "query_point": {
-      "lat": 19.0754794,
-      "lon": 72.8344076
-    },
-    "k": [
-      9
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 77,
-    "source": 627,
-    "target": 666,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        300
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 93,
-    "pois": [
-      "Bank"
-    ],
-    "query_point": {
-      "lat": 19.0708846,
-      "lon": 72.8254364
-    },
-    "k": [
-      14
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      574
-    ],
-    "patch": {
-      "length": 113.24
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      616
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      304
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      449
-    ],
-    "patch": {
-      "length": 47.36
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 53,
-    "source": 248,
-    "target": 490,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        453
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 88,
-    "pois": [
-      "Ice_Cream"
-    ],
-    "query_point": {
-      "lat": 19.07589,
-      "lon": 72.8319664
-    },
-    "k": [
-      5
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      753
-    ],
-    "patch": {
-      "length": 111.46
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 4,
-    "source": "732",
-    "target": "512",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        298
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 105,
-    "pois": [
-      "Ice_Cream"
-    ],
-    "query_point": {
-      "lat": 19.0731297,
-      "lon": 72.8266879
-    },
-    "k": [
-      21
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      221
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      776
-    ],
-    "patch": {
-      "length": 90.99
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      23
-    ],
-    "patch": {
-      "length": 201.37
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 63,
-    "source": 69,
-    "target": 681,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        218
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 68,
-    "source": 360,
-    "target": 724,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        626
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      889
-    ],
-    "patch": {
-      "length": 267.67
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 80,
-    "source": 361,
-    "target": 732,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        565
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      807
-    ],
-    "patch": {
-      "length": 69.93
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      403
-    ],
-    "patch": {
-      "length": 70.11
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 49,
-    "source": 748,
-    "target": 437,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        255
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      552
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      320
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      645
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 18,
-    "source": "312",
-    "target": "186",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        171
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      613
-    ],
-    "patch": {
-      "length": 67.51
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      461
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      155
-    ],
-    "patch": {
-      "length": 142.47
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 78,
-    "source": 266,
-    "target": 478,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        326
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 11,
-    "source": "161",
-    "target": "95",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        870
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 67,
-    "source": 65,
-    "target": 563,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        287
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      129
-    ],
-    "patch": {
-      "length": 287.16
-    }
-  },
-  {
-    "type": "knn",
-    "id": 127,
-    "pois": [
-      "Bank"
-    ],
-    "query_point": {
-      "lat": 19.0757896,
-      "lon": 72.8312814
-    },
-    "k": [
-      2
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 23,
-    "source": "512",
-    "target": "225",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        580
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 97,
-    "pois": [
-      "Bank"
-    ],
-    "query_point": {
-      "lat": 19.0750102,
-      "lon": 72.833663
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 108,
-    "pois": [
-      "Restaurant"
-    ],
-    "query_point": {
-      "lat": 19.0747365,
-      "lon": 72.8315398
-    },
-    "k": [
-      12
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 124,
-    "pois": [
-      "Cafe"
-    ],
-    "query_point": {
-      "lat": 19.0696829,
-      "lon": 72.8251953
-    },
-    "k": [
-      18
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 92,
-    "pois": [
-      "Fast_Food"
-    ],
-    "query_point": {
-      "lat": 19.0733786,
-      "lon": 72.8310579
-    },
-    "k": [
-      13
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      362
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      14
-    ],
-    "patch": {
-      "length": 120.4
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 74,
-    "source": 705,
-    "target": 65,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        597
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 15,
-    "source": "378",
-    "target": "608",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        216
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 43,
-    "source": "473",
-    "target": "640",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        291
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 7,
-    "source": "77",
-    "target": "306",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        638
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 70,
-    "source": 722,
-    "target": 447,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        251
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      47
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      374
-    ]
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      6
-    ],
-    "patch": {
-      "length": 150.35
-    }
-  },
-  {
-    "type": "knn",
-    "id": 107,
-    "pois": [
-      "Ice_Cream"
-    ],
-    "query_point": {
-      "lat": 19.0741008,
-      "lon": 72.826399
-    },
-    "k": [
-      21
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 42,
-    "source": "292",
-    "target": "413",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        25
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
   },
   {
     "type": "remove_edge",
@@ -2046,14 +401,46 @@
     ]
   },
   {
+    "type": "modify_edge",
+    "edge_id": [
+      77
+    ],
+    "patch": {
+      "length": 288.14
+    }
+  },
+  {
+    "type": "knn",
+    "id": 117,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0704726,
+      "lon": 72.8264792
+    },
+    "k": [
+      4
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      51
+    ]
+  },
+  {
     "type": "shortest_path",
-    "id": 20,
-    "source": "649",
-    "target": "809",
-    "mode": "distance",
+    "id": 51,
+    "source": 326,
+    "target": 128,
+    "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        126
+        498
       ],
       "forbidden_road_types": [
         "primary"
@@ -2061,19 +448,10 @@
     }
   },
   {
-    "type": "modify_edge",
-    "edge_id": [
-      165
-    ],
-    "patch": {
-      "length": 252.88
-    }
-  },
-  {
     "type": "shortest_path",
-    "id": 56,
-    "source": 394,
-    "target": 412,
+    "id": 73,
+    "source": 96,
+    "target": 470,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
@@ -2085,14 +463,71 @@
     }
   },
   {
+    "type": "knn",
+    "id": 105,
+    "poi": [
+      "Ice_Cream"
+    ],
+    "query_point": {
+      "lat": 19.0722745,
+      "lon": 72.8301224
+    },
+    "k": [
+      12
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 119,
+    "poi": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.0729564,
+      "lon": 72.8271856
+    },
+    "k": [
+      0
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 102,
+    "poi": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0727563,
+      "lon": 72.83183
+    },
+    "k": [
+      12
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      374
+    ]
+  },
+  {
     "type": "shortest_path",
     "id": 52,
-    "source": 734,
-    "target": 546,
+    "source": 648,
+    "target": 139,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        8
+        678
       ],
       "forbidden_road_types": [
         "primary"
@@ -2102,32 +537,198 @@
   {
     "type": "modify_edge",
     "edge_id": [
-      686
+      815
     ],
     "patch": {
-      "length": 183.85
+      "length": 180.65
     }
   },
   {
     "type": "remove_edge",
     "edge_id": [
-      883
+      862
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 69,
+    "source": 812,
+    "target": 713,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        31
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      514
+    ],
+    "patch": {
+      "length": 265.08
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      561
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 124,
+    "poi": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0722718,
+      "lon": 72.8270465
+    },
+    "k": [
+      2
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 77,
+    "source": 159,
+    "target": 584,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        176
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 83,
+    "source": 321,
+    "target": 405,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        593
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      477
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 108,
+    "poi": [
+      "Cafe"
+    ],
+    "query_point": {
+      "lat": 19.0756566,
+      "lon": 72.8356759
+    },
+    "k": [
+      1
+    ],
+    "metric": [
+      "Euclidian Distance"
     ]
   },
   {
     "type": "modify_edge",
     "edge_id": [
-      630
+      616
     ],
     "patch": {
-      "length": 177.6
+      "length": 228.95
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      252
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 67,
+    "source": 431,
+    "target": 583,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        618
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
     }
   },
   {
     "type": "shortest_path",
-    "id": 40,
-    "source": "343",
-    "target": "25",
+    "id": 17,
+    "source": "832",
+    "target": "497",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        809
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 32,
+    "source": "135",
+    "target": "756",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        111
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      541
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      467
+    ],
+    "patch": {
+      "length": 67.64
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 18,
+    "source": "145",
+    "target": "229",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
@@ -2139,14 +740,692 @@
     }
   },
   {
+    "type": "modify_edge",
+    "edge_id": [
+      899
+    ],
+    "patch": {
+      "length": 248.42
+    }
+  },
+  {
     "type": "shortest_path",
-    "id": 83,
-    "source": 87,
-    "target": 340,
+    "id": 62,
+    "source": 405,
+    "target": 378,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        380
+        703
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      673
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 96,
+    "poi": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0722133,
+      "lon": 72.8329923
+    },
+    "k": [
+      20
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 30,
+    "source": "80",
+    "target": "15",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        750
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 92,
+    "poi": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0701822,
+      "lon": 72.8246936
+    },
+    "k": [
+      21
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      147
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 4,
+    "source": "20",
+    "target": "664",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        494
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 99,
+    "poi": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0746641,
+      "lon": 72.8343379
+    },
+    "k": [
+      9
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      168
+    ],
+    "patch": {
+      "length": 198.03
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      48
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 86,
+    "source": 527,
+    "target": 513,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        281
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 40,
+    "source": "229",
+    "target": "134",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        616
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 74,
+    "source": 812,
+    "target": 787,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        600
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 79,
+    "source": 351,
+    "target": 631,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        547
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 9,
+    "source": "862",
+    "target": "2",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        786
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 24,
+    "source": "317",
+    "target": "579",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        786
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      246
+    ],
+    "patch": {
+      "length": 229.39
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 58,
+    "source": 321,
+    "target": 248,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        311
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      230
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      800
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      515
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 115,
+    "poi": [
+      "Police"
+    ],
+    "query_point": {
+      "lat": 19.0705268,
+      "lon": 72.8264845
+    },
+    "k": [
+      2
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 48,
+    "source": 823,
+    "target": 412,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        220
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      374
+    ],
+    "patch": {
+      "length": 39.21
+    }
+  },
+  {
+    "type": "knn",
+    "id": 118,
+    "poi": [
+      "Clinic"
+    ],
+    "query_point": {
+      "lat": 19.0754904,
+      "lon": 72.8318331
+    },
+    "k": [
+      19
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 88,
+    "poi": [
+      "Police"
+    ],
+    "query_point": {
+      "lat": 19.069554,
+      "lon": 72.8342635
+    },
+    "k": [
+      6
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      661
+    ],
+    "patch": {
+      "length": 38.98
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 25,
+    "source": "735",
+    "target": "37",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        67
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      13
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      257
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 123,
+    "poi": [
+      "Clinic"
+    ],
+    "query_point": {
+      "lat": 19.0727926,
+      "lon": 72.8294299
+    },
+    "k": [
+      12
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 101,
+    "poi": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.0728253,
+      "lon": 72.8275999
+    },
+    "k": [
+      3
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 72,
+    "source": 190,
+    "target": 292,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        526
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 7,
+    "source": "399",
+    "target": "718",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        556
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 113,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0761725,
+      "lon": 72.8370586
+    },
+    "k": [
+      4
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      161
+    ],
+    "patch": {
+      "length": 274.24
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 19,
+    "source": "135",
+    "target": "235",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        717
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 27,
+    "source": "312",
+    "target": "413",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        701
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 129,
+    "poi": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0746915,
+      "lon": 72.8386549
+    },
+    "k": [
+      20
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 109,
+    "poi": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0702922,
+      "lon": 72.8335489
+    },
+    "k": [
+      14
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 65,
+    "source": 151,
+    "target": 234,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        54
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 49,
+    "source": 215,
+    "target": 445,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        144
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 125,
+    "poi": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.0710761,
+      "lon": 72.8321348
+    },
+    "k": [
+      10
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      454
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 45,
+    "source": 361,
+    "target": 314,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        552
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 5,
+    "source": "432",
+    "target": "765",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        430
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      659
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      482
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 0,
+    "source": "184",
+    "target": "765",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        32
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      625
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      466
+    ],
+    "patch": {
+      "length": 42.03
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 23,
+    "source": "178",
+    "target": "709",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        246
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      877
+    ],
+    "patch": {
+      "length": 12.63
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 22,
+    "source": "734",
+    "target": "28",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        808
       ],
       "forbidden_road_types": [
         "primary"
@@ -2161,85 +1440,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 13,
-    "source": "227",
-    "target": "828",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        580
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 87,
-    "source": 274,
-    "target": 75,
+    "id": 82,
+    "source": 746,
+    "target": 378,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        747
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      569
-    ],
-    "patch": {
-      "length": 259.67
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      218
-    ],
-    "patch": {
-      "length": 190.05
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      741
-    ],
-    "patch": {
-      "length": 152.76
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 66,
-    "source": 879,
-    "target": 321,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        325
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 85,
-    "source": 536,
-    "target": 513,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        581
+        165
       ],
       "forbidden_road_types": [
         "primary"
@@ -2249,74 +1456,42 @@
   {
     "type": "remove_edge",
     "edge_id": [
-      418
+      388
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      469
     ]
   },
   {
     "type": "modify_edge",
     "edge_id": [
-      518
+      732
     ],
     "patch": {
-      "length": 117.41
+      "length": 277.89
     }
   },
   {
-    "type": "knn",
-    "id": 130,
-    "pois": [
-      "Cafe"
+    "type": "modify_edge",
+    "edge_id": [
+      329
     ],
-    "query_point": {
-      "lat": 19.0726182,
-      "lon": 72.8362031
-    },
-    "k": [
-      12
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 54,
-    "source": 605,
-    "target": 47,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        816
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
+    "patch": {
+      "length": 99.03
     }
   },
   {
     "type": "shortest_path",
-    "id": 73,
-    "source": 836,
-    "target": 778,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        640
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 24,
-    "source": "65",
-    "target": "561",
+    "id": 15,
+    "source": "172",
+    "target": "617",
     "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        2
+        236
       ],
       "forbidden_road_types": [
         "primary"
@@ -2324,264 +1499,72 @@
     }
   },
   {
-    "type": "remove_edge",
-    "edge_id": [
-      769
-    ]
+    "type": "shortest_path",
+    "id": 84,
+    "source": 659,
+    "target": 399,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        576
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
   },
   {
     "type": "knn",
-    "id": 102,
-    "pois": [
-      "Restaurant"
+    "id": 103,
+    "poi": [
+      "School"
     ],
     "query_point": {
-      "lat": 19.0718896,
-      "lon": 72.8288098
-    },
-    "k": [
-      11
-    ],
-    "metric": [
-      "Euclidian Distance"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 112,
-    "pois": [
-      "Place_Of_Worship"
-    ],
-    "query_point": {
-      "lat": 19.0751541,
-      "lon": 72.827275
+      "lat": 19.0731077,
+      "lon": 72.8254563
     },
     "k": [
       6
     ],
     "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      718
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      119
-    ]
-  },
-  {
-    "type": "remove_edge",
-    "edge_id": [
-      899
-    ]
-  },
-  {
-    "type": "shortest_path",
-    "id": 26,
-    "source": "549",
-    "target": "39",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        826
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "modify_edge",
-    "edge_id": [
-      754
-    ],
-    "patch": {
-      "length": 165.09
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 62,
-    "source": 198,
-    "target": 110,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        789
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 35,
-    "source": "249",
-    "target": "399",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        367
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "knn",
-    "id": 111,
-    "pois": [
-      "Restaurant"
-    ],
-    "query_point": {
-      "lat": 19.0732124,
-      "lon": 72.8364967
-    },
-    "k": [
-      13
-    ],
-    "metric": [
-      "shortest_path"
-    ]
-  },
-  {
-    "type": "knn",
-    "id": 115,
-    "pois": [
-      "Bank"
-    ],
-    "query_point": {
-      "lat": 19.0764409,
-      "lon": 72.8319291
-    },
-    "k": [
-      8
-    ],
-    "metric": [
       "Euclidian Distance"
     ]
   },
   {
-    "type": "remove_edge",
-    "edge_id": [
-      523
-    ]
-  },
-  {
     "type": "knn",
-    "id": 95,
-    "pois": [
-      "Place_Of_Worship"
+    "id": 90,
+    "poi": [
+      "Bank"
     ],
     "query_point": {
-      "lat": 19.0724729,
-      "lon": 72.8375055
+      "lat": 19.074656,
+      "lon": 72.8366945
     },
     "k": [
-      15
+      0
     ],
     "metric": [
       "shortest_path"
     ]
   },
   {
-    "type": "shortest_path",
-    "id": 19,
-    "source": "440",
-    "target": "777",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        350
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 28,
-    "source": "811",
-    "target": "438",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        571
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 32,
-    "source": "215",
-    "target": "604",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        834
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 69,
-    "source": 650,
-    "target": 808,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        441
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 0,
-    "source": "136",
-    "target": "622",
-    "mode": "distance",
-    "constraints": {
-      "forbidden_nodes": [
-        384
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "remove_edge",
+    "type": "modify_edge",
     "edge_id": [
-      463
-    ]
+      170
+    ],
+    "patch": {
+      "length": 16.04
+    }
   },
   {
     "type": "shortest_path",
-    "id": 51,
-    "source": 123,
-    "target": 97,
+    "id": 44,
+    "source": 755,
+    "target": 666,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        598
+        153
       ],
       "forbidden_road_types": [
         "primary"
@@ -2591,12 +1574,27 @@
   {
     "type": "shortest_path",
     "id": 75,
-    "source": 877,
-    "target": 646,
+    "source": 671,
+    "target": 9,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        144
+        655
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 76,
+    "source": 47,
+    "target": 589,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        258
       ],
       "forbidden_road_types": [
         "primary"
@@ -2606,11 +1604,32 @@
   {
     "type": "modify_edge",
     "edge_id": [
-      21
+      331
     ],
     "patch": {
-      "length": 112.5
+      "length": 276.05
     }
+  },
+  {
+    "type": "shortest_path",
+    "id": 14,
+    "source": "647",
+    "target": "222",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        96
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      90
+    ]
   },
   {
     "meta": {
@@ -2622,28 +1641,13 @@
   },
   {
     "type": "shortest_path",
-    "id": 81,
-    "source": 162,
-    "target": 607,
-    "mode": "time",
+    "id": 13,
+    "source": "762",
+    "target": "748",
+    "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        69
-      ],
-      "forbidden_road_types": [
-        "primary"
-      ]
-    }
-  },
-  {
-    "type": "shortest_path",
-    "id": 58,
-    "source": 537,
-    "target": 852,
-    "mode": "time",
-    "constraints": {
-      "forbidden_nodes": [
-        568
+        436
       ],
       "forbidden_road_types": [
         "primary"
@@ -2652,16 +1656,264 @@
   },
   {
     "type": "knn",
-    "id": 110,
-    "pois": [
-      "Atm"
+    "id": 98,
+    "poi": [
+      "Bank"
     ],
     "query_point": {
-      "lat": 19.0711672,
-      "lon": 72.8355754
+      "lat": 19.0730026,
+      "lon": 72.8295628
     },
     "k": [
-      13
+      15
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 10,
+    "source": "199",
+    "target": "456",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        569
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 2,
+    "source": "54",
+    "target": "509",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        122
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 61,
+    "source": 1,
+    "target": 436,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        587
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      822
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 114,
+    "poi": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.076592,
+      "lon": 72.8317203
+    },
+    "k": [
+      4
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 127,
+    "poi": [
+      "Clinic"
+    ],
+    "query_point": {
+      "lat": 19.0703155,
+      "lon": 72.8299542
+    },
+    "k": [
+      15
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 93,
+    "poi": [
+      "Fast_Food"
+    ],
+    "query_point": {
+      "lat": 19.0764966,
+      "lon": 72.8348421
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 106,
+    "poi": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0726339,
+      "lon": 72.8269662
+    },
+    "k": [
+      1
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 107,
+    "poi": [
+      "Restaurant"
+    ],
+    "query_point": {
+      "lat": 19.0726475,
+      "lon": 72.828126
+    },
+    "k": [
+      20
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 121,
+    "poi": [
+      "Fast_Food"
+    ],
+    "query_point": {
+      "lat": 19.0727404,
+      "lon": 72.8301118
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 66,
+    "source": 519,
+    "target": 22,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        430
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      470
+    ],
+    "patch": {
+      "length": 177.55
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      633
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      205
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      744
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      253
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 71,
+    "source": 826,
+    "target": 290,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        610
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      829
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      167
+    ],
+    "patch": {
+      "length": 145.94
+    }
+  },
+  {
+    "type": "knn",
+    "id": 131,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0760277,
+      "lon": 72.8282743
+    },
+    "k": [
+      8
     ],
     "metric": [
       "Euclidian Distance"
@@ -2670,18 +1922,109 @@
   {
     "type": "remove_edge",
     "edge_id": [
-      587
+      779
     ]
   },
   {
     "type": "shortest_path",
-    "id": 48,
-    "source": 544,
-    "target": 365,
+    "id": 81,
+    "source": 258,
+    "target": 163,
     "mode": "time",
     "constraints": {
       "forbidden_nodes": [
-        147
+        359
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 53,
+    "source": 418,
+    "target": 391,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        777
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      865
+    ],
+    "patch": {
+      "length": 241.7
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      780
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      18
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      513
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 94,
+    "poi": [
+      "School"
+    ],
+    "query_point": {
+      "lat": 19.0762454,
+      "lon": 72.8366353
+    },
+    "k": [
+      19
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 104,
+    "poi": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0759753,
+      "lon": 72.8340024
+    },
+    "k": [
+      8
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 12,
+    "source": "268",
+    "target": "217",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        665
       ],
       "forbidden_road_types": [
         "primary"
@@ -2691,27 +2034,57 @@
   {
     "type": "remove_edge",
     "edge_id": [
-      177
+      26
     ]
   },
   {
     "type": "modify_edge",
     "edge_id": [
-      815
+      293
     ],
     "patch": {
-      "length": 252.06
+      "length": 221.67
     }
   },
   {
     "type": "shortest_path",
-    "id": 84,
-    "source": 875,
-    "target": 458,
-    "mode": "time",
+    "id": 38,
+    "source": "302",
+    "target": "647",
+    "mode": "distance",
     "constraints": {
       "forbidden_nodes": [
-        594
+        501
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 8,
+    "source": "441",
+    "target": "782",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        203
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 39,
+    "source": "665",
+    "target": "543",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        563
       ],
       "forbidden_road_types": [
         "primary"
@@ -2720,19 +2093,646 @@
   },
   {
     "type": "knn",
-    "id": 121,
-    "pois": [
+    "id": 97,
+    "poi": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0766806,
+      "lon": 72.8316657
+    },
+    "k": [
+      5
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 41,
+    "source": "772",
+    "target": "210",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        836
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 80,
+    "source": 344,
+    "target": 270,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        310
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      570
+    ],
+    "patch": {
+      "length": 134.26
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 59,
+    "source": 796,
+    "target": 550,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        491
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      877
+    ],
+    "patch": {
+      "length": 16.81
+    }
+  },
+  {
+    "type": "knn",
+    "id": 95,
+    "poi": [
       "Place_Of_Worship"
     ],
     "query_point": {
-      "lat": 19.075884,
-      "lon": 72.8295508
+      "lat": 19.0742935,
+      "lon": 72.8327686
     },
     "k": [
-      9
+      8
     ],
     "metric": [
       "shortest_path"
     ]
+  },
+  {
+    "type": "knn",
+    "id": 89,
+    "poi": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.0734276,
+      "lon": 72.8377198
+    },
+    "k": [
+      6
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 112,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0729679,
+      "lon": 72.8328172
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 16,
+    "source": "101",
+    "target": "873",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        42
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      441
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      856
+    ],
+    "patch": {
+      "length": 259.46
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 21,
+    "source": "73",
+    "target": "42",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        316
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 35,
+    "source": "869",
+    "target": "732",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        367
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      742
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 87,
+    "source": 797,
+    "target": 483,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        577
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 54,
+    "source": 667,
+    "target": 82,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        37
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "knn",
+    "id": 130,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0695226,
+      "lon": 72.8350011
+    },
+    "k": [
+      3
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 64,
+    "source": 660,
+    "target": 803,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        96
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 29,
+    "source": "182",
+    "target": "260",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        551
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      114
+    ],
+    "patch": {
+      "length": 22.06
+    }
+  },
+  {
+    "type": "knn",
+    "id": 116,
+    "poi": [
+      "Hospital"
+    ],
+    "query_point": {
+      "lat": 19.073173,
+      "lon": 72.8244309
+    },
+    "k": [
+      7
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 31,
+    "source": "60",
+    "target": "787",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        86
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      684
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 85,
+    "source": 70,
+    "target": 716,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        447
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      56
+    ]
+  },
+  {
+    "type": "knn",
+    "id": 110,
+    "poi": [
+      "Bar"
+    ],
+    "query_point": {
+      "lat": 19.0721375,
+      "lon": 72.8271737
+    },
+    "k": [
+      4
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "remove_edge",
+    "edge_id": [
+      887
+    ]
+  },
+  {
+    "type": "shortest_path",
+    "id": 63,
+    "source": 880,
+    "target": 749,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        304
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      65
+    ],
+    "patch": {
+      "length": 178.53
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      186
+    ],
+    "patch": {
+      "length": 7.13
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      755
+    ],
+    "patch": {
+      "length": 275.02
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      844
+    ],
+    "patch": {
+      "length": 160.79
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      881
+    ],
+    "patch": {
+      "length": 179.75
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 20,
+    "source": "764",
+    "target": "528",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        693
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      542
+    ],
+    "patch": {
+      "length": 12.5
+    }
+  },
+  {
+    "type": "knn",
+    "id": 128,
+    "poi": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.075935,
+      "lon": 72.836425
+    },
+    "k": [
+      11
+    ],
+    "metric": [
+      "Euclidian Distance"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      425
+    ],
+    "patch": {
+      "length": 84.53
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 26,
+    "source": "247",
+    "target": "317",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        351
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      256
+    ],
+    "patch": {
+      "length": 295.06
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 43,
+    "source": "333",
+    "target": "15",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        863
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 1,
+    "source": "395",
+    "target": "830",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        385
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      157
+    ],
+    "patch": {
+      "length": 203.77
+    }
+  },
+  {
+    "type": "knn",
+    "id": 111,
+    "poi": [
+      "Place_Of_Worship"
+    ],
+    "query_point": {
+      "lat": 19.0748381,
+      "lon": 72.8327561
+    },
+    "k": [
+      18
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      861
+    ],
+    "patch": {
+      "length": 271.1
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 3,
+    "source": "150",
+    "target": "202",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        153
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 36,
+    "source": "620",
+    "target": "845",
+    "mode": "distance",
+    "constraints": {
+      "forbidden_nodes": [
+        219
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "shortest_path",
+    "id": 78,
+    "source": 166,
+    "target": 824,
+    "mode": "time",
+    "constraints": {
+      "forbidden_nodes": [
+        460
+      ],
+      "forbidden_road_types": [
+        "primary"
+      ]
+    }
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      286
+    ],
+    "patch": {
+      "length": 229.76
+    }
+  },
+  {
+    "type": "knn",
+    "id": 126,
+    "poi": [
+      "Bank"
+    ],
+    "query_point": {
+      "lat": 19.0742578,
+      "lon": 72.8314485
+    },
+    "k": [
+      16
+    ],
+    "metric": [
+      "shortest_path"
+    ]
+  },
+  {
+    "type": "modify_edge",
+    "edge_id": [
+      111
+    ],
+    "patch": {
+      "length": 4.35
+    }
   }
 ]

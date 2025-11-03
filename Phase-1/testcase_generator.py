@@ -95,11 +95,11 @@ for el in osm["elements"]:
                 min_length=min(length,min_length)
                 # Approximate speed (m/s) from google
                 base_speed = {
-                    "motorway": 27.8,   
-                    "primary": 22.2,  
-                    "secondary": 16.6,  
-                    "residential": 8.3, 
-                    "service": 5.5
+                    "expressway": 25.0,   # ~90 km/h
+                    "primary": 16.7,      # ~60 km/h
+                    "secondary": 13.9,    # ~50 km/h
+                    "tertiary": 11.1,     # ~40 km/h
+                    "local": 8.3,         # ~30 km/h
                 }.get(road_type, 13.9)  # default 50 km/h
 
                 # Time = distance / speed (seconds)
