@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
-
+#include <nlohmann/json.hpp>
 class Node{
 public:
     int id;
@@ -40,5 +40,6 @@ public:
     Node removeNode(int id);
     void removeEdge(int id);
     void modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
+    nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif

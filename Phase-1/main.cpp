@@ -72,8 +72,9 @@ int main(int argc, char* argv[]) {
 
         // Answer each query replacing the function process_query using 
         // whatever function or class methods that you have implemented
-        json result = process_query(query);
-
+        ///////---------->MODIFY FROM HERE <-------------////////
+        json result = Graph_internal.query_handler(query);
+        //////------------------- UPTO HERE --------------///////
         auto end_time = std::chrono::high_resolution_clock::now();
         result["processing_time"] = std::chrono::duration<double, std::milli>(end_time - start_time).count();
 

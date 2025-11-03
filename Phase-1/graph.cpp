@@ -31,3 +31,10 @@ void Graph::modifyEdge(int id, double length, double average_time, std::vector<d
     adjacency_list[edge.u][edge.id]=edge;
     if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
 }
+
+nlohmann::json query_handler(nlohmann::json& query){
+    if(query.find("meta")!=query.end())return query;
+    else{
+        
+    }
+}
