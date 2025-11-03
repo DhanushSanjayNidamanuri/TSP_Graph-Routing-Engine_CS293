@@ -36,7 +36,24 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     }
                     for(auto p:graph.adjacency_list[u]){
                         if(p.second.isOpen==true && visited[p.second.v]==false && graph.node_list[p.second.v].isValid==true && fb_types[p.second.road_type]==false){
-                            pq.push(std::make_tuple(neg_time-p.second.average_time,p.second.v,u));
+                            if(p.second.speed_profile.size()==0){
+                                pq.push(std::make_tuple(neg_time-p.second.average_time,p.second.v,u));continue;
+                            }
+                            int present_time=-(neg_time);
+                            int present_speed_profile_id=int(present_time/900)%96;
+                            int travesal_time=0;
+                            int distance=p.second.length;
+                            while(distance>0){
+                                if(900*p.second.speed_profile[present_speed_profile_id]>=distance){
+                                    distance-=900*p.second.speed_profile[present_speed_profile_id];
+                                    travesal_time+=900;present_speed_profile_id++;
+                                    present_speed_profile_id%=96;continue;
+                                }
+                                else{
+                                    travesal_time+=distance/p.second.speed_profile[present_speed_profile_id];break;
+                                }
+                            }
+                            pq.push(std::make_tuple(neg_time-travesal_time,p.second.v,u));
                         }
                     }
                 }
