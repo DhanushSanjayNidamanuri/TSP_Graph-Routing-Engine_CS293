@@ -11,14 +11,16 @@ void Graph::addEdge(const Edge& edge) {
 }
 
 bool Graph::removeEdge(int id) {
+    if(edge_list.find(id)==edge_list.end()) return false;
     Edge edge=edge_list[id];
     adjacency_list[edge.u][id].isOpen=false;
     if(!edge.oneway) adjacency_list[edge.v][id].isOpen=false;
     edge_list[id].isOpen=false;
+    return true;
 }
 
 bool Graph::modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile) {
-    if(edge_list.find(id)==edge_list.end()) return;
+    if(edge_list.find(id)==edge_list.end()) return false;
     Edge edge=edge_list[id];
     edge.isOpen=true;
     edge.length=length;
@@ -30,6 +32,7 @@ bool Graph::modifyEdge(int id, double length, double average_time, std::vector<d
     edge_list[id]=edge;
     adjacency_list[edge.u][edge.id]=edge;
     if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
+    return true;
 }
 
 nlohmann::json Graph::query_handler(const nlohmann::json& query){
