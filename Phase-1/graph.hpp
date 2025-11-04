@@ -20,12 +20,13 @@ class Edge{
 public:
     int id;
     int u, v;
-    bool isOpen=true;
+    bool isOpen;
     double length, average_time;
     std::vector<double> speed_profile;
     bool oneway;
     std::string road_type;
-    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id),isOpen(1), u(u), v(v), length(length), average_time(average_time), speed_profile(speed_profile), oneway(oneway), road_type(road_type) {};
+    Edge(): isOpen(true){};
+    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id), u(u), v(v),isOpen(true), length(length), average_time(average_time), speed_profile(speed_profile), oneway(oneway), road_type(road_type) {};
 };
 
 class Graph{
@@ -36,6 +37,7 @@ class Graph{
 
 public:
     friend class ShortestPath;
+    friend class KNN;
     Graph(int node_count=0): node_count(node_count){};
     void addNode(const Node& node);
     void addEdge(const Edge& edge);

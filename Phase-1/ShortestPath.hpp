@@ -1,12 +1,15 @@
 #ifndef SHORTESTPATH_HPP
 #define SHORTESTPATH_HPP
 
-#include "Graph.hpp"
+#include "graph.hpp"
 #include <vector>
 #include <string>
 #include <queue>
 #include <map>
 #include <algorithm>
+class Graph;
+class Node;
+class Edge;
 class ShortestPath_Result {
 public:
     int id;

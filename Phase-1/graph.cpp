@@ -26,7 +26,7 @@ bool Graph::modifyEdge(int id, double length, double average_time, std::vector<d
     edge.length=length;
     edge.average_time=average_time;
     edge.speed_profile.resize(speed_profile.size());
-    for(int i=0;i<speed_profile.size();i++) {
+    for(unsigned int i=0;i<speed_profile.size();i++) {
         edge.speed_profile[i]=speed_profile[i];
     }
     edge_list[id]=edge;

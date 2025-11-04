@@ -66,6 +66,9 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     parent[u]=par;
                     if(u==target){
                         ShortestPath_Result Out(id,true,-neg_time,Backtrack(u,parent));
+                        for(auto fb_id:forbidden_nodes){
+                            graph.node_list[fb_id].isValid=true;
+                        }
                         return Out;
                     }
                     for(auto& p:graph.adjacency_list[u]){
@@ -84,6 +87,9 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     parent[u]=par;
                     if(u==target){
                         ShortestPath_Result Out(id,true,-neg_dist,Backtrack(u,parent));
+                        for(auto fb_id:forbidden_nodes){
+                            graph.node_list[fb_id].isValid=true;
+                        }
                         return Out;
                     }
                     for(auto p:graph.adjacency_list[u]){
@@ -93,9 +99,9 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     }
                 }
             }
-            ShortestPath_Result Out(id,false);
-            return Out;
             for(auto fb_id:forbidden_nodes){
                 graph.node_list[fb_id].isValid=true;
             }
+            ShortestPath_Result Out(id,false);
+            return Out;
         }

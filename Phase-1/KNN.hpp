@@ -5,7 +5,9 @@
 #include <vector>
 #include <queue>
 #include <string>
-
+class Graph;
+class Node;
+class Edge;
 class Result_KNN {
 public:
     int id;
