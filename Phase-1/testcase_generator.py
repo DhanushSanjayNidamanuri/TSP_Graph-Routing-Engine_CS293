@@ -15,7 +15,7 @@ longLEFT=72.824315
 longRIGHT=72.838874
 
 query = f"""
-[out:json][timeout:100];
+[out:json][timeout:1000];
 (
   way[highway]({latDOWN},{longLEFT},{latUP},{longRIGHT});   // all roads
   node[amenity]({latDOWN},{longLEFT},{latUP},{longRIGHT});  // POIs like restaurants, schools, etc.
@@ -28,7 +28,7 @@ out body;
 
 print("🔍 Fetching data from Overpass API to generate a testcase...")
 response = requests.get("https://overpass-api.de/api/interpreter", params={'data': query})
-response.raise_for_status()
+
 osm = response.json()
 
 #Extract nodes
@@ -43,6 +43,12 @@ for element in osm["elements"]:
         if "amenity" in tags:
             pois.append(tags["amenity"].title())
             pois_available.update([tags["amenity"].title()])
+        if "shop" in tags:
+            pois.append(tags["shop"].title())
+            pois_available.update(tags["shop"].title())
+        if "tourism" in tags:
+            pois.append(tags["tourism"].title())
+            pois_available.update(tags["tourism"].title())
         node_map[element["id"]] = {
             "id": node_counter,
             "lat": element["lat"],
@@ -140,12 +146,6 @@ print(f"✅ Saved {len(node_map)} nodes and {len(edges)} edges to {output_file}"
 
 #query generating
 queries=[]
-queries.append(
-        {
-    "meta": { "id": "qset1" },
-    "events": [ "query"]
-    }
-)
 query_count=0
 no_of_queries_per_type=max(int(node_counter/20),10)
 for i in range(no_of_queries_per_type):
@@ -153,8 +153,8 @@ for i in range(no_of_queries_per_type):
     queries.append({
         "type":"shortest_path",
         "id":query_count,
-        "source":f"{source}",
-        "target": f"{destination}",
+        "source":source,
+        "target": destination,
         "mode": "distance",
         "constraints": {
             "forbidden_nodes": [forbid],
@@ -168,8 +168,8 @@ for i in range(no_of_queries_per_type):
     queries.append({
         "type":"shortest_path",
         "id":query_count,
-        "source":source,
-        "target":destination,
+        "source":int(source),
+        "target":int(destination),
         "mode": "time",
         "constraints": {
             "forbidden_nodes": [forbid],
@@ -183,21 +183,21 @@ for i in range(no_of_queries_per_type):
     lat=round(random.uniform(latDOWN,latUP),7)
     lon=round(random.uniform(longLEFT,longRIGHT),7)
     pois=random.sample(sorted(pois_available),1)
-    metric=random.sample(["shortest_path","Euclidian Distance"],1)
+    metric=random.sample(["shortest_path","euclidean"],1)
     queries.append({
         "type": "knn",
         "id":query_count,
-        "poi" : pois,
+        "poi" : pois[0],
         "query_point": { "lat": lat, "lon": lon },
-        "k": k,
-        "metric": metric
+        "k": k[0],
+        "metric": metric[0]
     })
     query_count+=1
 for i in range(no_of_queries_per_type):
     edge=random.sample(range(edge_id),1)
     queries.append({ 
         "type": "remove_edge",
-        "edge_id": edge
+        "edge_id": edge[0]
     }
     )
 
@@ -206,13 +206,18 @@ for i in range(no_of_queries_per_type):
     new_len=round(random.uniform(int(min_length),int(max_length)),2)
     queries.append({ 
         "type": "modify_edge",
-        "edge_id": edge,
+        "edge_id": edge[0],
         "patch": { "length": new_len } 
     }
     )
 random.shuffle(queries)
+queries_json = {
+    "meta": {"id": "testcase_1_queries"},
+    "events":queries
+}
+
 output_file = "testcases/queries_test1.json"
 with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(queries, f, indent=2)
+    json.dump(queries_json, f, indent=2)
 
 print(f"✅ Saved {query_count} queries  {output_file}")

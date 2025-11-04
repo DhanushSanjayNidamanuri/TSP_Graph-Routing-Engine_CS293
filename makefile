@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -g -Wall -Wextra -std=c++20 -Wno-unused-parameter -Werror
+CXXFLAGS = -g -Wall -Wextra -std=c++20 -Wno-unused-parameter -Werror 
 
 # Executable name
 EXEC = compare

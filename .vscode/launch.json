@@ -1,0 +1,20 @@
+{
+  "name": "Debug Phase1 in WSL",
+  "type": "cppdbg",
+  "request": "launch",
+  "program": "/mnt/c/Users/dhanu/OneDrive/Education/Lazarus_CS293/phase1",
+  "args": [
+    "Phase-1/testcases/test1.json",
+    "Phase-1/testcases/queries_test1.json",
+    "output.json"
+  ],
+  "MIMode": "gdb",
+  "miDebuggerPath": "/usr/bin/gdb",
+  "pipeTransport": {
+    "pipeCwd": "${workspaceFolder}",
+    "pipeProgram": "wsl",
+    "pipeArgs": [],
+    "debuggerPath": "/usr/bin/gdb"
+  },
+  "cwd": "${workspaceFolder}"
+}
