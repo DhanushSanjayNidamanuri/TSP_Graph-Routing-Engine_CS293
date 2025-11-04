@@ -2,6 +2,8 @@
 
 void Graph::addNode(const Node& node) {
     node_list[node.id]=node;
+    node_count++;
+    adjacency_list.push_back(std::unordered_map<int,Edge> ());
 }
 
 void Graph::addEdge(const Edge& edge) {
@@ -25,10 +27,7 @@ bool Graph::modifyEdge(int id, double length, double average_time, std::vector<d
     edge.isOpen=true;
     edge.length=length;
     edge.average_time=average_time;
-    edge.speed_profile.resize(speed_profile.size());
-    for(unsigned int i=0;i<speed_profile.size();i++) {
-        edge.speed_profile[i]=speed_profile[i];
-    }
+    edge.speed_profile=speed_profile;
     edge_list[id]=edge;
     adjacency_list[edge.u][edge.id]=edge;
     if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
