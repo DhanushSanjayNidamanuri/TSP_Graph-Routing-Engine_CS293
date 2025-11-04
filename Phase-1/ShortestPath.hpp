@@ -11,7 +11,7 @@ class Graph;
 class Node;
 class Edge;
 class ShortestPath_Result {
-public:
+public: 
     int id;
     bool possible;
     double min_dist_or_time;         

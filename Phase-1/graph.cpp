@@ -1,7 +1,7 @@
 #include "graph.hpp"
 
 void Graph::addNode(const Node& node) {
-    node_list[node.id]=node;
+    node_list.push_back(node);
     node_count++;
     adjacency_list.push_back(std::unordered_map<int,Edge> ());
 }

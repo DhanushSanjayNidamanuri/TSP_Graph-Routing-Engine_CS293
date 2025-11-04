@@ -8,7 +8,7 @@
 #include "ShortestPath.hpp"
 #include "KNN.hpp"
 class Node{
-public:
+public: 
     int id;
     bool isValid;    
     double lat, lon;
