@@ -5,6 +5,8 @@
 #include <string>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
+#include "ShortestPath.hpp"
+#include "KNN.hpp"
 class Node{
 public:
     int id;

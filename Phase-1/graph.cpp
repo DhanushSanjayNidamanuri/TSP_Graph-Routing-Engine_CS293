@@ -61,6 +61,24 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             out["done"]=done;
             return out;
         }
+        else if(query["type"]=="shortest_path"){
+            ShortestPath temp;
+            std::vector<int> forbidden_nodes=query["constraints"]["forbidden_nodes"];
+            std::vector<std::string> forbidden_types=query["constraints"]["forbidden_types"];
+            ShortestPath_Result tempout=temp.findShortestPath(*this,query["id"],query["source"],query["target"],query["mode"],forbidden_nodes,forbidden_types);
+            out["id"]=tempout.id;
+            out["possible"]=tempout.possible;
+            out["minimum_time/minimum_distance"]=tempout.min_dist_or_time;
+            out["path"]=tempout.path;
+            return out;
+        }
+        else if(query["type"]=="knn"){
+            KNN temp;
+            Result_KNN tempout=temp.findKNN(*this,query["id"],query["query_point"]["lat"],query["query_point"]["lon"],query["poi"],query["k"],query["metric"]);
+            out["id"]=tempout.id;
+            out["nodes"]=tempout.node_ids;
+            return out;
+        }
         else{
             return out;
         }
