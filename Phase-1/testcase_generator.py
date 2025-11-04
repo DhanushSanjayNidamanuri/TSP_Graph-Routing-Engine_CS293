@@ -45,10 +45,10 @@ for element in osm["elements"]:
             pois_available.update([tags["amenity"].title()])
         if "shop" in tags:
             pois.append(tags["shop"].title())
-            pois_available.update(tags["shop"].title())
+            pois_available.update([tags["shop"].title()])
         if "tourism" in tags:
             pois.append(tags["tourism"].title())
-            pois_available.update(tags["tourism"].title())
+            pois_available.update([tags["tourism"].title()])
         node_map[element["id"]] = {
             "id": node_counter,
             "lat": element["lat"],
@@ -177,6 +177,7 @@ for i in range(no_of_queries_per_type):
         }
     })
     query_count+=1
+
 for i in range(no_of_queries_per_type):
     source=random.sample(range(node_counter),3)
     k=random.sample(range(int(no_of_queries_per_type/2)),1)

@@ -45,10 +45,10 @@ for element in osm["elements"]:
             pois_available.update([tags["amenity"].title()])
         if "shop" in tags:
             pois.append(tags["shop"].title())
-            pois_available.update(tags["shop"].title())
+            pois_available.update([tags["shop"].title()])
         if "tourism" in tags:
             pois.append(tags["tourism"].title())
-            pois_available.update(tags["tourism"].title())
+            pois_available.update([tags["tourism"].title()])
         node_map[element["id"]] = {
             "id": node_counter,
             "lat": element["lat"],
