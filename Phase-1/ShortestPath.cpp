@@ -72,7 +72,8 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                         return Out;
                     }
                     for(auto& p:graph.adjacency_list[u]){
-                        if(Is_Usable_Now(graph.node_list[p.first],p.second,visited,fb_types)){
+                        int v=(p.second.u ? p.second.u!=u : p.second.v);
+                        if(Is_Usable_Now(graph.node_list[v],p.second,visited,fb_types)){
                             int expected_time_to_travel=Expected_time(p.second,-neg_time);
                             pq.push(std::make_tuple(-expected_time_to_travel,p.first,u));
                         }
@@ -93,7 +94,8 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                         return Out;
                     }
                     for(auto p:graph.adjacency_list[u]){
-                        if(Is_Usable_Now(graph.node_list[p.first],p.second,visited,fb_types)){
+                        int v=(p.second.u ? p.second.u!=u : p.second.v);
+                        if(Is_Usable_Now(graph.node_list[v],p.second,visited,fb_types)){
                             pq.push(std::make_tuple(neg_dist-p.second.length,p.first,u));
                         }
                     }
