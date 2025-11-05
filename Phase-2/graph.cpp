@@ -38,44 +38,37 @@ bool Graph::modifyEdge(int id, double length, double average_time, std::vector<d
 
 nlohmann::json Graph::query_handler(const nlohmann::json& query){
     nlohmann::json out;
-    if(query["type"]=="remove_edge"){
-        bool done=removeEdge(query["edge_id"]);
-        out["done"]=done;
-        return out;
-    }
-    else if(query["type"]=="modify_edge"){
-        int length=edge_list[query["edge_id"]].length;
-        if(query["patch"].find("length")!=query["patch"].end()){
-            length=query["patch"]["length"];
-        }
-        std::vector<double> speed_profile=edge_list[query["edge_id"]].speed_profile;
-        if(query["patch"].find("speed_profile")!=query["patch"].end()){
-            length=query["patch"]["speed_profile"];
-        }
-        double average_time=edge_list[query["edge_id"]].average_time;
-        if(query["patch"].find("average_time")!=query["patch"].end()){
-            length=query["patch"]["average_time"];
-        }
-        bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile);
-        out["done"]=done;
-        return out;
-    }
-    else if(query["type"]=="shortest_path"){
-        ShortestPath temp;
-        std::vector<int> forbidden_nodes=query["constraints"]["forbidden_nodes"];
-        std::vector<std::string> forbidden_types=query["constraints"]["forbidden_road_types"];
-        ShortestPath_Result tempout=temp.findShortestPath(*this,query["id"],query["source"],query["target"],query["mode"],forbidden_nodes,forbidden_types);
+    if(query["type"]=="k_shortest_paths" || query["type"]=="k_shortest_paths_heuristic"){
+        KShortestPaths temp;
+        KShortestPaths_Result tempout=temp.findShortest(*this,query["type"],query["id"],query["source"],query["target"],query["mode"],query["k"],query["mode"]);
         out["id"]=tempout.id;
-        out["possible"]=tempout.possible;
-        out["minimum_time/minimum_distance"]=tempout.min_dist_or_time;
-        out["path"]=tempout.path;
+        std::vector<nlohmann::json> tempdists;
+        for(auto [x,y]:tempout.paths){
+            nlohmann::json inner_json;
+            inner_json["path"]=x;
+            inner_json["length"]=y;
+            tempdists.push_back(inner_json);
+        }
+        out["paths"]=tempdists;
         return out;
     }
-    else if(query["type"]=="knn"){
-        KNN temp;
-        Result_KNN tempout=temp.findKNN(*this,query["id"],query["query_point"]["lat"],query["query_point"]["lon"],query["poi"],query["k"],query["metric"]);
+    else if(query["type"]=="approx_shortest_path"){
+        ApproxShortest temp;
+        std::vector<std::pair<int,int>> queries_temp;
+        for(auto x:query["queries"]){
+            queries_temp.push_back(std::make_pair(x["source"],x["targets"]));
+        }
+        ApproxShortest_Result tempout=temp.findApprox(*this,query["id"],queries_temp,query["time_budget_ms"],query["acceptable_error_pct"]);
         out["id"]=tempout.id;
-        out["nodes"]=tempout.node_ids;
+        std::vector<nlohmann::json> tempdists;
+        for(auto [x,y,z]:tempout.distances){
+            nlohmann::json inner_json;
+            inner_json["source"]=x;
+            inner_json["target"]=y;
+            inner_json["approx_shortest_distance"]=z;
+            tempdists.push_back(inner_json);
+        }
+        out["distances"]=tempdists;
         return out;
     }
     else{

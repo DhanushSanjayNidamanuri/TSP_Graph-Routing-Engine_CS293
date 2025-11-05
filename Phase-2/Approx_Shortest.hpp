@@ -16,7 +16,7 @@ public:
 
 class ApproxShortest {
 public:
-    ApproxShortest_Result findApprox(Graph& graph, int id, std::vector<std::pair<int,int> queries, int time_budget, double max_error);
-}
+    ApproxShortest_Result findApprox(Graph& graph, int id, std::vector<std::pair<int,int>> queries, int time_budget, double max_error);
+};
 
 #endif

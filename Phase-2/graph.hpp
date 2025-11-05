@@ -5,6 +5,8 @@
 #include <string>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
+#include "K_Shortest.hpp"
+#include "Approx_Shortest.hpp"
 class Node{
 public: 
     int id;
@@ -34,8 +36,8 @@ class Graph{
     std::unordered_map<int,Edge> edge_list;
 
 public:
-    friend class ShortestPath;
-    friend class KNN;
+    friend class KShoretestPaths;
+    friend class ApproxShortest_Result;
     Graph(int node_count=0): node_count(node_count){};
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
