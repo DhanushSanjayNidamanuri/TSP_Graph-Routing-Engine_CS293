@@ -36,7 +36,7 @@ class Graph{
     std::unordered_map<int,Edge> edge_list;
 
 public:
-    friend class KShoretestPaths;
+    friend class KShortestPaths;
     friend class ApproxShortest_Result;
     Graph(int node_count=0): node_count(node_count){};
     void addNode(const Node& node);
