@@ -1,11 +1,7 @@
 #include "graph.hpp"
-<<<<<<< HEAD
-
-=======
 class K_Exact;
 class K_Heuristic;
 class Approx_Shortest;
->>>>>>> 6a2508c6b9d0624eeb0d1abdc183787342fa63ae
 void Graph::addNode(const Node& node) {
     node_list.push_back(node);
     node_count++;
@@ -73,7 +69,6 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             tempdists.push_back(inner_json);
         }
         out["distances"]=tempdists;
->>>>>>> 6a2508c6b9d0624eeb0d1abdc183787342fa63ae
         return out;
     }
     else{
