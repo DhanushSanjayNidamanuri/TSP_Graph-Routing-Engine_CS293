@@ -1,4 +1,15 @@
 #include "ShortestPath.hpp"
+
+int ShortestPath::heuristic_distance(const Node& a, const Node& b) {
+    if(heuristic_distance_cache[a.id].find(b.id)!=heuristic_distance_cache[a.id].end())return heuristic_distance_cache[a.id][b.id];
+    double mean_lat = (a.lat + b.lat) * 0.5 *  3.14159265358979323846 / 180.0;
+    double dx = (b.lon - a.lon) * 111320.0 * std::cos(mean_lat);
+    double dy = (b.lat - a.lat)*111320.0;
+    double ans=std::sqrt(dx * dx + dy * dy);
+    heuristic_distance_cache[a.id][b.id]=int(ans);
+    heuristic_distance_cache[b.id][a.id]=int(ans);
+    return int(ans);
+    }
 bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>& visited, std::unordered_map<std::string,bool>& fb_types){
     if(!destination.isValid)return false;
     if(!edge.isOpen)return false;
@@ -52,13 +63,14 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     fb_types[s]=true;
             }
             std::priority_queue<std::tuple<int,int,int>> pq;
-            pq.push(std::make_tuple(0,source,source));
+
             int node_count=graph.node_list.size();
             std::vector<bool> visited(node_count,false);
             std::vector<int> parent(node_count,0);
             /////--------------------------------/////
 
             if(mode=="time"){
+                pq.push(std::make_tuple(0,source,source));
                 while(!pq.empty()){
                     auto [neg_time,u,par]=pq.top();pq.pop();
                     if(visited[u]==true)continue;
@@ -81,8 +93,10 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                 }
             }
             else if(mode=="distance"){
+                pq.push(std::make_tuple(-heuristic_distance(graph.node_list[source],graph.node_list[target]),source,source));
                 while(!pq.empty()){
                     auto [neg_dist,u,par]=pq.top();pq.pop();
+                    neg_dist=neg_dist+heuristic_distance_cache[u][target];
                     if(visited[u]==true)continue;
                     visited[u]=true;
                     parent[u]=par;
@@ -96,7 +110,7 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     for(auto p:graph.adjacency_list[u]){
                         int v =(p.second.u==u) ? p.second.v : p.second.u;
                         if(Is_Usable_Now(graph.node_list[v],p.second,visited,fb_types)){
-                            pq.push(std::make_tuple(neg_dist-p.second.length,v,u));
+                            pq.push(std::make_tuple(neg_dist-p.second.length-heuristic_distance(graph.node_list[v],graph.node_list[target]),v,u));
                         }
                     }
                 }
