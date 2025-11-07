@@ -1,13 +1,19 @@
 #include "ShortestPath.hpp"
 
+int ShortestPath::heuristic_time(const Node& a, const Node& b) {
+    double mean_lat = (a.lat + b.lat) * 0.5 * 3.14159265358979323846 / 180.0;
+    double dx = (b.lon - a.lon) * 111320.0 * std::cos(mean_lat);
+    double dy = (b.lat - a.lat) * 111320.0;
+    double distance_m = std::sqrt(dx * dx + dy * dy);
+    double time_seconds = distance_m / 40;
+    return static_cast<int>(time_seconds);
+}
+
 int ShortestPath::heuristic_distance(const Node& a, const Node& b) {
-    if(heuristic_distance_cache[a.id].find(b.id)!=heuristic_distance_cache[a.id].end())return heuristic_distance_cache[a.id][b.id];
     double mean_lat = (a.lat + b.lat) * 0.5 *  3.14159265358979323846 / 180.0;
     double dx = (b.lon - a.lon) * 111320.0 * std::cos(mean_lat);
     double dy = (b.lat - a.lat)*111320.0;
     double ans=std::sqrt(dx * dx + dy * dy);
-    heuristic_distance_cache[a.id][b.id]=int(ans);
-    heuristic_distance_cache[b.id][a.id]=int(ans);
     return int(ans);
     }
 bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>& visited, std::unordered_map<std::string,bool>& fb_types){
@@ -19,13 +25,13 @@ bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>&
     return true;
 }
 
-int ShortestPath::Expected_time(Edge& edge,int start_time){
+double ShortestPath::Expected_time(Edge& edge,int start_time){
     if(edge.speed_profile.size()==0){
         return start_time+edge.average_time;
     }
     int present_speed_profile_id=int(start_time/900)%96;
-    int travesal_time=0;
-    int distance=edge.length;
+    double travesal_time=0;
+    double distance=edge.length;
     while(distance>0){
         if(900*edge.speed_profile[present_speed_profile_id]>=distance){
             distance-=900*edge.speed_profile[present_speed_profile_id];
@@ -62,7 +68,7 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
             for(auto s:forbidden_road_types){
                     fb_types[s]=true;
             }
-            std::priority_queue<std::tuple<int,int,int>> pq;
+            
 
             int node_count=graph.node_list.size();
             std::vector<bool> visited(node_count,false);
@@ -70,9 +76,11 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
             /////--------------------------------/////
 
             if(mode=="time"){
-                pq.push(std::make_tuple(0,source,source));
+                std::priority_queue<std::tuple<double,int,int>> pq;
+                pq.push(std::make_tuple(-heuristic_time(graph.node_list[source],graph.node_list[target]),source,source));
                 while(!pq.empty()){
                     auto [neg_time,u,par]=pq.top();pq.pop();
+                    neg_time=neg_time+heuristic_time(graph.node_list[u], graph.node_list[target]);
                     if(visited[u]==true)continue;
                     visited[u]=true;
                     parent[u]=par;
@@ -86,17 +94,18 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     for(auto& p:graph.adjacency_list[u]){
                         int v =(p.second.u==u) ? p.second.v : p.second.u;
                         if(Is_Usable_Now(graph.node_list[v],p.second,visited,fb_types)){
-                            int expected_time_to_travel=Expected_time(p.second,-neg_time);
-                            pq.push(std::make_tuple(-expected_time_to_travel,v,u));
+                            double expected_time_to_travel=Expected_time(p.second,-neg_time);
+                            pq.push(std::make_tuple(-expected_time_to_travel-heuristic_time(graph.node_list[v], graph.node_list[target]),v,u));
                         }
                     }
                 }
             }
             else if(mode=="distance"){
+                std::priority_queue<std::tuple<int,int,int>> pq;
                 pq.push(std::make_tuple(-heuristic_distance(graph.node_list[source],graph.node_list[target]),source,source));
                 while(!pq.empty()){
                     auto [neg_dist,u,par]=pq.top();pq.pop();
-                    neg_dist=neg_dist+heuristic_distance_cache[u][target];
+                    neg_dist=neg_dist+heuristic_distance(graph.node_list[u], graph.node_list[target]);
                     if(visited[u]==true)continue;
                     visited[u]=true;
                     parent[u]=par;

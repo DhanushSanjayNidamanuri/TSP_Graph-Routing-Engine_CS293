@@ -16,7 +16,7 @@ P1_OBJS = $(P1_SRCS:$(P1_DIR)/%.cpp=$(P1_OBJ_DIR)/%.o)
 
 
 
-phase1:  $(P1_OBJS) 
+phase1:  $(P1_OBJS) P1_generate_testcases
 	@$(CXX) $(CXXFLAGS) -o phase1 $(P1_OBJS)
 	@echo "Phase 1 executable successfully built"
 $(P1_OBJ_DIR)/%.o: $(P1_DIR)/%.cpp $(wildcard $(P1_DIR)/*.hpp)

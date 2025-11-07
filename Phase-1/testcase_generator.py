@@ -9,11 +9,10 @@ import random
 pwd = Path(__file__).parent.resolve()
 os.chdir(pwd)
 
-latDOWN=19.069276
-latUP=19.076739
-longLEFT=72.824315
-longRIGHT=72.838874
-
+latDOWN  = 19.070
+latUP    = 19.085
+longLEFT = 72.825
+longRIGHT= 72.845
 query = f"""
 [out:json][timeout:1000];
 (
