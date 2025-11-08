@@ -76,9 +76,16 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     }
     
 }
-
-void Graph::preprocess(int witness_limit=40){
+double Graph::witness_search(int source,int target,int avoid,double dist_limit,int algo_limit){
     const double INF_DOUBLE=std::numeric_limits<double>::infinity();
+    std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
+    std::vector<double> dist(node_count,INF_DOUBLE);
+    dist[source]=0.0;
+    pq.push(std::make_pair(0.0,source));
+    
+};
+void Graph::preprocess(int witness_limit=40){
+    
     rank.assign(node_count,-1);upward_edges.resize(node_count);downward_edges.resize(node_count);
     std::vector<std::pair<int,int>> order;
     order.resize(node_count);

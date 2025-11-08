@@ -59,7 +59,7 @@ public:
     bool removeEdge(int id);
     bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
     void preprocess(int witness_limit=40);
-
+    double witness_search(int source,int target,int avoid,double dist_limit,int algo_limit);
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif
