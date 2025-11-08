@@ -25,7 +25,7 @@ bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>&
     return true;
 }
 
-double ShortestPath::Expected_time(Edge& edge,int start_time){
+double ShortestPath::Expected_time(Edge& edge,double start_time){
     if(edge.speed_profile.size()==0){
         return start_time+edge.average_time;
     }
@@ -33,7 +33,7 @@ double ShortestPath::Expected_time(Edge& edge,int start_time){
     double travesal_time=0;
     double distance=edge.length;
     while(distance>0){
-        if(900*edge.speed_profile[present_speed_profile_id]>=distance){
+        if(900*edge.speed_profile[present_speed_profile_id]<=distance){
             distance-=900*edge.speed_profile[present_speed_profile_id];
             travesal_time+=900;present_speed_profile_id++;
             present_speed_profile_id%=96;continue;
@@ -94,8 +94,8 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                     for(auto& p:graph.adjacency_list[u]){
                         int v =(p.second.u==u) ? p.second.v : p.second.u;
                         if(Is_Usable_Now(graph.node_list[v],p.second,visited,fb_types)){
-                            double expected_time_to_travel=Expected_time(p.second,-neg_time);
-                            pq.push(std::make_tuple(-expected_time_to_travel-heuristic_time(graph.node_list[v], graph.node_list[target]),v,u));
+                            double expected_time_to_reach=Expected_time(p.second,-neg_time);
+                            pq.push(std::make_tuple(-expected_time_to_reach-heuristic_time(graph.node_list[v], graph.node_list[target]),v,u));
                         }
                     }
                 }

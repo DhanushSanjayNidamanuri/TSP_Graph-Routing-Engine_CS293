@@ -1,4 +1,4 @@
-# temporary makefile for syntax
+
 SHELL := /bin/bash
 
 # Compiler and flags
