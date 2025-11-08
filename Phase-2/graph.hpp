@@ -18,7 +18,7 @@ public:
     int id;    
     double lat, lon;
     // std::vector<std::string> pois;
-    Node(int id, double lat, double lon, std::vector<std::string> pois) : id(id), lat(lat), lon(lon), pois(pois) {};
+    Node(int id, double lat, double lon) : id(id), lat(lat), lon(lon) {};
 };
 
 class Edge{
@@ -39,6 +39,7 @@ public:
     double length;
     int hidden_node;
     bool is_Shortcut;
+    Shortcut_Edge(int v,double length,int hidden_node,bool is_Shortcut=true):v(v),length(length),hidden_node(hidden_node),is_Shortcut(is_Shortcut){};
     
 };
 class Graph{
@@ -47,8 +48,8 @@ class Graph{
     std::vector<std::vector<Edge>> adjacency_list;
     //preprocess for approximate paths
     std::vector<int> rank;
-    std::vector<std::vector<Shortcut_Edge>> upward_edges;
-    std::vector<std::vector<Shortcut_Edge>> downward_edges;
+    std::vector<std::vector<Shortcut_Edge>> upward_edges; //outgoing 
+    std::vector<std::vector<Shortcut_Edge>> downward_edges; //incoming
 
 public:
     friend class KShortestPaths;
@@ -60,7 +61,7 @@ public:
     // bool removeEdge(int id);
     // bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
     void preprocess(int witness_limit=40);
-    double witness_search(int source,int target,int avoid,double dist_limit,int algo_limit);
+    double witness_search(int source,int target,int avoid,double dist_limit,int algo_limit=40);
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif

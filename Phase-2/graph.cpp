@@ -3,9 +3,7 @@ class K_Exact;
 class K_Heuristic;
 class Approx_Shortest;
 void Graph::addNode(const Node& node) {
-    node_list.push_back(node);
-    node_count++;
-    adjacency_list.push_back({});
+    node_list[node.id]=node;
 }
 
 void Graph::addEdge(const Edge& edge) {
@@ -17,7 +15,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     nlohmann::json out;
     if(query["type"]=="k_shortest_paths" || query["type"]=="k_shortest_paths_heuristic"){
         KShortestPaths temp;
-        KShortestPaths_Result tempout=temp.findShortest(*this,query["type"],query["id"],query["source"],query["target"],query["mode"],query["k"],query["mode"]);
+        KShortestPaths_Result tempout=temp.findShortest(*this,query["type"],query["id"],query["source"],query["target"],query["k"],query["mode"],query["overlap_threshold"]);
         out["id"]=tempout.id;
         std::vector<nlohmann::json> tempdists;
         for(auto [x,y]:tempout.paths){
@@ -33,7 +31,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         ApproxShortest temp;
         std::vector<std::pair<int,int>> queries_temp;
         for(auto x:query["queries"]){
-            queries_temp.push_back(std::make_pair(x["source"],x["targets"]));
+            queries_temp.push_back(std::make_pair(x["source"],x["target"]));
         }
         ApproxShortest_Result tempout=temp.findApprox(*this,query["id"],queries_temp,query["time_budget_ms"],query["acceptable_error_pct"]);
         out["id"]=tempout.id;
@@ -53,22 +51,104 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     }
     
 }
-double Graph::witness_search(int source,int target,int avoid,double dist_limit,int algo_limit){
+double Graph::witness_search(int source,int target,int avoid,double dist_limit,int algo_limit=40){
     const double INF_DOUBLE=std::numeric_limits<double>::infinity();
     std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
-    std::vector<double> dist(node_count,INF_DOUBLE);
-    dist[source]=0.0;
+    std::vector<double> distances(node_count,INF_DOUBLE);
+    distances[source]=0.0;
     pq.push(std::make_pair(0.0,source));
-    
+    int explored=0;
+    while(!pq.empty()){
+        auto [dist,u]=pq.top();pq.pop();
+        if(distances[u]!=INF_DOUBLE)continue;
+        distances[u]=dist;
+        if(u==target)return dist;
+        if(distances[u]>dist_limit)return INF_DOUBLE;
+        if(++explored>algo_limit)return INF_DOUBLE;
+        for (auto edge:adjacency_list[u]){
+            if(edge.oneway && edge.v==u)continue;
+            if(edge.u==u){
+                if(distances[edge.v]!=INF_DOUBLE)continue;
+                pq.push(std::make_pair(dist+edge.length,edge.v));
+            }
+            else{
+                if(distances[edge.u]!=INF_DOUBLE)continue;
+                pq.push(std::make_pair(dist+edge.length,edge.u));
+            }
+        }
+    }
+    return INF_DOUBLE;
 };
 void Graph::preprocess(int witness_limit=40){
-    
+    const double INF_DOUBLE=std::numeric_limits<double>::infinity();
     rank.assign(node_count,-1);upward_edges.resize(node_count);downward_edges.resize(node_count);
     std::vector<std::pair<int,int>> order;
-    order.resize(node_count);
     for(int i=0;i<node_count;i++){
         order.push_back(std::make_pair(adjacency_list[i].size(),i));
     }
     std::sort(order.begin(),order.end());
-
+    int rank_counter=0;
+    for(auto x:order){
+        rank[x.second]=rank_counter++;
+    }
+    for(auto [degree,u]:order){
+        std::vector<std::pair<int,double>> incoming_neighbours;
+        std::vector<std::pair<int,double>> outgoing_neighbours;
+        for(auto edge:adjacency_list[u]){
+            int temp= (edge.u==u) ? edge.v : edge.u;
+            if(edge.oneway){
+                if(u==edge.u)outgoing_neighbours.push_back(std::make_pair(temp,edge.length));
+                else incoming_neighbours.push_back(std::make_pair(temp,edge.length));
+            }
+            else{
+                outgoing_neighbours.push_back(std::make_pair(temp,edge.length));
+                incoming_neighbours.push_back(std::make_pair(temp,edge.length));
+            }
+        }
+        if(incoming_neighbours.empty() && outgoing_neighbours.empty())continue;
+        for(int i=0;i<incoming_neighbours.size();i++){
+            for(int j=0;j<outgoing_neighbours.size();j++){
+                int v=incoming_neighbours[i].first;
+                int w=outgoing_neighbours[j].first;
+                if(v==w)continue;
+                double present_dist=incoming_neighbours[i].second+ outgoing_neighbours[j].second;
+                double witness=witness_search(v,w,u,present_dist);
+                if(witness>present_dist){
+                    if(rank[v]<rank[w]){
+                        Shortcut_Edge Se(w,present_dist,u);
+                        upward_edges[v].push_back(Se);
+                        Shortcut_Edge Se2(v,present_dist,u);
+                        downward_edges[w].push_back(Se2);
+                    }
+                }
+            }
+        }
+        for(const auto &edge :adjacency_list[u]){
+            int temp= (edge.u==u) ? edge.v : edge.u;
+            if(edge.oneway){
+                if(edge.v==temp){
+                    if(rank[u]<rank[temp]){
+                        Shortcut_Edge Se(temp,edge.length,-1,false);
+                        upward_edges[u].push_back(Se);
+                        Shortcut_Edge Se2(u,edge.length,-1,false);
+                        downward_edges[temp].push_back(Se2);
+                    }
+                }
+            }
+            else{
+                if(rank[u]<rank[temp]){
+                    Shortcut_Edge Se(temp,edge.length,-1,false);
+                    upward_edges[u].push_back(Se);
+                    Shortcut_Edge Se2(u,edge.length,-1,false);
+                    downward_edges[temp].push_back(Se2);
+                }
+                else{
+                    Shortcut_Edge Se(u,edge.length,-1,false);
+                    upward_edges[temp].push_back(Se);
+                    Shortcut_Edge Se2(temp,edge.length,-1,false);
+                    downward_edges[u].push_back(Se2);
+                }
+            }
+        }
+    }   
 }

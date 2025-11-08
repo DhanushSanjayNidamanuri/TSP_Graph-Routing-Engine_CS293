@@ -36,13 +36,13 @@ int main(int argc, char* argv[]) {
     Graph Graph_internal(graph_data["nodes"].size());
     for(auto x:graph_data["nodes"]){
         std::vector<std::string> pois=x["pois"].get<std::vector<std::string>>();
-        Node temp(x["id"],x["lat"],x["lon"],pois);
+        Node temp(x["id"],x["lat"],x["lon"]);
         Graph_internal.addNode(temp);
     }
 
     for(auto x:graph_data["edges"]){
         std::vector<double> speed_profile=x["speed_profile"].get<std::vector<double>>();
-        Edge temp(x["id"],x["u"],x["v"],x["length"],x["average_time"],speed_profile,x["oneway"],x["road_type"]);
+        Edge temp(x["id"],x["u"],x["v"],x["length"],x["oneway"]);
         Graph_internal.addEdge(temp);
     }
     ////////-------> UPTO HERE <-----------///////////////
