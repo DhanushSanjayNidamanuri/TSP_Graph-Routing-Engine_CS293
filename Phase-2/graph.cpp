@@ -56,7 +56,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         ApproxShortest temp;
         std::vector<std::pair<int,int>> queries_temp;
         for(auto x:query["queries"]){
-            queries_temp.push_back(std::make_pair(x["source"],x["targets"]));
+            queries_temp.push_back(std::make_pair(x["source"],x["target"]));
         }
         ApproxShortest_Result tempout=temp.findApprox(*this,query["id"],queries_temp,query["time_budget_ms"],query["acceptable_error_pct"]);
         out["id"]=tempout.id;
