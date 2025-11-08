@@ -5,37 +5,48 @@
 #include <string>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
+#include <queue>
+#include <algorithm>
+#include <limits>
+#include <cmath>
 
 #include "K_Shortest.hpp"
 #include "Approx_Shortest.hpp"
 
 class Node{
 public: 
-    int id;
-    bool isValid;    
+    int id;    
     double lat, lon;
     std::vector<std::string> pois;
-    Node(int id, double lat, double lon, std::vector<std::string> pois) : id(id),isValid(1), lat(lat), lon(lon), pois(pois) {};
+    Node(int id, double lat, double lon, std::vector<std::string> pois) : id(id), lat(lat), lon(lon), pois(pois) {};
 };
 
 class Edge{
 public:
     int id;
     int u, v;
-    bool isOpen;
     double length, average_time;
     std::vector<double> speed_profile;
-    bool oneway;
     std::string road_type;
-    Edge(): isOpen(true){};
-    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id), u(u), v(v),isOpen(true), length(length), average_time(average_time), speed_profile(speed_profile), oneway(oneway), road_type(road_type) {};
+    Edge(){};
+    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id), u(u), v(v), length(length), average_time(average_time), speed_profile(speed_profile), road_type(road_type) {};
 };
-
+class Shortcut_Edge{
+public:
+    int v;
+    double length;
+    int hidden_node;
+    bool is_Shortcut;
+    
+};
 class Graph{
     std::vector<Node> node_list;
     int node_count;
-    std::vector<std::unordered_map<int,Edge>> adjacency_list;
-    std::unordered_map<int,Edge> edge_list;
+    std::vector<std::vector<Edge>> adjacency_list;
+    //preprocess for approximate paths
+    std::vector<int> rank;
+    std::vector<std::vector<Shortcut_Edge>> upward_edges;
+    std::vector<std::vector<Shortcut_Edge>> downward_edges;
 
 public:
     friend class KShortestPaths;
@@ -46,6 +57,7 @@ public:
     void addEdge(const Edge& edge);
     bool removeEdge(int id);
     bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
+    void preprocess(int witness_limit=40);
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif
