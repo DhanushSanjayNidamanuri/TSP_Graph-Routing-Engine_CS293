@@ -76,3 +76,15 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     }
     
 }
+
+void Graph::preprocess(int witness_limit=40){
+    const double INF_DOUBLE=std::numeric_limits<double>::infinity();
+    rank.assign(node_count,-1);upward_edges.resize(node_count);downward_edges.resize(node_count);
+    std::vector<std::pair<int,int>> order;
+    order.resize(node_count);
+    for(int i=0;i<node_count;i++){
+        order.push_back(std::make_pair(adjacency_list[i].size(),i));
+    }
+    std::sort(order.begin(),order.end());
+
+}
