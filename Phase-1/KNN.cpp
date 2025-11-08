@@ -59,9 +59,9 @@ std::vector<int> KNN::findKNN_ShortestPath(const Graph& graph, double lat, doubl
         }
         for(auto [id,edge]:graph.adjacency_list[u.second]) {
             if(!edge.isOpen) continue;
-            if(!visited[edge.v]) {
-                pq.push({SP[u.second]+edge.length,edge.v});
-                SP[edge.v]=std::min(SP[edge.v],SP[u.second]+edge.length);
+            if(!visited[edge.v]&&SP[u.second]+edge.length<SP[edge.v]) {
+                SP[edge.v]=SP[u.second]+edge.length;
+                pq.push({SP[edge.v],edge.v});
             }
         }
         visited[u.second]=true;
