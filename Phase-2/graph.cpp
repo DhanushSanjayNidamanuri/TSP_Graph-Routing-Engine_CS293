@@ -5,35 +5,12 @@ class Approx_Shortest;
 void Graph::addNode(const Node& node) {
     node_list.push_back(node);
     node_count++;
-    adjacency_list.push_back(std::unordered_map<int,Edge> ());
+    adjacency_list.push_back({});
 }
 
 void Graph::addEdge(const Edge& edge) {
-    edge_list.insert({edge.id,edge});
-    adjacency_list[edge.u][edge.id]=edge;
-    if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
-}
-
-bool Graph::removeEdge(int id) {
-    if(edge_list.find(id)==edge_list.end()) return false;
-    Edge edge=edge_list[id];
-    adjacency_list[edge.u][id].isOpen=false;
-    if(!edge.oneway) adjacency_list[edge.v][id].isOpen=false;
-    edge_list[id].isOpen=false;
-    return true;
-}
-
-bool Graph::modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile) {
-    if(edge_list.find(id)==edge_list.end()) return false;
-    Edge edge=edge_list[id];
-    edge.isOpen=true;
-    edge.length=length;
-    edge.average_time=average_time;
-    edge.speed_profile=speed_profile;
-    edge_list[id]=edge;
-    adjacency_list[edge.u][edge.id]=edge;
-    if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
-    return true;
+    adjacency_list[edge.u].push_back(edge);
+    adjacency_list[edge.v].push_back(edge);
 }
 
 nlohmann::json Graph::query_handler(const nlohmann::json& query){

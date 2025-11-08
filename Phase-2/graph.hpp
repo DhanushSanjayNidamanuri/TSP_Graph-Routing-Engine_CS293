@@ -17,7 +17,7 @@ class Node{
 public: 
     int id;    
     double lat, lon;
-    std::vector<std::string> pois;
+    // std::vector<std::string> pois;
     Node(int id, double lat, double lon, std::vector<std::string> pois) : id(id), lat(lat), lon(lon), pois(pois) {};
 };
 
@@ -25,12 +25,13 @@ class Edge{
 public:
     int id;
     int u, v;
-    double length, average_time;
+    double length;
+    // double average_time;
     bool oneway;
-    std::vector<double> speed_profile;
-    std::string road_type;
+    // std::vector<double> speed_profile;
+    // std::string road_type;
     Edge(){};
-    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id), u(u), v(v), length(length), average_time(average_time),oneway(oneway), speed_profile(speed_profile), road_type(road_type) {};
+    Edge(int id, int u, int v, double length, bool oneway) : id(id), u(u), v(v), length(length), oneway(oneway) {};
 };
 class Shortcut_Edge{
 public:
@@ -56,8 +57,8 @@ public:
     Graph(int node_count=0): node_count(node_count){adjacency_list.resize(node_count);node_list.resize(node_count);}
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
-    bool removeEdge(int id);
-    bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
+    // bool removeEdge(int id);
+    // bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
     void preprocess(int witness_limit=40);
     double witness_search(int source,int target,int avoid,double dist_limit,int algo_limit);
     nlohmann::json query_handler(const nlohmann::json& query);
