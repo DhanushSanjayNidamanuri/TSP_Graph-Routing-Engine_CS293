@@ -26,10 +26,11 @@ public:
     int id;
     int u, v;
     double length, average_time;
+    bool oneway;
     std::vector<double> speed_profile;
     std::string road_type;
     Edge(){};
-    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id), u(u), v(v), length(length), average_time(average_time), speed_profile(speed_profile), road_type(road_type) {};
+    Edge(int id, int u, int v, double length, double average_time, std::vector<double> speed_profile, bool oneway, std::string road_type) : id(id), u(u), v(v), length(length), average_time(average_time),oneway(oneway), speed_profile(speed_profile), road_type(road_type) {};
 };
 class Shortcut_Edge{
 public:
@@ -52,12 +53,13 @@ public:
     friend class KShortestPaths;
     friend class ApproxShortest_Result;
 
-    Graph(int node_count=0): node_count(node_count){};
+    Graph(int node_count=0): node_count(node_count){adjacency_list.resize(node_count);node_list.resize(node_count);}
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
     bool removeEdge(int id);
     bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
     void preprocess(int witness_limit=40);
+
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif
