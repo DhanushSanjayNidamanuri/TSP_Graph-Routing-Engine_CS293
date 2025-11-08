@@ -10,7 +10,7 @@ Result_KNN KNN::findKNN(const Graph& graph, int id, double lat, double lon, cons
 }
 
 double euclidean(double lat_a, double lon_a, double lat_b, double lon_b) {
-    return sqrt((lat_a-lat_b)*(lat_a-lat_b) + (lon_a-lon_b)*(lon_a-lon_b));
+    return (lat_a-lat_b)*(lat_a-lat_b) + (lon_a-lon_b)*(lon_a-lon_b);
 }
 
 std::vector<int> KNN::findKNN_Euclidean(const Graph& graph, double lat, double lon, const std::string& poi, int k) {
@@ -36,10 +36,12 @@ std::vector<int> KNN::findKNN_Euclidean(const Graph& graph, double lat, double l
 
 std::vector<int> KNN::findKNN_ShortestPath(const Graph& graph, double lat, double lon, const std::string& poi, int k) {
     if(graph.node_list.empty()||k==0) return {};
-    Node closest=graph.node_list[0];
+    Node infinity=Node(-1,1e9,1e9,{poi});
+    Node closest=infinity;
     for(Node u:graph.node_list) {
-        if(euclidean(u.lat,u.lon,lat,lon) < euclidean(closest.lat,closest.lon,lat,lon)) closest=u;
+        if(euclidean(u.lat,u.lon,lat,lon) < euclidean(closest.lat,closest.lon,lat,lon) && std::find(u.pois.begin(),u.pois.end(),poi)!=u.pois.end()) closest=u;
     }
+    if(closest==infinity) return {};
     std::vector<int> K_nearest;
     K_nearest.push_back(closest.id);
     std::priority_queue<std::pair<double,int>, std::vector<std::pair<double,int>>, std::greater<std::pair<double,int>>> pq;
