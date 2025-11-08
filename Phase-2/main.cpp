@@ -45,6 +45,7 @@ int main(int argc, char* argv[]) {
         Edge temp(x["id"],x["u"],x["v"],x["length"],x["oneway"]);
         Graph_internal.addEdge(temp);
     }
+    Graph_internal.preprocess();
     ////////-------> UPTO HERE <-----------///////////////
 
     // Read queries from second file
