@@ -41,9 +41,8 @@ std::vector<int> KNN::findKNN_ShortestPath(const Graph& graph, double lat, doubl
     for(Node u:graph.node_list) {
         if(euclidean(u.lat,u.lon,lat,lon) < euclidean(closest.lat,closest.lon,lat,lon) && std::find(u.pois.begin(),u.pois.end(),poi)!=u.pois.end()) closest=u;
     }
-    if(closest==infinity) return {};
+    if(closest.id==-1) return {};
     std::vector<int> K_nearest;
-    K_nearest.push_back(closest.id);
     std::priority_queue<std::pair<double,int>, std::vector<std::pair<double,int>>, std::greater<std::pair<double,int>>> pq;
     std::vector<bool> visited(graph.node_count);
     std::vector<double> SP(graph.node_count,1e18);
