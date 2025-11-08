@@ -5,7 +5,7 @@ class Approx_Shortest;
 void Graph::addNode(const Node& node) {
     node_list[node.id]=node;
 }
-
+ 
 void Graph::addEdge(const Edge& edge) {
     adjacency_list[edge.u].push_back(edge);
     adjacency_list[edge.v].push_back(edge);

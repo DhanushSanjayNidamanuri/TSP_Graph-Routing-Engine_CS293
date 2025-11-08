@@ -77,6 +77,8 @@
         "span": "cpp",
         "text_encoding": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "queue": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
