@@ -13,7 +13,7 @@ class Edge;
 
 class KShortestPaths_Result {
 public:
-    int id;
+    int id; 
     std::vector<std::pair<std::vector<int>,int>> paths;
     KShortestPaths_Result(int id, std::vector<std::pair<std::vector<int>,int>> paths) : id(id), paths(paths) {};
 };

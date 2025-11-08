@@ -7,7 +7,7 @@ void Graph::addNode(const Node& node) {
     node_count++;
     adjacency_list.push_back(std::unordered_map<int,Edge> ());
 }
-
+ 
 void Graph::addEdge(const Edge& edge) {
     edge_list.insert({edge.id,edge});
     adjacency_list[edge.u][edge.id]=edge;
