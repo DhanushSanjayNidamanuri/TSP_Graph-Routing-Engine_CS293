@@ -37,15 +37,15 @@
                 1199
             ],
             "possible": true,
-            "processing_time": 0.146388
+            "processing_time": 0.193409
         },
         {
             "done": true,
-            "processing_time": 0.008795
+            "processing_time": 0.010133
         },
         {
             "done": true,
-            "processing_time": 0.006465
+            "processing_time": 0.006763
         },
         {
             "id": 11,
@@ -68,50 +68,52 @@
                 652
             ],
             "possible": true,
-            "processing_time": 0.174796
+            "processing_time": 0.194558
         },
         {
             "id": 262,
             "nodes": [],
-            "processing_time": 2.010068
+            "processing_time": 2.187882
         },
         {
             "id": 142,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.016414
+            "processing_time": 1.095144
         },
         {
             "id": 290,
             "nodes": [],
-            "processing_time": 1.750855
+            "processing_time": 2.222606
         },
         {
             "done": true,
-            "processing_time": 0.003566
+            "processing_time": 0.004265
         },
         {
             "id": 169,
-            "minimum_time/minimum_distance": 33300.0,
+            "minimum_time/minimum_distance": 132.75852772462997,
             "path": [
                 1041,
                 1142,
                 1040,
                 174,
-                1141,
-                166,
-                162,
-                163,
-                160,
-                187,
-                201,
-                923,
-                1105,
-                764,
-                765,
-                905,
-                766,
+                680,
+                1140,
+                682,
+                683,
+                684,
+                685,
+                688,
+                1257,
+                1256,
+                1269,
+                220,
+                359,
+                1067,
+                486,
+                1544,
                 1545,
                 909,
                 767,
@@ -135,11 +137,11 @@
                 708
             ],
             "possible": true,
-            "processing_time": 1.268103
+            "processing_time": 0.561948
         },
         {
             "done": true,
-            "processing_time": 0.008015
+            "processing_time": 0.00853
         },
         {
             "id": 96,
@@ -180,11 +182,11 @@
                 2004
             ],
             "possible": true,
-            "processing_time": 0.128396
+            "processing_time": 0.173789
         },
         {
             "id": 109,
-            "minimum_time/minimum_distance": 34200.0,
+            "minimum_time/minimum_distance": 203.90780191486067,
             "path": [
                 870,
                 960,
@@ -198,28 +200,37 @@
                 1486,
                 1011,
                 1645,
-                1548,
-                1294,
-                646,
-                65,
-                449,
-                59,
+                82,
+                419,
+                1196,
+                414,
+                1323,
+                648,
+                88,
+                1212,
+                1359,
+                93,
+                1275,
+                649,
+                96,
                 89,
                 86,
                 342,
-                113,
-                110,
-                107,
-                108,
-                137,
-                133,
-                130,
+                83,
+                84,
+                85,
+                80,
+                78,
+                74,
+                99,
                 128,
-                543,
-                127,
-                665,
-                1159,
-                183,
+                658,
+                544,
+                1127,
+                160,
+                187,
+                201,
+                547,
                 199,
                 1734,
                 192,
@@ -227,7 +238,7 @@
                 202
             ],
             "possible": true,
-            "processing_time": 0.758319
+            "processing_time": 0.94611
         },
         {
             "id": 25,
@@ -284,31 +295,31 @@
                 977
             ],
             "possible": true,
-            "processing_time": 0.338699
+            "processing_time": 0.389889
         },
         {
             "done": true,
-            "processing_time": 0.002988
+            "processing_time": 0.003454
         },
         {
             "id": 217,
             "nodes": [],
-            "processing_time": 1.723805
+            "processing_time": 1.913475
         },
         {
             "done": true,
-            "processing_time": 0.003254
+            "processing_time": 0.003984
         },
         {
             "id": 202,
             "nodes": [
                 1977
             ],
-            "processing_time": 0.14908
+            "processing_time": 0.147146
         },
         {
             "id": 189,
-            "minimum_time/minimum_distance": 38700.0,
+            "minimum_time/minimum_distance": 355.8874244062859,
             "path": [
                 555,
                 181,
@@ -326,18 +337,25 @@
                 909,
                 767,
                 1424,
-                1423,
-                1422,
-                1421,
-                1259,
-                1270,
-                1271,
-                1272,
-                1273,
-                1274,
-                218,
-                713,
-                1675,
+                911,
+                768,
+                1979,
+                769,
+                770,
+                771,
+                772,
+                773,
+                774,
+                850,
+                529,
+                1429,
+                1439,
+                999,
+                370,
+                1763,
+                369,
+                993,
+                241,
                 983,
                 982,
                 981,
@@ -356,18 +374,18 @@
                 610
             ],
             "possible": true,
-            "processing_time": 1.720662
+            "processing_time": 2.070046
         },
         {
             "done": true,
-            "processing_time": 0.00773
+            "processing_time": 0.010376
         },
         {
             "id": 165,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.020538
+            "processing_time": 0.024019
         },
         {
             "id": 78,
@@ -403,60 +421,60 @@
                 722
             ],
             "possible": true,
-            "processing_time": 0.308655
+            "processing_time": 0.386536
         },
         {
             "id": 166,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.012572
+            "processing_time": 0.014611
         },
         {
             "id": 272,
             "nodes": [],
-            "processing_time": 1.416489
+            "processing_time": 1.556545
         },
         {
             "id": 267,
             "nodes": [
                 1965
             ],
-            "processing_time": 0.14462
+            "processing_time": 0.147779
         },
         {
             "done": true,
-            "processing_time": 0.003023
+            "processing_time": 0.00297
         },
         {
             "done": true,
-            "processing_time": 0.006489
+            "processing_time": 0.008279
         },
         {
             "done": true,
-            "processing_time": 0.006093
+            "processing_time": 0.006903
         },
         {
             "id": 16,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.407423
+            "processing_time": 2.883294
         },
         {
             "id": 98,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.45194
+            "processing_time": 2.584201
         },
         {
             "done": true,
-            "processing_time": 0.007887
+            "processing_time": 0.009443
         },
         {
             "done": true,
-            "processing_time": 0.00198
+            "processing_time": 0.002188
         },
         {
             "id": 28,
@@ -488,14 +506,14 @@
                 1476
             ],
             "possible": true,
-            "processing_time": 0.252653
+            "processing_time": 0.254698
         },
         {
             "id": 21,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.295385
+            "processing_time": 2.541821
         },
         {
             "id": 41,
@@ -545,15 +563,15 @@
                 1701
             ],
             "possible": true,
-            "processing_time": 0.528093
+            "processing_time": 0.587306
         },
         {
             "done": true,
-            "processing_time": 0.008181
+            "processing_time": 0.009259
         },
         {
             "id": 175,
-            "minimum_time/minimum_distance": 27000.0,
+            "minimum_time/minimum_distance": 95.47215746338804,
             "path": [
                 1719,
                 1718,
@@ -561,25 +579,30 @@
                 1669,
                 1668,
                 1667,
-                300,
-                299,
+                1708,
+                301,
+                961,
+                1297,
+                1867,
+                1866,
                 446,
                 1282,
                 1281,
                 1280,
-                1294,
-                88,
-                648,
-                1479,
-                1480,
-                1481,
-                1482,
-                1483,
-                1476,
-                1213,
-                1176,
-                1177,
-                1324,
+                1547,
+                1643,
+                1645,
+                82,
+                420,
+                1361,
+                1362,
+                1363,
+                1364,
+                1365,
+                1366,
+                1367,
+                1368,
+                1369,
                 1370,
                 1325,
                 1326,
@@ -588,11 +611,11 @@
                 1179
             ],
             "possible": true,
-            "processing_time": 0.628206
+            "processing_time": 0.346375
         },
         {
             "done": true,
-            "processing_time": 0.006618
+            "processing_time": 0.007208
         },
         {
             "id": 93,
@@ -664,11 +687,11 @@
                 1575
             ],
             "possible": true,
-            "processing_time": 1.223654
+            "processing_time": 1.207462
         },
         {
             "id": 181,
-            "minimum_time/minimum_distance": 18900.0,
+            "minimum_time/minimum_distance": 126.47796876204197,
             "path": [
                 176,
                 676,
@@ -678,10 +701,10 @@
                 144,
                 1747,
                 136,
-                107,
-                110,
-                113,
-                1706,
+                139,
+                140,
+                143,
+                797,
                 115,
                 96,
                 649,
@@ -694,11 +717,11 @@
                 448
             ],
             "possible": true,
-            "processing_time": 0.475415
+            "processing_time": 0.472164
         },
         {
             "done": true,
-            "processing_time": 0.007222
+            "processing_time": 0.009288
         },
         {
             "id": 19,
@@ -790,15 +813,15 @@
                 180
             ],
             "possible": true,
-            "processing_time": 0.412988
+            "processing_time": 0.433792
         },
         {
             "done": true,
-            "processing_time": 0.00739
+            "processing_time": 0.007233
         },
         {
             "id": 148,
-            "minimum_time/minimum_distance": 3600.0,
+            "minimum_time/minimum_distance": 27.01377971606208,
             "path": [
                 1282,
                 446,
@@ -807,36 +830,36 @@
                 1297
             ],
             "possible": true,
-            "processing_time": 0.036946
+            "processing_time": 0.044919
         },
         {
             "id": 173,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.668324
+            "processing_time": 1.876327
         },
         {
             "id": 119,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014848
+            "processing_time": 0.022398
         },
         {
             "done": true,
-            "processing_time": 0.002591
+            "processing_time": 0.002686
         },
         {
             "id": 240,
             "nodes": [
                 1971
             ],
-            "processing_time": 0.135819
+            "processing_time": 0.135134
         },
         {
             "id": 147,
-            "minimum_time/minimum_distance": 11700.0,
+            "minimum_time/minimum_distance": 105.83150160832369,
             "path": [
                 124,
                 127,
@@ -854,58 +877,58 @@
                 1315
             ],
             "possible": true,
-            "processing_time": 0.327842
+            "processing_time": 0.302607
         },
         {
             "done": true,
-            "processing_time": 0.007239
+            "processing_time": 0.007661
         },
         {
             "id": 116,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.018305
+            "processing_time": 0.017684
         },
         {
             "done": true,
-            "processing_time": 0.001998
+            "processing_time": 0.002346
         },
         {
             "done": true,
-            "processing_time": 0.005672
+            "processing_time": 0.006475
         },
         {
             "id": 137,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.608679
+            "processing_time": 1.69653
         },
         {
             "done": true,
-            "processing_time": 0.003388
+            "processing_time": 0.003765
         },
         {
             "id": 299,
             "nodes": [],
-            "processing_time": 0.14643
+            "processing_time": 0.141355
         },
         {
             "done": true,
-            "processing_time": 0.007213
+            "processing_time": 0.007464
         },
         {
             "id": 279,
             "nodes": [],
-            "processing_time": 0.137727
+            "processing_time": 0.133272
         },
         {
             "id": 190,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.685896
+            "processing_time": 1.705298
         },
         {
             "id": 1,
@@ -919,14 +942,14 @@
                 1643
             ],
             "possible": true,
-            "processing_time": 0.02643
+            "processing_time": 0.02551
         },
         {
             "id": 216,
             "nodes": [
                 1977
             ],
-            "processing_time": 0.13963
+            "processing_time": 0.133646
         },
         {
             "id": 14,
@@ -952,11 +975,11 @@
                 1220
             ],
             "possible": true,
-            "processing_time": 0.11623
+            "processing_time": 0.118154
         },
         {
             "done": true,
-            "processing_time": 0.002668
+            "processing_time": 0.002645
         },
         {
             "id": 71,
@@ -1038,14 +1061,14 @@
                 1670
             ],
             "possible": true,
-            "processing_time": 1.163455
+            "processing_time": 1.138249
         },
         {
             "id": 302,
             "nodes": [
                 1795
             ],
-            "processing_time": 0.157216
+            "processing_time": 0.132765
         },
         {
             "id": 82,
@@ -1096,51 +1119,51 @@
                 77
             ],
             "possible": true,
-            "processing_time": 0.275796
+            "processing_time": 0.279053
         },
         {
             "id": 233,
             "nodes": [],
-            "processing_time": 1.369999
+            "processing_time": 1.335481
         },
         {
             "done": true,
-            "processing_time": 0.008312
+            "processing_time": 0.008382
         },
         {
             "done": true,
-            "processing_time": 0.005832
+            "processing_time": 0.006529
         },
         {
             "done": true,
-            "processing_time": 0.005957
+            "processing_time": 0.006228
         },
         {
             "id": 207,
             "nodes": [],
-            "processing_time": 1.446958
+            "processing_time": 1.357642
         },
         {
             "done": true,
-            "processing_time": 0.008508
+            "processing_time": 0.009177
         },
         {
             "id": 252,
             "nodes": [
                 1507
             ],
-            "processing_time": 0.158474
+            "processing_time": 0.141201
         },
         {
             "id": 243,
             "nodes": [
                 1795
             ],
-            "processing_time": 0.135613
+            "processing_time": 0.140711
         },
         {
             "done": true,
-            "processing_time": 0.006107
+            "processing_time": 0.006039
         },
         {
             "id": 211,
@@ -1148,53 +1171,63 @@
                 1997,
                 1996
             ],
-            "processing_time": 0.134079
+            "processing_time": 0.131981
         },
         {
             "id": 17,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.020925
+            "processing_time": 0.021319
         },
         {
             "id": 208,
             "nodes": [],
-            "processing_time": 0.158046
+            "processing_time": 0.154528
         },
         {
             "id": 160,
-            "minimum_time/minimum_distance": 22500.0,
+            "minimum_time/minimum_distance": 183.7219177319352,
             "path": [
                 159,
-                157,
-                155,
-                144,
-                1747,
-                136,
-                650,
-                137,
-                133,
-                130,
-                128,
-                543,
-                127,
-                665,
-                1159,
-                183,
+                179,
+                685,
+                684,
+                683,
+                682,
+                1140,
+                680,
+                174,
+                1141,
+                166,
+                162,
+                340,
+                185,
+                188,
+                187,
+                201,
+                547,
                 199,
                 205,
                 204,
                 465,
                 203,
                 200,
-                213,
+                1496,
+                393,
+                1150,
+                701,
+                1151,
+                193,
+                1153,
+                1154,
+                206,
                 214,
                 1157,
                 1156
             ],
             "possible": true,
-            "processing_time": 0.892812
+            "processing_time": 1.021101
         },
         {
             "id": 206,
@@ -1209,18 +1242,18 @@
                 1994,
                 1986
             ],
-            "processing_time": 0.15137
+            "processing_time": 0.144235
         },
         {
             "id": 129,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.01186
+            "processing_time": 0.012849
         },
         {
             "done": true,
-            "processing_time": 0.006744
+            "processing_time": 0.006622
         },
         {
             "id": 235,
@@ -1236,11 +1269,11 @@
                 936,
                 934
             ],
-            "processing_time": 0.153086
+            "processing_time": 0.148068
         },
         {
             "id": 199,
-            "minimum_time/minimum_distance": 16200.0,
+            "minimum_time/minimum_distance": 124.80285906560934,
             "path": [
                 169,
                 1130,
@@ -1263,7 +1296,7 @@
                 201
             ],
             "possible": true,
-            "processing_time": 0.206403
+            "processing_time": 0.451682
         },
         {
             "id": 291,
@@ -1271,20 +1304,20 @@
                 553,
                 854
             ],
-            "processing_time": 0.139931
+            "processing_time": 0.135307
         },
         {
             "id": 255,
             "nodes": [],
-            "processing_time": 1.780042
+            "processing_time": 1.700809
         },
         {
             "done": true,
-            "processing_time": 0.014392
+            "processing_time": 0.008428
         },
         {
             "done": true,
-            "processing_time": 0.00539
+            "processing_time": 0.006094
         },
         {
             "id": 88,
@@ -1331,16 +1364,16 @@
                 1318
             ],
             "possible": true,
-            "processing_time": 0.477257
+            "processing_time": 0.500492
         },
         {
             "id": 259,
             "nodes": [],
-            "processing_time": 0.139752
+            "processing_time": 0.131276
         },
         {
             "id": 178,
-            "minimum_time/minimum_distance": 45900.0,
+            "minimum_time/minimum_distance": 297.1218643356208,
             "path": [
                 102,
                 101,
@@ -1396,39 +1429,39 @@
                 307
             ],
             "possible": true,
-            "processing_time": 1.731297
+            "processing_time": 1.716215
         },
         {
             "id": 228,
             "nodes": [],
-            "processing_time": 1.294345
+            "processing_time": 1.25578
         },
         {
             "id": 146,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.025086
+            "processing_time": 0.100004
         },
         {
             "done": true,
-            "processing_time": 0.006667
+            "processing_time": 0.007469
         },
         {
             "done": true,
-            "processing_time": 0.002229
+            "processing_time": 0.002358
         },
         {
             "done": true,
-            "processing_time": 0.005994
+            "processing_time": 0.006248
         },
         {
             "done": true,
-            "processing_time": 0.002569
+            "processing_time": 0.014204
         },
         {
             "id": 167,
-            "minimum_time/minimum_distance": 32400.0,
+            "minimum_time/minimum_distance": 276.0770520656101,
             "path": [
                 290,
                 560,
@@ -1437,18 +1470,23 @@
                 361,
                 1701,
                 15,
-                1285,
-                39,
-                83,
-                110,
-                107,
-                108,
-                137,
-                133,
-                130,
+                14,
+                12,
+                11,
+                1699,
+                332,
+                1796,
+                1550,
+                32,
+                58,
+                74,
+                99,
                 128,
-                543,
-                127,
+                658,
+                544,
+                545,
+                669,
+                668,
                 665,
                 1159,
                 183,
@@ -1469,11 +1507,11 @@
                 692
             ],
             "possible": true,
-            "processing_time": 1.007198
+            "processing_time": 1.35218
         },
         {
             "done": true,
-            "processing_time": 0.007544
+            "processing_time": 0.007568
         },
         {
             "id": 75,
@@ -1557,18 +1595,18 @@
                 1656
             ],
             "possible": true,
-            "processing_time": 0.634776
+            "processing_time": 0.660403
         },
         {
             "id": 92,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.021499
+            "processing_time": 0.023173
         },
         {
             "id": 117,
-            "minimum_time/minimum_distance": 46800.0,
+            "minimum_time/minimum_distance": 292.46672950254936,
             "path": [
                 410,
                 63,
@@ -1577,15 +1615,21 @@
                 1486,
                 1011,
                 1645,
-                1548,
-                1294,
-                646,
-                65,
-                449,
-                59,
-                89,
-                86,
-                342,
+                82,
+                419,
+                1196,
+                414,
+                1323,
+                648,
+                88,
+                1212,
+                1359,
+                93,
+                1275,
+                649,
+                96,
+                115,
+                1706,
                 113,
                 110,
                 107,
@@ -1594,8 +1638,8 @@
                 104,
                 99,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -1625,39 +1669,39 @@
                 1511
             ],
             "possible": true,
-            "processing_time": 1.216857
+            "processing_time": 0.997989
         },
         {
             "done": true,
-            "processing_time": 0.003562
+            "processing_time": 0.003051
         },
         {
             "id": 220,
             "nodes": [],
-            "processing_time": 1.319975
+            "processing_time": 1.320337
         },
         {
             "id": 194,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.016135
+            "processing_time": 0.016959
         },
         {
             "done": true,
-            "processing_time": 0.00256
+            "processing_time": 0.002423
         },
         {
             "done": true,
-            "processing_time": 0.006205
+            "processing_time": 0.006631
         },
         {
             "done": true,
-            "processing_time": 0.002006
+            "processing_time": 0.002326
         },
         {
             "done": true,
-            "processing_time": 0.002208
+            "processing_time": 0.002145
         },
         {
             "id": 29,
@@ -1720,18 +1764,18 @@
                 1149
             ],
             "possible": true,
-            "processing_time": 0.321568
+            "processing_time": 0.219716
         },
         {
             "done": true,
-            "processing_time": 0.007418
+            "processing_time": 0.006909
         },
         {
             "id": 10,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.296564
+            "processing_time": 2.299725
         },
         {
             "id": 85,
@@ -1753,7 +1797,7 @@
                 54
             ],
             "possible": true,
-            "processing_time": 0.080505
+            "processing_time": 0.079539
         },
         {
             "id": 61,
@@ -1801,35 +1845,35 @@
                 1564
             ],
             "possible": true,
-            "processing_time": 0.355897
+            "processing_time": 0.397046
         },
         {
             "id": 95,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.277614
+            "processing_time": 2.354787
         },
         {
             "id": 283,
             "nodes": [
                 1795
             ],
-            "processing_time": 0.136451
+            "processing_time": 0.140716
         },
         {
             "id": 201,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.018674
+            "processing_time": 0.019294
         },
         {
             "id": 87,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.343615
+            "processing_time": 2.328864
         },
         {
             "id": 79,
@@ -1860,11 +1904,11 @@
                 1672
             ],
             "possible": true,
-            "processing_time": 0.163318
+            "processing_time": 0.167266
         },
         {
             "id": 187,
-            "minimum_time/minimum_distance": 31500.0,
+            "minimum_time/minimum_distance": 105.61661082793404,
             "path": [
                 989,
                 990,
@@ -1904,7 +1948,7 @@
                 904
             ],
             "possible": true,
-            "processing_time": 0.125083
+            "processing_time": 0.077194
         },
         {
             "id": 281,
@@ -1914,7 +1958,7 @@
                 556,
                 2016
             ],
-            "processing_time": 0.139239
+            "processing_time": 0.138847
         },
         {
             "id": 20,
@@ -1944,22 +1988,27 @@
                 1155
             ],
             "possible": true,
-            "processing_time": 0.311246
+            "processing_time": 0.320313
         },
         {
             "id": 155,
-            "minimum_time/minimum_distance": 31500.0,
+            "minimum_time/minimum_distance": 176.4760702593197,
             "path": [
                 459,
                 121,
                 122,
                 124,
                 127,
-                665,
-                1159,
-                183,
-                199,
-                547,
+                543,
+                128,
+                658,
+                544,
+                1127,
+                160,
+                163,
+                185,
+                188,
+                187,
                 201,
                 923,
                 1105,
@@ -1988,7 +2037,7 @@
                 990
             ],
             "possible": true,
-            "processing_time": 1.2866
+            "processing_time": 0.867464
         },
         {
             "id": 53,
@@ -2069,50 +2118,50 @@
                 1611
             ],
             "possible": true,
-            "processing_time": 1.532399
+            "processing_time": 1.583878
         },
         {
             "done": true,
-            "processing_time": 0.003648
+            "processing_time": 0.003836
         },
         {
             "id": 258,
             "nodes": [],
-            "processing_time": 1.290215
+            "processing_time": 1.366456
         },
         {
             "id": 108,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.015037
+            "processing_time": 0.019765
         },
         {
             "done": true,
-            "processing_time": 0.002315
+            "processing_time": 0.002716
         },
         {
             "done": true,
-            "processing_time": 0.002352
+            "processing_time": 0.002157
         },
         {
             "done": true,
-            "processing_time": 0.001768
+            "processing_time": 0.00274
         },
         {
             "done": true,
-            "processing_time": 0.002078
+            "processing_time": 0.002312
         },
         {
             "id": 60,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.253624
+            "processing_time": 2.351243
         },
         {
             "done": true,
-            "processing_time": 0.003411
+            "processing_time": 0.003684
         },
         {
             "id": 246,
@@ -2131,19 +2180,19 @@
                 931,
                 1937
             ],
-            "processing_time": 0.161924
+            "processing_time": 0.151854
         },
         {
             "done": true,
-            "processing_time": 0.002078
+            "processing_time": 0.002172
         },
         {
             "done": true,
-            "processing_time": 0.007114
+            "processing_time": 0.007221
         },
         {
             "done": true,
-            "processing_time": 0.006396
+            "processing_time": 0.005785
         },
         {
             "id": 43,
@@ -2182,7 +2231,7 @@
                 165
             ],
             "possible": true,
-            "processing_time": 0.295855
+            "processing_time": 0.298669
         },
         {
             "id": 58,
@@ -2211,11 +2260,11 @@
                 656
             ],
             "possible": true,
-            "processing_time": 0.1659
+            "processing_time": 0.159236
         },
         {
             "done": true,
-            "processing_time": 0.002721
+            "processing_time": 0.002182
         },
         {
             "id": 218,
@@ -2228,44 +2277,44 @@
                 1993,
                 942
             ],
-            "processing_time": 0.148667
+            "processing_time": 0.144558
         },
         {
             "done": true,
-            "processing_time": 0.002302
+            "processing_time": 0.001852
         },
         {
             "done": true,
-            "processing_time": 0.002314
+            "processing_time": 0.001747
         },
         {
             "done": true,
-            "processing_time": 0.006407
+            "processing_time": 0.006074
         },
         {
             "id": 301,
             "nodes": [],
-            "processing_time": 0.133138
+            "processing_time": 0.132415
         },
         {
             "id": 23,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.027449
+            "processing_time": 0.026001
         },
         {
             "id": 289,
             "nodes": [],
-            "processing_time": 1.337813
+            "processing_time": 1.254121
         },
         {
             "done": true,
-            "processing_time": 0.006951
+            "processing_time": 0.008622
         },
         {
             "done": true,
-            "processing_time": 0.002064
+            "processing_time": 0.002041
         },
         {
             "id": 231,
@@ -2273,34 +2322,42 @@
                 565,
                 1229
             ],
-            "processing_time": 0.175734
+            "processing_time": 0.151845
         },
         {
             "done": true,
-            "processing_time": 0.00276
+            "processing_time": 0.003078
         },
         {
             "id": 8,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.314844
+            "processing_time": 2.17074
         },
         {
             "id": 141,
-            "minimum_time/minimum_distance": 13500.0,
+            "minimum_time/minimum_distance": 54.57055102514223,
             "path": [
                 1332,
-                1343,
-                1331,
-                649,
-                1275,
-                93,
-                65,
-                1282,
-                1281,
-                1280,
-                1547,
+                1478,
+                1333,
+                1425,
+                1200,
+                1356,
+                1357,
+                1358,
+                600,
+                1359,
+                1212,
+                88,
+                648,
+                1323,
+                414,
+                1196,
+                419,
+                82,
+                1645,
                 1643,
                 1012,
                 447,
@@ -2308,18 +2365,18 @@
                 62
             ],
             "possible": true,
-            "processing_time": 0.366275
+            "processing_time": 0.182724
         },
         {
             "done": true,
-            "processing_time": 0.003314
+            "processing_time": 0.002781
         },
         {
             "id": 157,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.012297
+            "processing_time": 0.010316
         },
         {
             "id": 278,
@@ -2327,11 +2384,11 @@
                 1185,
                 1928
             ],
-            "processing_time": 0.137723
+            "processing_time": 0.133411
         },
         {
             "done": true,
-            "processing_time": 0.007124
+            "processing_time": 0.006835
         },
         {
             "id": 70,
@@ -2384,7 +2441,7 @@
                 1122
             ],
             "possible": true,
-            "processing_time": 0.442416
+            "processing_time": 0.461806
         },
         {
             "id": 36,
@@ -2416,7 +2473,7 @@
                 1475
             ],
             "possible": true,
-            "processing_time": 0.279934
+            "processing_time": 0.267712
         },
         {
             "id": 67,
@@ -2426,19 +2483,19 @@
                 1103
             ],
             "possible": true,
-            "processing_time": 0.014268
+            "processing_time": 0.013428
         },
         {
             "done": true,
-            "processing_time": 0.006857
+            "processing_time": 0.006906
         },
         {
             "done": true,
-            "processing_time": 0.006171
+            "processing_time": 0.006274
         },
         {
             "id": 135,
-            "minimum_time/minimum_distance": 66600.0,
+            "minimum_time/minimum_distance": 272.5126867637044,
             "path": [
                 726,
                 1059,
@@ -2480,20 +2537,22 @@
                 130,
                 133,
                 137,
-                108,
-                107,
-                110,
-                113,
-                1706,
+                650,
+                136,
+                139,
+                140,
+                143,
+                797,
                 115,
                 96,
                 649,
-                1275,
-                93,
-                1359,
-                600,
-                1358,
-                1357,
+                1331,
+                1343,
+                1332,
+                1478,
+                1333,
+                1425,
+                1200,
                 1356,
                 1184,
                 1334,
@@ -2517,7 +2576,7 @@
                 1172
             ],
             "possible": true,
-            "processing_time": 1.646194
+            "processing_time": 0.932373
         },
         {
             "id": 40,
@@ -2570,15 +2629,15 @@
                 248
             ],
             "possible": true,
-            "processing_time": 0.503308
+            "processing_time": 0.490731
         },
         {
             "done": true,
-            "processing_time": 0.008259
+            "processing_time": 0.008337
         },
         {
             "done": true,
-            "processing_time": 0.006579
+            "processing_time": 0.005622
         },
         {
             "id": 9,
@@ -2644,7 +2703,7 @@
                 520
             ],
             "possible": true,
-            "processing_time": 0.460781
+            "processing_time": 0.335726
         },
         {
             "id": 59,
@@ -2688,7 +2747,7 @@
                 19
             ],
             "possible": true,
-            "processing_time": 0.260453
+            "processing_time": 0.201488
         },
         {
             "id": 270,
@@ -2706,11 +2765,11 @@
                 941,
                 951
             ],
-            "processing_time": 0.172636
+            "processing_time": 0.148691
         },
         {
             "id": 134,
-            "minimum_time/minimum_distance": 25200.0,
+            "minimum_time/minimum_distance": 164.4075831557955,
             "path": [
                 1962,
                 1960,
@@ -2729,40 +2788,41 @@
                 66,
                 72,
                 71,
-                101,
-                100,
-                542,
+                75,
+                541,
+                74,
                 99,
-                104,
-                109,
-                108,
-                107,
-                110,
+                128,
+                130,
+                133,
+                137,
+                650,
+                136,
                 139,
                 140,
                 143
             ],
             "possible": true,
-            "processing_time": 0.578718
+            "processing_time": 0.589252
         },
         {
             "done": true,
-            "processing_time": 0.003667
+            "processing_time": 0.003028
         },
         {
             "id": 64,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014066
+            "processing_time": 0.012145
         },
         {
             "done": true,
-            "processing_time": 0.007598
+            "processing_time": 0.006276
         },
         {
             "id": 156,
-            "minimum_time/minimum_distance": 26100.0,
+            "minimum_time/minimum_distance": 107.01582474081358,
             "path": [
                 898,
                 1951,
@@ -2774,11 +2834,13 @@
                 1119,
                 1118,
                 91,
-                90,
-                525,
-                76,
-                1487,
-                1851,
+                79,
+                1641,
+                67,
+                1640,
+                1642,
+                68,
+                69,
                 518,
                 70,
                 389,
@@ -2796,15 +2858,15 @@
                 1520
             ],
             "possible": true,
-            "processing_time": 0.452071
+            "processing_time": 0.269759
         },
         {
             "done": true,
-            "processing_time": 0.002749
+            "processing_time": 0.003595
         },
         {
             "done": true,
-            "processing_time": 0.002475
+            "processing_time": 0.002003
         },
         {
             "id": 269,
@@ -2812,7 +2874,7 @@
                 551,
                 1405
             ],
-            "processing_time": 0.156284
+            "processing_time": 0.134666
         },
         {
             "id": 74,
@@ -2923,7 +2985,7 @@
                 1470
             ],
             "possible": true,
-            "processing_time": 1.25397
+            "processing_time": 0.975095
         },
         {
             "id": 42,
@@ -2975,15 +3037,15 @@
                 630
             ],
             "possible": true,
-            "processing_time": 1.331724
+            "processing_time": 1.02568
         },
         {
             "done": true,
-            "processing_time": 0.008565
+            "processing_time": 0.008703
         },
         {
             "done": true,
-            "processing_time": 0.002124
+            "processing_time": 0.002026
         },
         {
             "id": 66,
@@ -3040,18 +3102,18 @@
                 824
             ],
             "possible": true,
-            "processing_time": 1.12216
+            "processing_time": 0.814054
         },
         {
             "done": true,
-            "processing_time": 0.009177
+            "processing_time": 0.008451
         },
         {
             "id": 3,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.712592
+            "processing_time": 2.178218
         },
         {
             "id": 37,
@@ -3110,15 +3172,15 @@
                 330
             ],
             "possible": true,
-            "processing_time": 0.322626
+            "processing_time": 0.290475
         },
         {
             "done": true,
-            "processing_time": 0.0031580000000000002
+            "processing_time": 0.003128
         },
         {
             "id": 149,
-            "minimum_time/minimum_distance": 27000.0,
+            "minimum_time/minimum_distance": 205.82192314598063,
             "path": [
                 1626,
                 1631,
@@ -3136,10 +3198,12 @@
                 433,
                 555,
                 181,
-                183,
-                678,
-                546,
-                545,
+                1340,
+                164,
+                152,
+                134,
+                124,
+                127,
                 543,
                 128,
                 130,
@@ -3148,12 +3212,12 @@
                 650,
                 136,
                 139,
-                148,
-                149,
+                140,
+                143,
                 653
             ],
             "possible": true,
-            "processing_time": 0.655455
+            "processing_time": 0.720065
         },
         {
             "id": 80,
@@ -3267,48 +3331,51 @@
                 616
             ],
             "possible": true,
-            "processing_time": 1.751541
+            "processing_time": 1.397696
         },
         {
             "done": true,
-            "processing_time": 0.003829
+            "processing_time": 0.003908
         },
         {
             "done": true,
-            "processing_time": 0.008534
+            "processing_time": 0.007015
         },
         {
             "id": 76,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.556284
+            "processing_time": 2.258954
         },
         {
             "id": 229,
             "nodes": [],
-            "processing_time": 1.527618
+            "processing_time": 1.258456
         },
         {
             "done": true,
-            "processing_time": 0.009392
+            "processing_time": 0.008643
         },
         {
             "id": 200,
-            "minimum_time/minimum_distance": 20700.0,
+            "minimum_time/minimum_distance": 191.39114256206815,
             "path": [
                 845,
                 38,
-                36,
-                85,
-                1976,
-                108,
-                109,
-                104,
-                99,
-                542,
-                100,
-                101,
+                1286,
+                14,
+                12,
+                11,
+                1699,
+                332,
+                1796,
+                1550,
+                32,
+                58,
+                74,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -3323,49 +3390,49 @@
                 518
             ],
             "possible": true,
-            "processing_time": 0.603832
+            "processing_time": 0.574892
         },
         {
             "done": true,
-            "processing_time": 0.008288
+            "processing_time": 0.007193
         },
         {
             "done": true,
-            "processing_time": 0.0022
+            "processing_time": 0.002049
         },
         {
             "done": true,
-            "processing_time": 0.005992
+            "processing_time": 0.005447
         },
         {
             "done": true,
-            "processing_time": 0.00279
+            "processing_time": 0.002511
         },
         {
             "done": true,
-            "processing_time": 0.002026
+            "processing_time": 0.001844
         },
         {
             "done": true,
-            "processing_time": 0.002702
+            "processing_time": 0.002766
         },
         {
             "done": true,
-            "processing_time": 0.002102
+            "processing_time": 0.002036
         },
         {
             "id": 284,
             "nodes": [
                 2014
             ],
-            "processing_time": 0.14641
+            "processing_time": 0.131979
         },
         {
             "id": 32,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.473364
+            "processing_time": 2.156121
         },
         {
             "id": 52,
@@ -3405,7 +3472,7 @@
                 1018
             ],
             "possible": true,
-            "processing_time": 0.22328
+            "processing_time": 0.198638
         },
         {
             "id": 99,
@@ -3465,21 +3532,21 @@
                 1247
             ],
             "possible": true,
-            "processing_time": 1.315021
+            "processing_time": 1.084884
         },
         {
             "id": 176,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.020997
+            "processing_time": 0.019049
         },
         {
             "id": 162,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.013208
+            "processing_time": 0.011523
         },
         {
             "id": 22,
@@ -3532,11 +3599,11 @@
                 257
             ],
             "possible": true,
-            "processing_time": 0.223793
+            "processing_time": 0.192686
         },
         {
             "done": true,
-            "processing_time": 0.003409
+            "processing_time": 0.002823
         },
         {
             "id": 83,
@@ -3589,18 +3656,18 @@
                 730
             ],
             "possible": true,
-            "processing_time": 0.586655
+            "processing_time": 0.472073
         },
         {
             "done": true,
-            "processing_time": 0.003426
+            "processing_time": 0.004204
         },
         {
             "id": 33,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.528376
+            "processing_time": 2.1276
         },
         {
             "id": 84,
@@ -3660,11 +3727,11 @@
                 629
             ],
             "possible": true,
-            "processing_time": 1.299389
+            "processing_time": 1.215297
         },
         {
             "id": 101,
-            "minimum_time/minimum_distance": 19800.0,
+            "minimum_time/minimum_distance": 187.70593680194412,
             "path": [
                 1612,
                 1615,
@@ -3691,11 +3758,11 @@
                 1484
             ],
             "possible": true,
-            "processing_time": 0.447121
+            "processing_time": 0.660297
         },
         {
             "done": true,
-            "processing_time": 0.010409
+            "processing_time": 0.009364
         },
         {
             "id": 261,
@@ -3706,11 +3773,11 @@
                 489,
                 362
             ],
-            "processing_time": 0.15658
+            "processing_time": 0.150782
         },
         {
             "id": 158,
-            "minimum_time/minimum_distance": 19800.0,
+            "minimum_time/minimum_distance": 51.073198998450096,
             "path": [
                 858,
                 1131,
@@ -3737,18 +3804,18 @@
                 156
             ],
             "possible": true,
-            "processing_time": 0.285216
+            "processing_time": 0.131237
         },
         {
             "id": 124,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.124398
+            "processing_time": 0.089163
         },
         {
             "id": 154,
-            "minimum_time/minimum_distance": 17100.0,
+            "minimum_time/minimum_distance": 142.90909868086968,
             "path": [
                 541,
                 74,
@@ -3772,12 +3839,12 @@
                 448
             ],
             "possible": true,
-            "processing_time": 0.61984
+            "processing_time": 0.644031
         },
         {
             "id": 288,
             "nodes": [],
-            "processing_time": 0.176167
+            "processing_time": 0.152922
         },
         {
             "id": 90,
@@ -3828,36 +3895,36 @@
                 1502
             ],
             "possible": true,
-            "processing_time": 0.772537
+            "processing_time": 0.746249
         },
         {
             "done": true,
-            "processing_time": 0.004096
+            "processing_time": 0.003241
         },
         {
             "id": 275,
             "nodes": [
                 1795
             ],
-            "processing_time": 0.154907
+            "processing_time": 0.146174
         },
         {
             "done": true,
-            "processing_time": 0.00766
+            "processing_time": 0.006975
         },
         {
             "id": 293,
             "nodes": [
                 1971
             ],
-            "processing_time": 0.153706
+            "processing_time": 0.131608
         },
         {
             "id": 107,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.630818
+            "processing_time": 1.666683
         },
         {
             "id": 232,
@@ -3872,50 +3939,50 @@
                 1994,
                 1986
             ],
-            "processing_time": 0.170962
+            "processing_time": 0.144397
         },
         {
             "id": 111,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014688
+            "processing_time": 0.013223
         },
         {
             "id": 63,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.491454
+            "processing_time": 2.126346
         },
         {
             "id": 86,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.024036
+            "processing_time": 0.021851
         },
         {
             "id": 183,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.747141
+            "processing_time": 1.561388
         },
         {
             "done": true,
-            "processing_time": 0.004017
+            "processing_time": 0.004133
         },
         {
             "id": 115,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.0234
+            "processing_time": 0.02156
         },
         {
             "done": true,
-            "processing_time": 0.008696
+            "processing_time": 0.006475
         },
         {
             "id": 300,
@@ -3923,14 +3990,14 @@
                 551,
                 1405
             ],
-            "processing_time": 0.15589
+            "processing_time": 0.13477
         },
         {
             "id": 179,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.096382
+            "processing_time": 0.074738
         },
         {
             "id": 46,
@@ -4050,34 +4117,34 @@
                 310
             ],
             "possible": true,
-            "processing_time": 1.198265
+            "processing_time": 1.0895
         },
         {
             "id": 114,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.646462
+            "processing_time": 1.58474
         },
         {
             "id": 237,
             "nodes": [
                 405
             ],
-            "processing_time": 0.151136
+            "processing_time": 0.142289
         },
         {
             "id": 226,
             "nodes": [],
-            "processing_time": 1.474847
+            "processing_time": 1.171793
         },
         {
             "done": true,
-            "processing_time": 0.009842
+            "processing_time": 0.008354
         },
         {
             "done": true,
-            "processing_time": 0.006955
+            "processing_time": 0.006331
         },
         {
             "id": 282,
@@ -4087,22 +4154,22 @@
                 549,
                 2016
             ],
-            "processing_time": 0.154898
+            "processing_time": 0.149494
         },
         {
             "done": true,
-            "processing_time": 0.002482
+            "processing_time": 0.002159
         },
         {
             "done": true,
-            "processing_time": 0.002248
+            "processing_time": 0.001889
         },
         {
             "id": 132,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.021245
+            "processing_time": 0.019668
         },
         {
             "id": 97,
@@ -4124,73 +4191,73 @@
                 1542
             ],
             "possible": true,
-            "processing_time": 0.04915
+            "processing_time": 0.044684
         },
         {
             "done": true,
-            "processing_time": 0.007031
+            "processing_time": 0.007671
         },
         {
             "id": 257,
             "nodes": [
                 1922
             ],
-            "processing_time": 0.145901
+            "processing_time": 0.132836
         },
         {
             "id": 224,
             "nodes": [],
-            "processing_time": 0.149467
+            "processing_time": 0.137338
         },
         {
             "done": true,
-            "processing_time": 0.007735
+            "processing_time": 0.006605
         },
         {
             "id": 292,
             "nodes": [
                 2008
             ],
-            "processing_time": 0.146078
+            "processing_time": 0.133194
         },
         {
             "done": true,
-            "processing_time": 0.002474
+            "processing_time": 0.001957
         },
         {
             "id": 174,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.653065
+            "processing_time": 1.576668
         },
         {
             "done": true,
-            "processing_time": 0.008987
+            "processing_time": 0.008609
         },
         {
             "id": 219,
             "nodes": [],
-            "processing_time": 0.338702
+            "processing_time": 0.269038
         },
         {
             "id": 271,
             "nodes": [],
-            "processing_time": 1.475631
+            "processing_time": 1.121152
         },
         {
             "id": 13,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.152168
+            "processing_time": 0.116339
         },
         {
             "id": 295,
             "nodes": [
                 1507
             ],
-            "processing_time": 0.153808
+            "processing_time": 0.147546
         },
         {
             "id": 31,
@@ -4229,44 +4296,53 @@
                 1716
             ],
             "possible": true,
-            "processing_time": 0.29483
+            "processing_time": 0.247794
         },
         {
             "id": 192,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.400802
+            "processing_time": 1.245561
         },
         {
             "done": true,
-            "processing_time": 0.003814
+            "processing_time": 0.003069
         },
         {
             "id": 125,
-            "minimum_time/minimum_distance": 27000.0,
+            "minimum_time/minimum_distance": 165.5758608023671,
             "path": [
                 1004,
                 1018,
                 418,
-                1543,
-                412,
-                344,
-                62,
-                411,
-                447,
+                870,
+                960,
+                871,
+                872,
+                1006,
+                873,
+                1748,
+                874,
+                875,
                 1486,
                 1011,
                 1645,
-                1548,
-                1294,
-                646,
-                65,
-                449,
-                59,
-                89,
-                86,
-                342,
+                82,
+                419,
+                1196,
+                414,
+                1323,
+                648,
+                88,
+                1212,
+                1359,
+                93,
+                1275,
+                649,
+                96,
+                115,
+                1706,
                 113,
                 110,
                 107,
@@ -4279,88 +4355,88 @@
                 75
             ],
             "possible": true,
-            "processing_time": 0.516093
+            "processing_time": 0.562804
         },
         {
             "done": true,
-            "processing_time": 0.003049
+            "processing_time": 0.00315
         },
         {
             "done": true,
-            "processing_time": 0.008584
+            "processing_time": 0.006348
         },
         {
             "done": true,
-            "processing_time": 0.002259
+            "processing_time": 0.002004
         },
         {
             "done": true,
-            "processing_time": 0.006039
+            "processing_time": 0.005767
         },
         {
             "done": true,
-            "processing_time": 0.006046
+            "processing_time": 0.005601
         },
         {
             "id": 39,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.564954
+            "processing_time": 2.190699
         },
         {
             "id": 247,
             "nodes": [
                 1965
             ],
-            "processing_time": 0.16154
+            "processing_time": 0.150069
         },
         {
             "id": 225,
             "nodes": [],
-            "processing_time": 0.161388
+            "processing_time": 0.132765
         },
         {
             "done": true,
-            "processing_time": 0.008776
+            "processing_time": 0.00729
         },
         {
             "done": true,
-            "processing_time": 0.0073
+            "processing_time": 0.006561
         },
         {
             "id": 150,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.680009
+            "processing_time": 1.531001
         },
         {
             "done": true,
-            "processing_time": 0.00387
+            "processing_time": 0.003561
         },
         {
             "id": 168,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.017513
+            "processing_time": 0.015299
         },
         {
             "id": 57,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.016802
+            "processing_time": 0.014034
         },
         {
             "id": 285,
             "nodes": [],
-            "processing_time": 1.515195
+            "processing_time": 1.217472
         },
         {
             "id": 151,
-            "minimum_time/minimum_distance": 73800.0,
+            "minimum_time/minimum_distance": 391.6510911035785,
             "path": [
                 960,
                 871,
@@ -4373,15 +4449,21 @@
                 1486,
                 1011,
                 1645,
-                1548,
-                1294,
-                646,
-                65,
-                449,
-                59,
-                89,
-                86,
-                342,
+                82,
+                419,
+                1196,
+                414,
+                1323,
+                648,
+                88,
+                1212,
+                1359,
+                93,
+                1275,
+                649,
+                96,
+                115,
+                1706,
                 113,
                 110,
                 107,
@@ -4390,8 +4472,8 @@
                 104,
                 99,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -4420,25 +4502,30 @@
                 1520,
                 154,
                 1465,
-                170,
-                918,
-                1596,
-                171,
-                1848,
-                172,
-                184,
-                198,
-                197,
-                699,
-                1134,
-                1135,
-                196,
-                1137,
-                1138,
-                1136,
-                378,
-                379,
-                562,
+                1467,
+                175,
+                1129,
+                857,
+                1133,
+                1132,
+                1131,
+                858,
+                169,
+                1130,
+                391,
+                1609,
+                1611,
+                1601,
+                1603,
+                1610,
+                434,
+                702,
+                1623,
+                1625,
+                1631,
+                1630,
+                1629,
+                1627,
                 1628,
                 380,
                 219,
@@ -4447,7 +4534,7 @@
                 711
             ],
             "possible": true,
-            "processing_time": 1.554442
+            "processing_time": 1.468529
         },
         {
             "id": 15,
@@ -4468,34 +4555,34 @@
                 1388
             ],
             "possible": true,
-            "processing_time": 0.042042
+            "processing_time": 0.037027
         },
         {
             "id": 238,
             "nodes": [],
-            "processing_time": 0.198662
+            "processing_time": 0.185779
         },
         {
             "id": 2,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.012115
+            "processing_time": 0.013239
         },
         {
             "done": true,
-            "processing_time": 0.007954
+            "processing_time": 0.006903
         },
         {
             "id": 171,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.035753
+            "processing_time": 0.016171
         },
         {
             "done": true,
-            "processing_time": 0.011387
+            "processing_time": 0.006051
         },
         {
             "id": 244,
@@ -4503,23 +4590,23 @@
                 1229,
                 565
             ],
-            "processing_time": 0.216175
+            "processing_time": 0.133869
         },
         {
             "done": true,
-            "processing_time": 0.003448
+            "processing_time": 0.00219
         },
         {
             "done": true,
-            "processing_time": 0.006966
+            "processing_time": 0.005685
         },
         {
             "done": true,
-            "processing_time": 0.002566
+            "processing_time": 0.002187
         },
         {
             "id": 153,
-            "minimum_time/minimum_distance": 33300.0,
+            "minimum_time/minimum_distance": 228.2590819733058,
             "path": [
                 1061,
                 1062,
@@ -4541,34 +4628,40 @@
                 130,
                 133,
                 137,
-                108,
-                107,
-                110,
-                113,
-                1706,
+                650,
+                136,
+                139,
+                140,
+                143,
+                797,
                 115,
                 96,
                 649,
                 1275,
                 93,
-                65,
-                1282,
-                1281,
-                1280,
-                1547,
+                1359,
+                1212,
+                88,
+                648,
+                1323,
+                414,
+                1196,
+                419,
+                82,
+                1645,
                 1643,
                 1012,
                 447
             ],
             "possible": true,
-            "processing_time": 0.955983
+            "processing_time": 0.762703
         },
         {
             "id": 227,
             "nodes": [
                 1922
             ],
-            "processing_time": 0.158697
+            "processing_time": 0.140195
         },
         {
             "id": 256,
@@ -4578,38 +4671,38 @@
                 549,
                 2016
             ],
-            "processing_time": 0.149421
+            "processing_time": 0.137436
         },
         {
             "done": true,
-            "processing_time": 0.002572
+            "processing_time": 0.002436
         },
         {
             "done": true,
-            "processing_time": 0.002383
+            "processing_time": 0.002503
         },
         {
             "done": true,
-            "processing_time": 0.002465
+            "processing_time": 0.001991
         },
         {
             "id": 296,
             "nodes": [],
-            "processing_time": 1.475582
+            "processing_time": 1.21238
         },
         {
             "id": 152,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.01823
+            "processing_time": 0.017793
         },
         {
             "id": 34,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.146587
+            "processing_time": 0.116425
         },
         {
             "id": 100,
@@ -4747,7 +4840,7 @@
                 247
             ],
             "possible": true,
-            "processing_time": 1.32007
+            "processing_time": 1.210067
         },
         {
             "id": 249,
@@ -4755,14 +4848,14 @@
                 553,
                 854
             ],
-            "processing_time": 0.153294
+            "processing_time": 0.137101
         },
         {
             "id": 35,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014698
+            "processing_time": 0.012753
         },
         {
             "id": 50,
@@ -4813,15 +4906,15 @@
                 1322
             ],
             "possible": true,
-            "processing_time": 0.627865
+            "processing_time": 0.584558
         },
         {
             "done": true,
-            "processing_time": 0.003808
+            "processing_time": 0.003059
         },
         {
             "done": true,
-            "processing_time": 0.002242
+            "processing_time": 0.00211
         },
         {
             "id": 94,
@@ -4883,14 +4976,14 @@
                 995
             ],
             "possible": true,
-            "processing_time": 0.823889
+            "processing_time": 0.752019
         },
         {
             "id": 48,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.13835
+            "processing_time": 0.119482
         },
         {
             "id": 4,
@@ -4911,102 +5004,102 @@
                 1061
             ],
             "possible": true,
-            "processing_time": 0.035641
+            "processing_time": 0.034775
         },
         {
             "id": 68,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.727627
+            "processing_time": 2.20461
         },
         {
             "id": 230,
             "nodes": [],
-            "processing_time": 1.387593
+            "processing_time": 1.354465
         },
         {
             "done": true,
-            "processing_time": 0.008912
+            "processing_time": 0.008804
         },
         {
             "id": 49,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.015832
+            "processing_time": 0.014369
         },
         {
             "done": true,
-            "processing_time": 0.002524
+            "processing_time": 0.002078
         },
         {
             "id": 159,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.665303
+            "processing_time": 1.547037
         },
         {
             "id": 234,
             "nodes": [
                 1990
             ],
-            "processing_time": 0.148789
+            "processing_time": 0.13535
         },
         {
             "id": 245,
             "nodes": [
                 1795
             ],
-            "processing_time": 0.157439
+            "processing_time": 0.134513
         },
         {
             "id": 138,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.581078
+            "processing_time": 1.578428
         },
         {
             "done": true,
-            "processing_time": 0.009024
+            "processing_time": 0.007596
         },
         {
             "done": true,
-            "processing_time": 0.002367
+            "processing_time": 0.002215
         },
         {
             "id": 205,
             "nodes": [],
-            "processing_time": 0.146466
+            "processing_time": 0.129845
         },
         {
             "id": 268,
             "nodes": [],
-            "processing_time": 0.155188
+            "processing_time": 0.135519
         },
         {
             "done": true,
-            "processing_time": 0.006441
+            "processing_time": 0.017812
         },
         {
             "done": true,
-            "processing_time": 0.002178
+            "processing_time": 0.002438
         },
         {
             "id": 69,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.107225
+            "processing_time": 1.941281
         },
         {
             "id": 128,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.021799
+            "processing_time": 0.021005
         },
         {
             "id": 27,
@@ -5051,11 +5144,11 @@
                 295
             ],
             "possible": true,
-            "processing_time": 0.779897
+            "processing_time": 0.748765
         },
         {
             "id": 177,
-            "minimum_time/minimum_distance": 26100.0,
+            "minimum_time/minimum_distance": 154.2879978892047,
             "path": [
                 664,
                 656,
@@ -5066,9 +5159,9 @@
                 130,
                 128,
                 543,
-                127,
-                124,
-                101,
+                542,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -5079,8 +5172,9 @@
                 1889,
                 42,
                 1892,
-                1912,
-                1910,
+                878,
+                1909,
+                1913,
                 1911,
                 1908,
                 1907,
@@ -5089,27 +5183,27 @@
                 1904
             ],
             "possible": true,
-            "processing_time": 0.969567
+            "processing_time": 0.514345
         },
         {
             "done": true,
-            "processing_time": 0.00402
+            "processing_time": 0.002981
         },
         {
             "done": true,
-            "processing_time": 0.002519
+            "processing_time": 0.001972
         },
         {
             "done": true,
-            "processing_time": 0.007706
+            "processing_time": 0.006688
         },
         {
             "done": true,
-            "processing_time": 0.006391
+            "processing_time": 0.006182
         },
         {
             "id": 191,
-            "minimum_time/minimum_distance": 36000.0,
+            "minimum_time/minimum_distance": 189.220305043127,
             "path": [
                 703,
                 776,
@@ -5154,25 +5248,25 @@
                 924
             ],
             "possible": true,
-            "processing_time": 0.445735
+            "processing_time": 0.30253
         },
         {
             "id": 223,
             "nodes": [
                 405
             ],
-            "processing_time": 0.146607
+            "processing_time": 0.135498
         },
         {
             "id": 126,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.369499
+            "processing_time": 1.27749
         },
         {
             "id": 198,
-            "minimum_time/minimum_distance": 22500.0,
+            "minimum_time/minimum_distance": 186.903918948065,
             "path": [
                 1604,
                 1606,
@@ -5202,22 +5296,22 @@
                 742
             ],
             "possible": true,
-            "processing_time": 0.384351
+            "processing_time": 0.54473
         },
         {
             "id": 123,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014152
+            "processing_time": 0.012392
         },
         {
             "done": true,
-            "processing_time": 0.007697
+            "processing_time": 0.006809
         },
         {
             "id": 180,
-            "minimum_time/minimum_distance": 2700.0,
+            "minimum_time/minimum_distance": 12.65478867906983,
             "path": [
                 303,
                 1790,
@@ -5225,7 +5319,7 @@
                 291
             ],
             "possible": true,
-            "processing_time": 0.025147
+            "processing_time": 0.018014
         },
         {
             "id": 89,
@@ -5246,25 +5340,25 @@
                 15
             ],
             "possible": true,
-            "processing_time": 0.047638
+            "processing_time": 0.043968
         },
         {
             "id": 164,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.442815
+            "processing_time": 1.300496
         },
         {
             "done": true,
-            "processing_time": 0.008633
+            "processing_time": 0.007251
         },
         {
             "id": 196,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014929
+            "processing_time": 0.013375
         },
         {
             "id": 277,
@@ -5272,14 +5366,14 @@
                 1185,
                 1928
             ],
-            "processing_time": 0.144961
+            "processing_time": 0.133334
         },
         {
             "id": 253,
             "nodes": [
                 1507
             ],
-            "processing_time": 0.146291
+            "processing_time": 0.132274
         },
         {
             "id": 26,
@@ -5328,101 +5422,101 @@
                 1011
             ],
             "possible": true,
-            "processing_time": 0.610338
+            "processing_time": 0.550832
         },
         {
             "done": true,
-            "processing_time": 0.007538
+            "processing_time": 0.007085
         },
         {
             "done": true,
-            "processing_time": 0.002499
+            "processing_time": 0.002304
         },
         {
             "done": true,
-            "processing_time": 0.006502
+            "processing_time": 0.005691
         },
         {
             "done": true,
-            "processing_time": 0.006358
+            "processing_time": 0.005752
         },
         {
             "done": true,
-            "processing_time": 0.006393
+            "processing_time": 0.005986
         },
         {
             "id": 51,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.227604
+            "processing_time": 1.954589
         },
         {
             "id": 204,
             "nodes": [],
-            "processing_time": 0.181254
+            "processing_time": 0.154235
         },
         {
             "done": true,
-            "processing_time": 0.002802
+            "processing_time": 0.002291
         },
         {
             "done": true,
-            "processing_time": 0.002358
+            "processing_time": 0.002302
         },
         {
             "done": true,
-            "processing_time": 0.007655
+            "processing_time": 0.007276
         },
         {
             "done": true,
-            "processing_time": 0.002402
+            "processing_time": 0.00189
         },
         {
             "id": 77,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 2.101085
+            "processing_time": 1.893305
         },
         {
             "id": 172,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.023594
+            "processing_time": 0.019715
         },
         {
             "done": true,
-            "processing_time": 0.002778
+            "processing_time": 0.002489
         },
         {
             "done": true,
-            "processing_time": 0.002145
+            "processing_time": 0.001907
         },
         {
             "id": 222,
             "nodes": [],
-            "processing_time": 0.316329
+            "processing_time": 0.275429
         },
         {
             "done": true,
-            "processing_time": 0.007857
+            "processing_time": 0.006695
         },
         {
             "id": 287,
             "nodes": [
                 2015
             ],
-            "processing_time": 0.16725
+            "processing_time": 0.13286
         },
         {
             "done": true,
-            "processing_time": 0.00321
+            "processing_time": 0.003347
         },
         {
             "id": 195,
-            "minimum_time/minimum_distance": 72900.0,
+            "minimum_time/minimum_distance": 308.38099174877846,
             "path": [
                 1691,
                 817,
@@ -5468,11 +5562,13 @@
                 1119,
                 1118,
                 91,
-                90,
-                525,
-                76,
-                1487,
-                1851,
+                79,
+                1641,
+                67,
+                1640,
+                1642,
+                68,
+                69,
                 518,
                 70,
                 389,
@@ -5508,24 +5604,24 @@
                 1489
             ],
             "possible": true,
-            "processing_time": 1.069748
+            "processing_time": 0.53413
         },
         {
             "id": 112,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.42047
+            "processing_time": 1.306456
         },
         {
             "id": 248,
             "nodes": [],
-            "processing_time": 1.155718
+            "processing_time": 1.049626
         },
         {
             "id": 209,
             "nodes": [],
-            "processing_time": 0.263818
+            "processing_time": 0.236563
         },
         {
             "id": 54,
@@ -5549,18 +5645,18 @@
                 1849
             ],
             "possible": true,
-            "processing_time": 0.065968
+            "processing_time": 0.059519
         },
         {
             "id": 65,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014782
+            "processing_time": 0.014307
         },
         {
             "id": 188,
-            "minimum_time/minimum_distance": 12600.0,
+            "minimum_time/minimum_distance": 109.04046945431361,
             "path": [
                 839,
                 325,
@@ -5579,14 +5675,14 @@
                 456
             ],
             "possible": true,
-            "processing_time": 0.195723
+            "processing_time": 0.170584
         },
         {
             "id": 143,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.021984
+            "processing_time": 0.022375
         },
         {
             "id": 0,
@@ -5622,24 +5718,24 @@
                 677
             ],
             "possible": true,
-            "processing_time": 0.111962
+            "processing_time": 0.108601
         },
         {
             "id": 242,
             "nodes": [],
-            "processing_time": 1.118345
+            "processing_time": 1.194608
         },
         {
             "done": true,
-            "processing_time": 0.004431
+            "processing_time": 0.003316
         },
         {
             "done": true,
-            "processing_time": 0.002538
+            "processing_time": 0.002076
         },
         {
             "done": true,
-            "processing_time": 0.006803
+            "processing_time": 0.006599
         },
         {
             "id": 239,
@@ -5647,15 +5743,15 @@
                 1997,
                 1996
             ],
-            "processing_time": 0.148327
+            "processing_time": 0.145237
         },
         {
             "done": true,
-            "processing_time": 0.002758
+            "processing_time": 0.00251
         },
         {
             "done": true,
-            "processing_time": 0.002813
+            "processing_time": 0.002241
         },
         {
             "id": 212,
@@ -5666,37 +5762,38 @@
                 489,
                 362
             ],
-            "processing_time": 0.149259
+            "processing_time": 0.155827
         },
         {
             "id": 127,
-            "minimum_time/minimum_distance": 900.0,
+            "minimum_time/minimum_distance": 1.8167239404352804,
             "path": [
                 1043,
                 145
             ],
             "possible": true,
-            "processing_time": 0.017822
+            "processing_time": 0.017371
         },
         {
             "id": 197,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.016047
+            "processing_time": 0.013541
         },
         {
             "id": 113,
-            "minimum_time/minimum_distance": 42300.0,
+            "minimum_time/minimum_distance": 293.28426534747376,
             "path": [
                 647,
                 646,
                 65,
-                449,
-                59,
-                89,
-                86,
-                342,
+                93,
+                1275,
+                649,
+                96,
+                115,
+                1706,
                 113,
                 110,
                 107,
@@ -5705,8 +5802,8 @@
                 104,
                 99,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -5739,29 +5836,29 @@
                 118
             ],
             "possible": true,
-            "processing_time": 1.19487
+            "processing_time": 1.141333
         },
         {
             "done": true,
-            "processing_time": 0.009044
+            "processing_time": 0.008281
         },
         {
             "id": 130,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.342307
+            "processing_time": 1.241605
         },
         {
             "id": 106,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.014705
+            "processing_time": 0.012569
         },
         {
             "id": 104,
-            "minimum_time/minimum_distance": 80100.0,
+            "minimum_time/minimum_distance": 370.7199242122091,
             "path": [
                 984,
                 1328,
@@ -5777,21 +5874,25 @@
                 1189,
                 965,
                 1322,
-                1321,
-                1320,
-                1319,
-                1213,
-                1476,
-                1335,
-                1334,
-                1184,
-                1356,
-                1357,
-                1358,
-                600,
-                1359,
-                93,
-                1275,
+                802,
+                1211,
+                1210,
+                1209,
+                1208,
+                1207,
+                1206,
+                1205,
+                1204,
+                1203,
+                1202,
+                1201,
+                1200,
+                1425,
+                1333,
+                1478,
+                1332,
+                1343,
+                1331,
                 649,
                 96,
                 115,
@@ -5804,8 +5905,8 @@
                 104,
                 99,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -5837,9 +5938,13 @@
                 1099,
                 1098,
                 175,
-                180,
-                914,
-                915,
+                1129,
+                857,
+                1133,
+                1132,
+                1131,
+                858,
+                169,
                 1130,
                 391,
                 1609,
@@ -5855,28 +5960,28 @@
                 1613
             ],
             "possible": true,
-            "processing_time": 1.266165
+            "processing_time": 1.225433
         },
         {
             "done": true,
-            "processing_time": 0.008999
+            "processing_time": 0.008469
         },
         {
             "done": true,
-            "processing_time": 0.002298
+            "processing_time": 0.001931
         },
         {
             "id": 280,
             "nodes": [],
-            "processing_time": 1.166125
+            "processing_time": 1.024071
         },
         {
             "done": true,
-            "processing_time": 0.0031580000000000002
+            "processing_time": 0.00352
         },
         {
             "done": true,
-            "processing_time": 0.002189
+            "processing_time": 0.002008
         },
         {
             "id": 62,
@@ -5943,43 +6048,43 @@
                 378
             ],
             "possible": true,
-            "processing_time": 0.608197
+            "processing_time": 0.566419
         },
         {
             "done": true,
-            "processing_time": 0.008361
+            "processing_time": 0.007278
         },
         {
             "done": true,
-            "processing_time": 0.002874
+            "processing_time": 0.002582
         },
         {
             "id": 91,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.013988
+            "processing_time": 0.011324
         },
         {
             "id": 102,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.013499
+            "processing_time": 0.012911
         },
         {
             "done": true,
-            "processing_time": 0.006973
+            "processing_time": 0.006546
         },
         {
             "id": 163,
-            "minimum_time/minimum_distance": 17100.0,
+            "minimum_time/minimum_distance": 67.57103500163171,
             "path": [
                 1835,
-                1836,
-                1839,
-                1837,
-                1838,
+                1834,
+                1741,
+                1840,
+                1742,
                 1740,
                 1883,
                 205,
@@ -5997,19 +6102,19 @@
                 395
             ],
             "possible": true,
-            "processing_time": 0.247862
+            "processing_time": 0.052533
         },
         {
             "done": true,
-            "processing_time": 0.006921
+            "processing_time": 0.007204
         },
         {
             "done": true,
-            "processing_time": 0.006509
+            "processing_time": 0.00532
         },
         {
             "id": 103,
-            "minimum_time/minimum_distance": 33300.0,
+            "minimum_time/minimum_distance": 198.20850781954707,
             "path": [
                 1480,
                 1479,
@@ -6031,8 +6136,8 @@
                 104,
                 99,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -6051,23 +6156,23 @@
                 1896
             ],
             "possible": true,
-            "processing_time": 0.832472
+            "processing_time": 0.747134
         },
         {
             "done": true,
-            "processing_time": 0.004144
+            "processing_time": 0.003353
         },
         {
             "done": true,
-            "processing_time": 0.007122
+            "processing_time": 0.00586
         },
         {
             "done": true,
-            "processing_time": 0.002305
+            "processing_time": 0.00226
         },
         {
             "done": true,
-            "processing_time": 0.002153
+            "processing_time": 0.001884
         },
         {
             "id": 213,
@@ -6078,19 +6183,19 @@
                 2001,
                 601
             ],
-            "processing_time": 0.152709
+            "processing_time": 0.154633
         },
         {
             "done": true,
-            "processing_time": 0.003024
+            "processing_time": 0.00296
         },
         {
             "done": true,
-            "processing_time": 0.007583
+            "processing_time": 0.006864
         },
         {
             "id": 136,
-            "minimum_time/minimum_distance": 50400.0,
+            "minimum_time/minimum_distance": 341.12758395821095,
             "path": [
                 361,
                 1701,
@@ -6098,15 +6203,16 @@
                 1285,
                 39,
                 83,
-                110,
-                107,
+                84,
+                85,
+                1976,
                 108,
                 109,
                 104,
                 99,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -6151,40 +6257,40 @@
                 699
             ],
             "possible": true,
-            "processing_time": 1.204503
+            "processing_time": 1.242318
         },
         {
             "id": 251,
             "nodes": [
                 949
             ],
-            "processing_time": 0.148269
+            "processing_time": 0.13388
         },
         {
             "id": 56,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.811052
+            "processing_time": 1.819878
         },
         {
             "done": true,
-            "processing_time": 0.003954
+            "processing_time": 0.003919
         },
         {
             "done": true,
-            "processing_time": 0.007409
+            "processing_time": 0.006684
         },
         {
             "id": 263,
             "nodes": [
                 2015
             ],
-            "processing_time": 0.137429
+            "processing_time": 0.133542
         },
         {
             "done": true,
-            "processing_time": 0.005886
+            "processing_time": 0.005986
         },
         {
             "id": 6,
@@ -6211,27 +6317,27 @@
                 683
             ],
             "possible": true,
-            "processing_time": 0.10538
+            "processing_time": 0.105432
         },
         {
             "done": true,
-            "processing_time": 0.006477
+            "processing_time": 0.007248
         },
         {
             "done": true,
-            "processing_time": 0.002497
+            "processing_time": 0.00232
         },
         {
             "done": true,
-            "processing_time": 0.002098
+            "processing_time": 0.002064
         },
         {
             "done": true,
-            "processing_time": 0.001872
+            "processing_time": 0.001952
         },
         {
             "done": true,
-            "processing_time": 0.001773
+            "processing_time": 0.002225
         },
         {
             "id": 30,
@@ -6289,117 +6395,117 @@
                 1715
             ],
             "possible": true,
-            "processing_time": 0.62261
+            "processing_time": 0.611129
         },
         {
             "done": true,
-            "processing_time": 0.002896
+            "processing_time": 0.002437
         },
         {
             "id": 122,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.082295
+            "processing_time": 0.078374
         },
         {
             "done": true,
-            "processing_time": 0.002438
+            "processing_time": 0.002488
         },
         {
             "id": 266,
             "nodes": [
                 2008
             ],
-            "processing_time": 0.15315
+            "processing_time": 0.146931
         },
         {
             "id": 120,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.184974
+            "processing_time": 1.408848
         },
         {
             "done": true,
-            "processing_time": 0.008433
+            "processing_time": 0.010498
         },
         {
             "done": true,
-            "processing_time": 0.00544
+            "processing_time": 0.006026
         },
         {
             "id": 7,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.027908
+            "processing_time": 0.030062
         },
         {
             "done": true,
-            "processing_time": 0.002576
+            "processing_time": 0.002556
         },
         {
             "done": true,
-            "processing_time": 0.005601
+            "processing_time": 0.005916
         },
         {
             "id": 210,
             "nodes": [
                 756
             ],
-            "processing_time": 0.136019
+            "processing_time": 0.139476
         },
         {
             "id": 298,
             "nodes": [
                 1507
             ],
-            "processing_time": 0.134205
+            "processing_time": 0.132866
         },
         {
             "done": true,
-            "processing_time": 0.005845
+            "processing_time": 0.00621
         },
         {
             "done": true,
-            "processing_time": 0.005896
+            "processing_time": 0.005848
         },
         {
             "id": 47,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.013176
+            "processing_time": 0.013196
         },
         {
             "done": true,
-            "processing_time": 0.001889
+            "processing_time": 0.001932
         },
         {
             "id": 241,
             "nodes": [],
-            "processing_time": 0.980268
+            "processing_time": 1.566966
         },
         {
             "id": 265,
             "nodes": [],
-            "processing_time": 0.228697
+            "processing_time": 0.214042
         },
         {
             "done": true,
-            "processing_time": 0.002434
+            "processing_time": 0.002634
         },
         {
             "id": 186,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.175308
+            "processing_time": 1.320651
         },
         {
             "done": true,
-            "processing_time": 0.003165
+            "processing_time": 0.003796
         },
         {
             "id": 250,
@@ -6407,25 +6513,25 @@
                 1997,
                 1996
             ],
-            "processing_time": 0.144158
+            "processing_time": 0.133986
         },
         {
             "id": 276,
             "nodes": [],
-            "processing_time": 0.143636
+            "processing_time": 0.140949
         },
         {
             "id": 286,
             "nodes": [],
-            "processing_time": 1.014623
+            "processing_time": 1.035984
         },
         {
             "done": true,
-            "processing_time": 0.003802
+            "processing_time": 0.002931
         },
         {
             "id": 184,
-            "minimum_time/minimum_distance": 17100.0,
+            "minimum_time/minimum_distance": 136.11077713275733,
             "path": [
                 1672,
                 673,
@@ -6433,45 +6539,50 @@
                 144,
                 1747,
                 136,
-                107,
-                108,
-                109,
-                104,
-                99,
+                650,
+                137,
+                133,
+                130,
+                128,
+                543,
                 542,
                 541,
                 540,
-                49,
-                50,
-                29,
+                539,
+                538,
+                21,
+                323,
+                836,
+                835,
+                834,
                 18,
                 833,
                 832
             ],
             "possible": true,
-            "processing_time": 0.366123
+            "processing_time": 0.446482
         },
         {
             "id": 185,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.01171
+            "processing_time": 0.014694
         },
         {
             "done": true,
-            "processing_time": 0.007065
+            "processing_time": 0.007722
         },
         {
             "id": 145,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.030421
+            "processing_time": 0.027089
         },
         {
             "done": true,
-            "processing_time": 0.006166
+            "processing_time": 0.006243
         },
         {
             "id": 236,
@@ -6481,26 +6592,26 @@
                 1504,
                 1216
             ],
-            "processing_time": 0.141592
+            "processing_time": 0.137612
         },
         {
             "done": true,
-            "processing_time": 0.006923
+            "processing_time": 0.006034
         },
         {
             "done": true,
-            "processing_time": 0.00619
+            "processing_time": 0.006521
         },
         {
             "id": 140,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.08262
+            "processing_time": 1.228743
         },
         {
             "id": 110,
-            "minimum_time/minimum_distance": 57600.0,
+            "minimum_time/minimum_distance": 460.2882075077703,
             "path": [
                 609,
                 608,
@@ -6559,24 +6670,25 @@
                 130,
                 133,
                 137,
-                108,
-                107,
-                110,
-                113,
-                1706,
+                650,
+                136,
+                139,
+                140,
+                143,
+                797,
                 115,
                 96,
                 649
             ],
             "possible": true,
-            "processing_time": 0.520547
+            "processing_time": 0.465057
         },
         {
             "id": 182,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.129369
+            "processing_time": 1.135832
         },
         {
             "id": 55,
@@ -6627,18 +6739,18 @@
                 1091
             ],
             "possible": true,
-            "processing_time": 0.523547
+            "processing_time": 0.533353
         },
         {
             "id": 264,
             "nodes": [
                 290
             ],
-            "processing_time": 0.14965
+            "processing_time": 0.136978
         },
         {
             "id": 131,
-            "minimum_time/minimum_distance": 43200.0,
+            "minimum_time/minimum_distance": 250.67832561257725,
             "path": [
                 372,
                 1309,
@@ -6654,14 +6766,15 @@
                 140,
                 139,
                 136,
-                107,
-                108,
-                109,
-                104,
-                99,
+                650,
+                137,
+                133,
+                130,
+                128,
+                543,
                 542,
-                100,
-                101,
+                541,
+                75,
                 71,
                 72,
                 66,
@@ -6691,37 +6804,37 @@
                 154
             ],
             "possible": true,
-            "processing_time": 0.918854
+            "processing_time": 1.502162
         },
         {
             "id": 274,
             "nodes": [
                 1235
             ],
-            "processing_time": 0.139979
+            "processing_time": 0.139259
         },
         {
             "done": true,
-            "processing_time": 0.002576
+            "processing_time": 0.003077
         },
         {
             "done": true,
-            "processing_time": 0.002749
+            "processing_time": 0.002005
         },
         {
             "id": 105,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.011486
+            "processing_time": 0.012228
         },
         {
             "done": true,
-            "processing_time": 0.002179
+            "processing_time": 0.002364
         },
         {
             "done": true,
-            "processing_time": 0.00655
+            "processing_time": 0.006713
         },
         {
             "id": 215,
@@ -6732,21 +6845,21 @@
                 601,
                 2001
             ],
-            "processing_time": 0.140274
+            "processing_time": 0.152719
         },
         {
             "id": 294,
             "nodes": [
                 2013
             ],
-            "processing_time": 0.134213
+            "processing_time": 0.133612
         },
         {
             "id": 161,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.015569
+            "processing_time": 0.017014
         },
         {
             "id": 81,
@@ -6790,42 +6903,42 @@
                 1830
             ],
             "possible": true,
-            "processing_time": 0.402821
+            "processing_time": 0.399369
         },
         {
             "done": true,
-            "processing_time": 0.002568
+            "processing_time": 0.002379
         },
         {
             "id": 297,
             "nodes": [],
-            "processing_time": 0.139333
+            "processing_time": 0.252666
         },
         {
             "done": true,
-            "processing_time": 0.002597
+            "processing_time": 0.003971
         },
         {
             "id": 144,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.085165
+            "processing_time": 0.083603
         },
         {
             "done": true,
-            "processing_time": 0.006906
+            "processing_time": 0.007136
         },
         {
             "id": 18,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.638615
+            "processing_time": 1.671355
         },
         {
             "id": 121,
-            "minimum_time/minimum_distance": 19800.0,
+            "minimum_time/minimum_distance": 173.99508284651733,
             "path": [
                 467,
                 762,
@@ -6841,79 +6954,80 @@
                 130,
                 133,
                 137,
-                108,
-                107,
-                110,
-                113,
-                1706,
+                650,
+                136,
+                139,
+                140,
+                143,
+                797,
                 115,
                 96,
                 649,
                 1331
             ],
             "possible": true,
-            "processing_time": 0.393971
+            "processing_time": 0.373786
         },
         {
             "done": true,
-            "processing_time": 0.007139
+            "processing_time": 0.009071
         },
         {
             "id": 118,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.01348
+            "processing_time": 0.014215
         },
         {
             "id": 24,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.013028
+            "processing_time": 0.013749
         },
         {
             "id": 254,
             "nodes": [
                 1795
             ],
-            "processing_time": 0.135926
+            "processing_time": 0.14457
         },
         {
             "id": 193,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.020525
+            "processing_time": 0.018673
         },
         {
             "done": true,
-            "processing_time": 0.006699
+            "processing_time": 0.006756
         },
         {
             "id": 139,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.011466
+            "processing_time": 0.01363
         },
         {
             "id": 12,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.64132
+            "processing_time": 1.685386
         },
         {
             "id": 214,
             "nodes": [
                 927
             ],
-            "processing_time": 0.146917
+            "processing_time": 0.151192
         },
         {
             "done": true,
-            "processing_time": 0.007818
+            "processing_time": 0.008674
         },
         {
             "id": 260,
@@ -6923,60 +7037,60 @@
                 549,
                 2016
             ],
-            "processing_time": 0.138602
+            "processing_time": 0.137532
         },
         {
             "id": 72,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.68444
+            "processing_time": 1.998515
         },
         {
             "done": true,
-            "processing_time": 0.008328
+            "processing_time": 0.008453
         },
         {
             "done": true,
-            "processing_time": 0.002008
+            "processing_time": 0.002038
         },
         {
             "done": true,
-            "processing_time": 0.002252
+            "processing_time": 0.001946
         },
         {
             "id": 273,
             "nodes": [],
-            "processing_time": 0.15735
+            "processing_time": 0.144317
         },
         {
             "done": true,
-            "processing_time": 0.006136
+            "processing_time": 0.005741
         },
         {
             "id": 203,
             "nodes": [
                 927
             ],
-            "processing_time": 0.135253
+            "processing_time": 0.135481
         },
         {
             "done": true,
-            "processing_time": 0.002572
+            "processing_time": 0.002419
         },
         {
             "id": 38,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.018977
+            "processing_time": 0.017889
         },
         {
             "id": 170,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.105091
+            "processing_time": 1.263555
         },
         {
             "id": 73,
@@ -7018,37 +7132,37 @@
                 1919
             ],
             "possible": true,
-            "processing_time": 0.187347
+            "processing_time": 0.181793
         },
         {
             "done": true,
-            "processing_time": 0.007147
+            "processing_time": 0.007193
         },
         {
             "id": 133,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.085922
+            "processing_time": 1.181518
         },
         {
             "id": 44,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 0.118891
+            "processing_time": 0.223221
         },
         {
             "id": 221,
             "nodes": [],
-            "processing_time": 0.997838
+            "processing_time": 1.223029
         },
         {
             "id": 5,
             "minimum_time/minimum_distance": -1.0,
             "path": [],
             "possible": false,
-            "processing_time": 1.685737
+            "processing_time": 2.036602
         }
     ]
 }
