@@ -38,6 +38,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     nlohmann::json out;
     if(query["type"]=="remove_edge"){
         bool done=removeEdge(query["edge_id"]);
+        out["id"]=query["id"];
         out["done"]=done;
         return out;
     }
@@ -55,6 +56,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             length=query["patch"]["average_time"];
         }
         bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile);
+        out["id"]=query["id"];
         out["done"]=done;
         return out;
     }

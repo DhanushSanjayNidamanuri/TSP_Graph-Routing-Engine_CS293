@@ -196,20 +196,23 @@ for i in range(no_of_queries_per_type):
 for i in range(no_of_queries_per_type):
     edge=random.sample(range(edge_id),1)
     queries.append({ 
+        "id":query_count,
         "type": "remove_edge",
         "edge_id": edge[0]
     }
     )
-
+    query_count+=1
 for i in range(no_of_queries_per_type):
     edge=random.sample(range(edge_id),1)
     new_len=round(random.uniform(int(min_length),int(max_length)),2)
     queries.append({ 
+        "id":query_count,
         "type": "modify_edge",
         "edge_id": edge[0],
         "patch": { "length": new_len } 
     }
     )
+    query_count+=1
 random.shuffle(queries)
 queries_json = {
     "meta": {"id": "testcase_1_queries"},
