@@ -101,7 +101,7 @@ ShortestPath_Result ShortestPath::findShortestPath(Graph& graph, int id, int sou
                 }
             }
             else if(mode=="distance"){
-                std::priority_queue<std::tuple<int,int,int>> pq;
+                std::priority_queue<std::tuple<double,int,int>> pq;
                 pq.push(std::make_tuple(-heuristic_distance(graph.node_list[source],graph.node_list[target]),source,source));
                 while(!pq.empty()){
                     auto [neg_dist,u,par]=pq.top();pq.pop();

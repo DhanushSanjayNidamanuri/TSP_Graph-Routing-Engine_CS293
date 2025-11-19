@@ -38,6 +38,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     nlohmann::json out;
     if(query["type"]=="remove_edge"){
         bool done=removeEdge(query["edge_id"]);
+        out["id"]=query["id"];
         out["done"]=done;
         return out;
     }
@@ -55,6 +56,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             length=query["patch"]["average_time"];
         }
         bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile);
+        out["id"]=query["id"];
         out["done"]=done;
         return out;
     }
@@ -65,7 +67,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         ShortestPath_Result tempout=temp.findShortestPath(*this,query["id"],query["source"],query["target"],query["mode"],forbidden_nodes,forbidden_types);
         out["id"]=tempout.id;
         out["possible"]=tempout.possible;
-        out["minimum_time/minimum_distance"]=tempout.min_dist_or_time;
+        out["minimum_time/minimum_distance"]=std::round(tempout.min_dist_or_time*1e6)/1e6;
         out["path"]=tempout.path;
         return out;
     }

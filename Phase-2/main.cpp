@@ -2,16 +2,15 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
-/* 
+/*
     Add other includes that you require, only write code wherever indicated
 */
 #include "graph.hpp"
-
 using json = nlohmann::json;
 
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
-        std::cerr << "Usage: " << argv[0] << " <graph.json> <queries.json> <output.json>" << std::endl;
+    if (argc != 3) {
+        std::cerr << "Usage: " << argv[0] << " <graph.json> <queries.json>" << std::endl;
         return 1;
     }
 
@@ -20,8 +19,6 @@ int main(int argc, char* argv[]) {
         Add your graph reading and processing code here
         Initialize any classes and data structures needed for query processing
     */
-
-
     ///////-------> MODIFIED FROM HERE <------------//////
 
     std::ifstream input_graph_file(argv[1]);
@@ -45,9 +42,8 @@ int main(int argc, char* argv[]) {
         Edge temp(x["id"],x["u"],x["v"],x["length"],x["oneway"]);
         Graph_internal.addEdge(temp);
     }
-    Graph_internal.preprocess();
+    Graph_internal.preprocessCH();
     ////////-------> UPTO HERE <-----------///////////////
-
     // Read queries from second file
     std::ifstream queries_file(argv[2]);
     if (!queries_file.is_open()) {
@@ -57,9 +53,13 @@ int main(int argc, char* argv[]) {
     json queries_json;
     queries_file >> queries_json;
 
-    std::vector<json> results;
+    std::ofstream output_file("output.json");
+    if (!output_file.is_open()) {
+        std::cerr << "Failed to open output.json for writing" << std::endl;
+        return 1;
+    }
 
-    for (const auto& query : queries_json["events"]) {
+    for (const auto& query : queries_json) {
         auto start_time = std::chrono::high_resolution_clock::now();
 
         /*
@@ -73,17 +73,9 @@ int main(int argc, char* argv[]) {
 
         auto end_time = std::chrono::high_resolution_clock::now();
         result["processing_time"] = std::chrono::duration<double, std::milli>(end_time - start_time).count();
-        results.push_back(result);
-    }
 
-    std::ofstream output_file(argv[3]);
-    if (!output_file.is_open()) {
-        std::cerr << "Failed to open output.json for writing" << std::endl;
-        return 1;
+        output_file << result.dump(4) << '\n';
     }
-
-    json output = results;
-    output_file << output.dump(4) << std::endl;
 
     output_file.close();
     return 0;
