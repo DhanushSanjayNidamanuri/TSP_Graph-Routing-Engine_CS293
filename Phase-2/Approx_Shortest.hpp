@@ -7,16 +7,20 @@
 #include <queue> 
 #include <map>
 #include <algorithm>
+class Graph;
+class Node;
 class ApproxShortest_Result {
 public:
     int id;
-    std::vector<std::tuple<int,int,int>> distances;
-    ApproxShortest_Result(int id, std::vector<std::tuple<int,int,int>> distances) : id(id), distances(distances) {};
+    std::vector<std::tuple<int,int,double>> distances;
+    ApproxShortest_Result(int id, std::vector<std::tuple<int,int,double>> distances) : id(id), distances(distances) {};
 };
 
 class ApproxShortest {
 public:
-    ApproxShortest_Result findApprox(Graph& graph, int id, std::vector<std::pair<int,int>> queries, int time_budget, double max_error);
+    ApproxShortest_Result findApprox(Graph& graph, int id, std::vector<std::pair<int,int>>& queries,double time_budget, double max_error);
+    double Hybrid_A_Star(Graph& graph,double time_limit,int source,int target,double upper_bound);
+    int heuristic_distance(const Node& a, const Node& b);
 };
 
 #endif

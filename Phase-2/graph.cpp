@@ -51,6 +51,132 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     }
     
 }
+void Graph::dijkstra_FarLM(std::vector<double>& distances,int src){
+    std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
+    pq.push(std::make_pair(0,src));
+    while(!pq.empty()){
+        auto [dist,u]=pq.top();pq.pop();
+        if(distances[u]<=dist)continue;
+        distances[u]=dist;
+        for(auto& e:adjacency_list[u]){
+            int v =(e.u==u) ? e.v : e.u;
+            if(((!e.oneway) || (e.u == u)) && distances[v]>dist+e.length){
+                pq.push(std::make_pair(dist+e.length,v));
+            }
+        }
+    }
+}
+void Graph::multi_source_dijkstra_into(std::vector<int> srcs){
+    std::priority_queue<std::tuple<double,int,int>,std::vector<std::tuple<double,int,int>>,std::greater<std::tuple<double,int,int>>> pq;
+    for(auto x:srcs){
+        pq.push(std::make_tuple(0,x,x));
+    }
+    std::vector<bool> visited(node_count,false);
+    while(!pq.empty()){
+        auto [dist,u,lm]=pq.top();pq.pop();
+        if(visited[u])continue;
+        visited[u]=true;nearest_into_landmark[u]=std::make_pair(lm,dist);
+        for(auto& e:adjacency_list[u]){
+            int v =(e.u==u) ? e.v : e.u;
+            if(!visited[v] && ((!e.oneway) || (e.u == v))){
+                pq.push(std::make_tuple(dist+e.length,v,lm));
+            }
+        }
+    }
+}
+void Graph::multi_source_dijkstra_outOf(std::vector<int> srcs){
+    std::priority_queue<std::tuple<double,int,int>,std::vector<std::tuple<double,int,int>>,std::greater<std::tuple<double,int,int>>> pq;
+    for(auto x:srcs){
+        pq.push(std::make_tuple(0,x,x));
+    }
+    std::vector<bool> visited(node_count,false);
+    while(!pq.empty()){
+        auto [dist,u,lm]=pq.top();pq.pop();
+        if(visited[u])continue;
+        visited[u]=true;nearest_outOf_landmark[u]=std::make_pair(lm,dist);
+        for(auto& e:adjacency_list[u]){
+            int v =(e.u==u) ? e.v : e.u;
+            if(!visited[v] && ((!e.oneway) || (e.u == u))){
+                pq.push(std::make_tuple(dist+e.length,v,lm));
+            }
+        }
+    }
+}
+void Graph::preprocess_LM(){
+    int no_of_landmarks=std::min(1024,node_count);
+    nearest_landmark.resize(node_count);
+    std::vector<int> landmarkID_to_nodeID(no_of_landmarks);
+    if(no_of_landmarks==node_count){
+        for(int i=0;i<nearest_landmark.size();i++){
+            nearest_landmark[i]=std::make_pair(i,0);
+            landmarkID_to_nodeID[i]=i;
+            node_list[i].is_landmark=true;
+        }
+        for(auto x:landmarkID_to_nodeID){
+            for(auto y:landmarkID_to_nodeID){
+                landmark_to_landmark[x][y]=-1;
+            }
+        }
+        for(auto src:landmarkID_to_nodeID){
+            std::vector<bool> visited(node_count,false);
+            std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
+            pq.push(std::make_pair(0,src));
+            while(!pq.empty()){
+                auto [dist,u]=pq.top();pq.pop();
+                if(visited[u]==true)continue;
+                visited[u]=true;
+                landmark_to_landmark[src][u]=dist;
+                for(auto& e:adjacency_list[u]){
+                    int v =(e.u==u) ? e.v : e.u;
+                    if(!visited[v] && ((!e.oneway) || (e.u == u))){
+                        pq.push(std::make_pair(dist+e.length,v));
+                    }
+                }
+            }
+        }
+    }
+    else{
+        std::vector<double> dmin(node_count,std::numeric_limits<double>::infinity());
+        landmarkID_to_nodeID[0]=0;
+        node_list[0].is_landmark=true;
+        dijkstra_FarLM(dmin,0);
+        for(int i=1;i<no_of_landmarks;i++){
+            landmarkID_to_nodeID[i] = std::max_element(dmin.begin(), dmin.end())-dmin.begin();
+            node_list[landmarkID_to_nodeID[i]].is_landmark=true;
+            dijkstra_FarLM(dmin,landmarkID_to_nodeID[i]);
+        }
+        for(auto x:landmarkID_to_nodeID){
+            for(auto y:landmarkID_to_nodeID){
+                landmark_to_landmark[x][y]=-1;
+            }
+        }
+        for(int i=0;i<no_of_landmarks;i++){
+            int count=0;
+            std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
+            std::vector<bool> visited(node_count,false);
+            pq.push(std::make_pair(0,landmarkID_to_nodeID[i]));
+            while(!pq.empty() && count<no_of_landmarks){
+                auto [dist,u]=pq.top();pq.pop();
+                if(visited[u])continue;
+                visited[u]=true;
+                if(node_list[u].is_landmark){
+                    landmark_to_landmark[landmarkID_to_nodeID[i]][u]=dist;count++;
+                }
+                for(auto& e:adjacency_list[u]){
+                    int v =(e.u==u) ? e.v : e.u;
+                    if(!visited[v] && ((!e.oneway) || (e.u == u))){
+                        pq.push(std::make_pair(dist+e.length,v));
+                    }
+                }
+            }
+        }
+        multi_source_dijkstra_into(landmarkID_to_nodeID);
+        multi_source_dijkstra_outOf(landmarkID_to_nodeID);
+    }
+};
+
+
+
 // double Graph::witness_search(int source,int target,int avoid,double dist_limit,int algo_limit=40){
 //     const double INF_DOUBLE=std::numeric_limits<double>::infinity();
 //     std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
