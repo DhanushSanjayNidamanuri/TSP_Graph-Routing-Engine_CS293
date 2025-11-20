@@ -192,21 +192,53 @@ no_of_queries_per_type=max(int(node_counter/20),10)
 #         })
 #     query_count+=1
 # approx_shortest_path
+Phase1_like_queries=[]
+phase_1_count=0
 for i in range(no_of_queries_per_type):
     source=random.sample(range(node_counter),3)
-    no_of_queries=int(random.uniform(0,int(no_of_queries_per_type)))
+    no_of_queries=int(random.uniform(0,5))
     sources=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]
     targets=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]
-    accpetable_error=round(random.uniform(3,10),2)
+    accpetable_error=round(random.uniform(5,15),2)
     queries.append({
         "type": "approx_shortest_path",
         "id": query_count,
         "queries": [{"source": sources[i],"target": targets[i]} for i in range(no_of_queries) ],
-        "time_budget_ms": 10*no_of_queries,
+        "time_budget_ms": 5*no_of_queries,
         "acceptable_error_pct": accpetable_error
     })
+    #<----------------------ADDED FOR VERIFICATION------------------>
+    for i in range(no_of_queries):
+        Phase1_like_queries.append({
+            "type":"shortest_path",
+            "id":phase_1_count,
+            "source":int(sources[i]),
+            "target":int(targets[i]),
+            "mode": "distance",
+            "constraints": {
+                "forbidden_nodes": [],
+                "forbidden_road_types": [] 
+            }
+        })
+        phase_1_count+=1
     query_count+=1
-random.shuffle(queries)
+    #<--------------------------------------------------------------->
+#random.shuffle(queries)
+#<----------------------ADDED FOR VERIFICATION------------------>
+# Save file
+output_file = "../Phase-1/testcases/test1.json"
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(custom_json, f, indent=2)
+
+
+queries_phase1like_json = {
+    "meta": {"id": "testcase_1_queries"},
+    "events":Phase1_like_queries
+}
+output_file = "../Phase-1/testcases/queries_test1.json"
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(queries_phase1like_json, f, indent=2)
+#<--------------------------------------------------------------->
 queries_json = {
     "meta": {"id": "testcase_1_queries"},
     "events":queries
