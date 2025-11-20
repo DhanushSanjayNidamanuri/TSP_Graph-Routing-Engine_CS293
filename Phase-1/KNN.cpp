@@ -23,8 +23,10 @@ std::vector<int> KNN::findKNN_Euclidean(const Graph& graph, double lat, double l
     };
     std::vector<int> K_nearest;
     std::priority_queue<Node, std::vector<Node>, decltype(cmp)> pq(cmp);
-    for(int u:graph.pois[poi]) {
-        pq.push(u);
+    if(graph.pois.find(poi)!=graph.pois.end()) {
+        for(int u:graph.pois.at(poi)) {
+            pq.push(graph.node_list[u]);
+        }
     }
     while(!pq.empty() && k--) {
         K_nearest.push_back(pq.top().id);
