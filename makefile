@@ -52,10 +52,9 @@ phase3:
 
 # Clean target
 clean:
-	rm phase1 phase2 phase3
-	rm $(P1_OBJ_DIR)/*
-	rm $(P2_OBJ_DIR)/*
-	rm $(P3_OBJ_DIR)/*
+	rm -f phase1 phase2 phase3
+	rm -f $(P1_OBJ_DIR)/*
+	rm -f $(P2_OBJ_DIR)/*
 
 .PHONY: phase1 phase2 phase3 p1_generate_testcases clean 
 
