@@ -49,11 +49,11 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         }
         std::vector<double> speed_profile=edge_list[query["edge_id"]].speed_profile;
         if(query["patch"].find("speed_profile")!=query["patch"].end()){
-            length=query["patch"]["speed_profile"];
+            speed_profile=query["patch"]["speed_profile"];
         }
         double average_time=edge_list[query["edge_id"]].average_time;
         if(query["patch"].find("average_time")!=query["patch"].end()){
-            length=query["patch"]["average_time"];
+            average_time=query["patch"]["average_time"];
         }
         bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile);
         out["id"]=query["id"];
@@ -62,8 +62,8 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     }
     else if(query["type"]=="shortest_path"){
         ShortestPath temp;
-        std::vector<int> forbidden_nodes=query["constraints"]["forbidden_nodes"];
-        std::vector<std::string> forbidden_types=query["constraints"]["forbidden_road_types"];
+        std::vector<int> forbidden_nodes = c["forbidden_nodes"].get<std::vector<int>>();
+        std::vector<std::string> forbidden_types = c["forbidden_road_types"].get<std::vector<std::string>>();
         ShortestPath_Result tempout=temp.findShortestPath(*this,query["id"],query["source"],query["target"],query["mode"],forbidden_nodes,forbidden_types);
         out["id"]=tempout.id;
         out["possible"]=tempout.possible;
