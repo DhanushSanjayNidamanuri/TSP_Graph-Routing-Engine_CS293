@@ -34,6 +34,7 @@ class Graph{
     int node_count;
     std::vector<std::unordered_map<int,Edge>> adjacency_list;
     std::unordered_map<int,Edge> edge_list;
+    std::unordered_map<std::string, std::vector<int>> pois;
 
 public:
     friend class ShortestPath;
@@ -42,7 +43,7 @@ public:
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
     bool removeEdge(int id);
-    bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile);
+    bool modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile, std::string road_type);
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif
