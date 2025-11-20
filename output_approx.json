@@ -1,0 +1,784 @@
+{
+    "meta": {
+        "id": "testcase_1_queries"
+    },
+    "results": [
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 568.0,
+                    "source": 529,
+                    "target": 39
+                },
+                {
+                    "approx_shortest_distance": 986.0,
+                    "source": 448,
+                    "target": 538
+                },
+                {
+                    "approx_shortest_distance": 1290.0,
+                    "source": 889,
+                    "target": 401
+                },
+                {
+                    "approx_shortest_distance": 713.0,
+                    "source": 400,
+                    "target": 313
+                }
+            ],
+            "id": 0,
+            "processing_time": 0.399933
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 776.0,
+                    "source": 500,
+                    "target": 276
+                },
+                {
+                    "approx_shortest_distance": 1425.0,
+                    "source": 594,
+                    "target": 831
+                },
+                {
+                    "approx_shortest_distance": 1136.0,
+                    "source": 363,
+                    "target": 773
+                },
+                {
+                    "approx_shortest_distance": 1566.89,
+                    "source": 121,
+                    "target": 299
+                }
+            ],
+            "id": 1,
+            "processing_time": 0.644624
+        },
+        {
+            "distances": [],
+            "id": 2,
+            "processing_time": 0.005305
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 638.0,
+                    "source": 382,
+                    "target": 256
+                },
+                {
+                    "approx_shortest_distance": 1375.09,
+                    "source": 625,
+                    "target": 809
+                },
+                {
+                    "approx_shortest_distance": 1324.51,
+                    "source": 161,
+                    "target": 14
+                },
+                {
+                    "approx_shortest_distance": 1092.0,
+                    "source": 714,
+                    "target": 378
+                }
+            ],
+            "id": 3,
+            "processing_time": 0.384996
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 655.0,
+                    "source": 125,
+                    "target": 530
+                },
+                {
+                    "approx_shortest_distance": 215.16,
+                    "source": 237,
+                    "target": 823
+                }
+            ],
+            "id": 4,
+            "processing_time": 0.144183
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 738.0,
+                    "source": 575,
+                    "target": 163
+                },
+                {
+                    "approx_shortest_distance": 275.46,
+                    "source": 185,
+                    "target": 563
+                },
+                {
+                    "approx_shortest_distance": 1024.87,
+                    "source": 685,
+                    "target": 458
+                }
+            ],
+            "id": 5,
+            "processing_time": 0.160909
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 640.0,
+                    "source": 537,
+                    "target": 103
+                }
+            ],
+            "id": 6,
+            "processing_time": 0.119883
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 728.0,
+                    "source": 499,
+                    "target": 229
+                }
+            ],
+            "id": 7,
+            "processing_time": 0.119319
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1036.86,
+                    "source": 130,
+                    "target": 534
+                },
+                {
+                    "approx_shortest_distance": 735.49,
+                    "source": 707,
+                    "target": 470
+                },
+                {
+                    "approx_shortest_distance": 555.07,
+                    "source": 503,
+                    "target": 650
+                }
+            ],
+            "id": 8,
+            "processing_time": 0.160523
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 487.0,
+                    "source": 202,
+                    "target": 285
+                },
+                {
+                    "approx_shortest_distance": 493.55,
+                    "source": 249,
+                    "target": 754
+                },
+                {
+                    "approx_shortest_distance": 1735.34,
+                    "source": 301,
+                    "target": 105
+                },
+                {
+                    "approx_shortest_distance": 781.14,
+                    "source": 788,
+                    "target": 283
+                }
+            ],
+            "id": 9,
+            "processing_time": 0.165169
+        },
+        {
+            "distances": [],
+            "id": 10,
+            "processing_time": 0.004366
+        },
+        {
+            "distances": [],
+            "id": 11,
+            "processing_time": 0.004141
+        },
+        {
+            "distances": [],
+            "id": 12,
+            "processing_time": 0.004042
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 514.0,
+                    "source": 17,
+                    "target": 497
+                }
+            ],
+            "id": 13,
+            "processing_time": 0.128889
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1661.0,
+                    "source": 804,
+                    "target": 857
+                },
+                {
+                    "approx_shortest_distance": 1404.23,
+                    "source": 226,
+                    "target": 608
+                },
+                {
+                    "approx_shortest_distance": 1500.25,
+                    "source": 769,
+                    "target": 299
+                }
+            ],
+            "id": 14,
+            "processing_time": 0.537214
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 328.49,
+                    "source": 650,
+                    "target": 637
+                },
+                {
+                    "approx_shortest_distance": 347.63,
+                    "source": 431,
+                    "target": 234
+                },
+                {
+                    "approx_shortest_distance": 522.36,
+                    "source": 287,
+                    "target": 18
+                }
+            ],
+            "id": 15,
+            "processing_time": 0.105454
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 556.06,
+                    "source": 148,
+                    "target": 280
+                }
+            ],
+            "id": 16,
+            "processing_time": 0.044095
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 725.0,
+                    "source": 683,
+                    "target": 42
+                },
+                {
+                    "approx_shortest_distance": 1339.52,
+                    "source": 380,
+                    "target": 732
+                },
+                {
+                    "approx_shortest_distance": 260.0,
+                    "source": 233,
+                    "target": 27
+                }
+            ],
+            "id": 17,
+            "processing_time": 0.391141
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 785.8,
+                    "source": 103,
+                    "target": 628
+                },
+                {
+                    "approx_shortest_distance": 986.0,
+                    "source": 257,
+                    "target": 729
+                },
+                {
+                    "approx_shortest_distance": 1188.0,
+                    "source": 330,
+                    "target": 858
+                }
+            ],
+            "id": 18,
+            "processing_time": 0.236926
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 802.0,
+                    "source": 515,
+                    "target": 287
+                },
+                {
+                    "approx_shortest_distance": 1307.0,
+                    "source": 470,
+                    "target": 837
+                },
+                {
+                    "approx_shortest_distance": 483.19,
+                    "source": 739,
+                    "target": 225
+                },
+                {
+                    "approx_shortest_distance": 1302.0,
+                    "source": 787,
+                    "target": 515
+                }
+            ],
+            "id": 19,
+            "processing_time": 0.392638
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1078.0,
+                    "source": 564,
+                    "target": 514
+                },
+                {
+                    "approx_shortest_distance": 991.0,
+                    "source": 409,
+                    "target": 582
+                },
+                {
+                    "approx_shortest_distance": 1440.21,
+                    "source": 833,
+                    "target": 693
+                },
+                {
+                    "approx_shortest_distance": 693.88,
+                    "source": 249,
+                    "target": 261
+                }
+            ],
+            "id": 20,
+            "processing_time": 0.443336
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 458.41,
+                    "source": 243,
+                    "target": 47
+                },
+                {
+                    "approx_shortest_distance": 406.78,
+                    "source": 431,
+                    "target": 34
+                }
+            ],
+            "id": 21,
+            "processing_time": 0.081766
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1342.79,
+                    "source": 38,
+                    "target": 176
+                }
+            ],
+            "id": 22,
+            "processing_time": 0.227849
+        },
+        {
+            "distances": [],
+            "id": 23,
+            "processing_time": 0.004079
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 772.0,
+                    "source": 205,
+                    "target": 567
+                },
+                {
+                    "approx_shortest_distance": 1988.64,
+                    "source": 855,
+                    "target": 721
+                }
+            ],
+            "id": 24,
+            "processing_time": 0.083931
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 609.0,
+                    "source": 590,
+                    "target": 19
+                },
+                {
+                    "approx_shortest_distance": 633.21,
+                    "source": 310,
+                    "target": 29
+                }
+            ],
+            "id": 25,
+            "processing_time": 0.025451
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 927.0,
+                    "source": 635,
+                    "target": 292
+                },
+                {
+                    "approx_shortest_distance": 966.81,
+                    "source": 430,
+                    "target": 432
+                },
+                {
+                    "approx_shortest_distance": 849.0,
+                    "source": 691,
+                    "target": 158
+                },
+                {
+                    "approx_shortest_distance": 891.49,
+                    "source": 149,
+                    "target": 607
+                }
+            ],
+            "id": 26,
+            "processing_time": 0.387053
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 942.0,
+                    "source": 90,
+                    "target": 852
+                },
+                {
+                    "approx_shortest_distance": 1238.0,
+                    "source": 713,
+                    "target": 525
+                }
+            ],
+            "id": 27,
+            "processing_time": 0.02077
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 984.23,
+                    "source": 6,
+                    "target": 432
+                },
+                {
+                    "approx_shortest_distance": 1032.0,
+                    "source": 843,
+                    "target": 189
+                },
+                {
+                    "approx_shortest_distance": 1460.17,
+                    "source": 72,
+                    "target": 83
+                }
+            ],
+            "id": 28,
+            "processing_time": 0.388973
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 867.96,
+                    "source": 798,
+                    "target": 200
+                },
+                {
+                    "approx_shortest_distance": 1376.0,
+                    "source": 577,
+                    "target": 799
+                },
+                {
+                    "approx_shortest_distance": 2364.02,
+                    "source": 736,
+                    "target": 715
+                },
+                {
+                    "approx_shortest_distance": 67.7,
+                    "source": 621,
+                    "target": 547
+                }
+            ],
+            "id": 29,
+            "processing_time": 0.265196
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 400.29,
+                    "source": 521,
+                    "target": 820
+                },
+                {
+                    "approx_shortest_distance": 1062.0,
+                    "source": 599,
+                    "target": 463
+                },
+                {
+                    "approx_shortest_distance": 707.0,
+                    "source": 519,
+                    "target": 188
+                }
+            ],
+            "id": 30,
+            "processing_time": 0.314413
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1218.0,
+                    "source": 460,
+                    "target": 758
+                },
+                {
+                    "approx_shortest_distance": 1117.0,
+                    "source": 434,
+                    "target": 683
+                },
+                {
+                    "approx_shortest_distance": 1008.03,
+                    "source": 396,
+                    "target": 73
+                }
+            ],
+            "id": 31,
+            "processing_time": 0.176782
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 649.66,
+                    "source": 476,
+                    "target": 582
+                },
+                {
+                    "approx_shortest_distance": 108.0,
+                    "source": 2,
+                    "target": 106
+                },
+                {
+                    "approx_shortest_distance": 923.0,
+                    "source": 791,
+                    "target": 132
+                }
+            ],
+            "id": 32,
+            "processing_time": 0.331707
+        },
+        {
+            "distances": [],
+            "id": 33,
+            "processing_time": 0.004694
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 165.0,
+                    "source": 164,
+                    "target": 1
+                }
+            ],
+            "id": 34,
+            "processing_time": 0.112861
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 511.94,
+                    "source": 477,
+                    "target": 127
+                },
+                {
+                    "approx_shortest_distance": 547.73,
+                    "source": 22,
+                    "target": 507
+                },
+                {
+                    "approx_shortest_distance": 668.4,
+                    "source": 793,
+                    "target": 217
+                },
+                {
+                    "approx_shortest_distance": 394.0,
+                    "source": 161,
+                    "target": 233
+                }
+            ],
+            "id": 35,
+            "processing_time": 0.38018
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 519.0,
+                    "source": 336,
+                    "target": 183
+                }
+            ],
+            "id": 36,
+            "processing_time": 0.118141
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1378.19,
+                    "source": 192,
+                    "target": 807
+                },
+                {
+                    "approx_shortest_distance": 457.0,
+                    "source": 116,
+                    "target": 341
+                },
+                {
+                    "approx_shortest_distance": 219.62,
+                    "source": 349,
+                    "target": 580
+                }
+            ],
+            "id": 37,
+            "processing_time": 0.271514
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1738.0,
+                    "source": 873,
+                    "target": 865
+                },
+                {
+                    "approx_shortest_distance": 1030.0,
+                    "source": 715,
+                    "target": 315
+                },
+                {
+                    "approx_shortest_distance": 718.83,
+                    "source": 753,
+                    "target": 659
+                }
+            ],
+            "id": 38,
+            "processing_time": 0.309725
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1084.0,
+                    "source": 451,
+                    "target": 633
+                },
+                {
+                    "approx_shortest_distance": 1345.98,
+                    "source": 841,
+                    "target": 39
+                },
+                {
+                    "approx_shortest_distance": 188.0,
+                    "source": 92,
+                    "target": 96
+                }
+            ],
+            "id": 39,
+            "processing_time": 0.181804
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 1049.0,
+                    "source": 739,
+                    "target": 310
+                },
+                {
+                    "approx_shortest_distance": 1178.0,
+                    "source": 853,
+                    "target": 325
+                },
+                {
+                    "approx_shortest_distance": 572.13,
+                    "source": 691,
+                    "target": 49
+                },
+                {
+                    "approx_shortest_distance": 687.0,
+                    "source": 266,
+                    "target": 421
+                }
+            ],
+            "id": 40,
+            "processing_time": 0.322438
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 683.0,
+                    "source": 395,
+                    "target": 288
+                },
+                {
+                    "approx_shortest_distance": 672.2,
+                    "source": 178,
+                    "target": 141
+                },
+                {
+                    "approx_shortest_distance": 1465.27,
+                    "source": 383,
+                    "target": 807
+                },
+                {
+                    "approx_shortest_distance": 1392.0,
+                    "source": 777,
+                    "target": 615
+                }
+            ],
+            "id": 41,
+            "processing_time": 0.319514
+        },
+        {
+            "distances": [
+                {
+                    "approx_shortest_distance": 745.0,
+                    "source": 157,
+                    "target": 588
+                },
+                {
+                    "approx_shortest_distance": 253.0,
+                    "source": 183,
+                    "target": 70
+                },
+                {
+                    "approx_shortest_distance": 894.0,
+                    "source": 358,
+                    "target": 536
+                },
+                {
+                    "approx_shortest_distance": 1260.0,
+                    "source": 550,
+                    "target": 710
+                }
+            ],
+            "id": 42,
+            "processing_time": 0.356296
+        },
+        {
+            "distances": [],
+            "id": 43,
+            "processing_time": 0.004411
+        }
+    ]
+}

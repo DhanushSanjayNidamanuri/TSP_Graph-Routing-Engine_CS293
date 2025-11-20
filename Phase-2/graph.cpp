@@ -40,7 +40,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             nlohmann::json inner_json;
             inner_json["source"]=x;
             inner_json["target"]=y;
-            inner_json["approx_shortest_distance"]=z;
+            inner_json["approx_shortest_distance"]=std::round(z * 1e6) / 1e6;
             tempdists.push_back(inner_json);
         }
         out["distances"]=tempdists;
