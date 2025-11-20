@@ -61,7 +61,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         }
         std::string road_type=edge_list[query["edge_id"]].road_type;
         if(query["patch"].find("road_type")!=query["patch"].end()){
-            average_time=query["patch"]["road_type"].get<std::string>();
+            road_type=query["patch"]["road_type"].get<std::string>();
         }
         bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile,road_type);
         out["id"]=query["id"];
