@@ -149,48 +149,46 @@ queries=[]
 query_count=0
 no_of_queries_per_type=max(int(node_counter/20),10)
 #k shortest paths(distance)
-# for i in range(no_of_queries_per_type):
-#     source,destination=random.sample(range(node_counter),2)
-#     k=random.sample(range(int(no_of_queries_per_type/2)),1)
-#     queries.append({
-#             "type": "k_shortest_paths",
-#             "id": query_count,
-#             "source": source,
-#             "target": destination,
-#             "k":k[0],
-#             "mode": "distance",
-#         })
-#     query_count+=1
+for i in range(no_of_queries_per_type):
+     source,destination=random.sample(range(node_counter),2)
+     k=random.sample(range(int(no_of_queries_per_type/2)),1)
+     queries.append({
+             "type": "k_shortest_paths",
+             "id": query_count,
+             "source": source,
+             "target": destination,
+             "k":k[0],
+             "mode": "distance",
+         })
+     query_count+=1
 #k shortest paths(time)
-# for i in range(no_of_queries_per_type):
-#     source,destination=random.sample(range(node_counter),2)
-#     k=random.sample(range(int(no_of_queries_per_type/2)),1)
-#     k=max(k[0],1)
-#     queries.append({
-#             "type": "k_shortest_paths",
-#             "id": query_count,
-#             "source": source,
-#             "target": destination,
-#             "k":k,
-#             "mode": "time",
-#         })
-#     query_count+=1
+for i in range(no_of_queries_per_type):
+     source,destination=random.sample(range(node_counter),2)
+     k=random.sample(range(int(no_of_queries_per_type/2)),1)
+     k=max(k[0],1)
+     queries.append({
+             "type": "k_shortest_paths",
+             "id": query_count,
+             "source": source,
+             "target": destination,
+             "k":k,
+             "mode": "time",
+         })
+     query_count+=1
 #k_shortest_paths_heuristic
-# for i in range(no_of_queries_per_type):
-#     source,destination=random.sample(range(node_counter),2)
-#     k=random.sample(range(int(no_of_queries_per_type/2)),1)
-#     k=max(k[0],1)
-#     overlap_penalty=round(random.uniform(0,2),2)
-#     distance_penalty=round(random.uniform(0,2),2)
-#     queries.append({
-#         "type": "k_shortest_paths_heuristic",
-#         "id": query_count,
-#         "source": source,
-#         "target": destination,
-#         "k": k,
-#         "heuristic": { "overlap_penalty": overlap_penalty, "distance_penalty": distance_penalty }
-#         })
-#     query_count+=1
+for i in range(no_of_queries_per_type):
+     source,destination=random.sample(range(node_counter),2)
+     k=random.randint(2,4)
+     overlap_threshold=random.randint(20,80)
+     queries.append({
+         "type": "k_shortest_paths_heuristic",
+         "id": query_count,
+         "source": source,
+         "target": destination,
+         "k": k,
+         "heuristic": overlap_threshold
+         })
+     query_count+=1
 # approx_shortest_path
 Phase1_like_queries=[]
 phase_1_count=0

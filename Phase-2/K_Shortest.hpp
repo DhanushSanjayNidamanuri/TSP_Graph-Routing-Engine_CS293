@@ -25,4 +25,7 @@ public:
     std::vector<std::pair<std::vector<int>,int>> KShortest_heuristic(Graph& graph, int source, int target,unsigned int k, int overlap_threshold);
 };
 
+std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode);
+double path_distance(Graph& graph, std::vector<int>& path);
+
 #endif

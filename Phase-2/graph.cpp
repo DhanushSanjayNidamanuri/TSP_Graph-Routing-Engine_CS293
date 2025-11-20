@@ -13,10 +13,20 @@ void Graph::addEdge(const Edge& edge) {
 
 nlohmann::json Graph::query_handler(const nlohmann::json& query){
     nlohmann::json out;
-    if(query["type"]=="k_shortest_paths" || query["type"]=="k_shortest_paths_heuristic"){
+
+    std::string type = query.value("type", "");
+    int id = query.value("id", -1);
+    out["id"] = id;
+    if(type=="k_shortest_paths" || type=="k_shortest_paths_heuristic"){
         KShortestPaths temp;
-        KShortestPaths_Result tempout=temp.findShortest(*this,query["type"],query["id"],query["source"],query["target"],query["k"],query["mode"],query["overlap_threshold"]);
-        out["id"]=tempout.id;
+
+        int source = query.value("source", -1);
+        int target = query.value("target", -1);
+        int k = query.value("k", 0);
+        std::string mode = query.value("mode", "distance");
+        int overlap_threshold = query.value("overlap_threshold", 0);
+        KShortestPaths_Result tempout=temp.findShortest(*this,type,id,source,target,k,mode,overlap_threshold);
+        
         std::vector<nlohmann::json> tempdists;
         for(auto [x,y]:tempout.paths){
             nlohmann::json inner_json;
@@ -25,16 +35,24 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             tempdists.push_back(inner_json);
         }
         out["paths"]=tempdists;
-        return out;
+        
     }
-    else if(query["type"]=="approx_shortest_path"){
+    else if(type=="approx_shortest_path"){
         ApproxShortest temp;
         std::vector<std::pair<int,int>> queries_temp;
-        for(auto x:query["queries"]){
-            queries_temp.push_back(std::make_pair(x["source"],x["target"]));
+        if(query.contains("queries") && query["queries"].is_array()) {
+            for(auto& x : query["queries"]) {
+                int src = x.value("source", -1);
+                int tgt = x.value("target", -1);
+                queries_temp.push_back(std::make_pair(src, tgt));
+            }
         }
-        ApproxShortest_Result tempout=temp.findApprox(*this,query["id"],queries_temp,query["time_budget_ms"],query["acceptable_error_pct"]);
-        out["id"]=tempout.id;
+        
+        int time_budget = query.value("time_budget_ms", 100);
+        double acceptable_error = query.value("acceptable_error_pct", 10.0);
+
+        ApproxShortest_Result tempout=temp.findApprox(*this,id,queries_temp,time_budget,acceptable_error);
+        
         std::vector<nlohmann::json> tempdists;
         for(auto [x,y,z]:tempout.distances){
             nlohmann::json inner_json;
@@ -44,11 +62,12 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             tempdists.push_back(inner_json);
         }
         out["distances"]=tempdists;
-        return out;
+        
     }
     else{
-        return out;
+        out["error"] = "Unknown query type";
     }
+    return out;
     
 }
 void Graph::dijkstra_FarLM(std::vector<double>& distances,int src){
