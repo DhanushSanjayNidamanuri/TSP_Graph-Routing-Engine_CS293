@@ -62,8 +62,8 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     }
     else if(query["type"]=="shortest_path"){
         ShortestPath temp;
-        std::vector<int> forbidden_nodes = query["forbidden_nodes"].get<std::vector<int>>();
-        std::vector<std::string> forbidden_types = query["forbidden_road_types"].get<std::vector<std::string>>();
+        std::vector<int> forbidden_nodes = query["constraints"]["forbidden_nodes"].get<std::vector<int>>();
+        std::vector<std::string> forbidden_types = query["constraints"]["forbidden_road_types"].get<std::vector<std::string>>();
         ShortestPath_Result tempout=temp.findShortestPath(*this,query["id"],query["source"],query["target"],query["mode"],forbidden_nodes,forbidden_types);
         out["id"]=tempout.id;
         out["possible"]=tempout.possible;
