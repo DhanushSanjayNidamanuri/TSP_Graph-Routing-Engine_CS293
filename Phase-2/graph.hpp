@@ -28,7 +28,7 @@ public:
     int id;
     int u, v;
     double length;
-    // double average_time;
+    double average_time;
     bool oneway;
     // std::vector<double> speed_profile;
     // std::string road_type;
@@ -64,7 +64,8 @@ public:
     friend class KShortestPaths;
     friend class ApproxShortest;
     friend class ApproxShortest_Result;
-    
+    friend double path_distance(Graph& graph, std::vector<int>& path);
+    friend std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode);
     Graph(int node_count=0): node_count(node_count){
         adjacency_list.resize(node_count);node_list.resize(node_count);
         // processed_incoming_edges.resize(node_count);processed_outgoing_edges.resize(node_count);

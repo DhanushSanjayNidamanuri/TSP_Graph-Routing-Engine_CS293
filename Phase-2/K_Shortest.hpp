@@ -21,8 +21,8 @@ public:
 class KShortestPaths {
 public:
     KShortestPaths_Result findShortest(Graph& graph,std::string type, int id, int source, int target, int k, std::string mode="distance", int overlap_threshold=0);
-    std::vector<std::pair<std::vector<int>,int>> KShortest(Graph& graph, int source, int target, int k, std::string mode);
-    std::vector<std::pair<std::vector<int>,int>> KShortest_heuristic(Graph& graph, int source, int target, int k, int overlap_threshold);
+    std::vector<std::pair<std::vector<int>,int>> KShortest(Graph& graph, int source, int target,unsigned int k, std::string mode);
+    std::vector<std::pair<std::vector<int>,int>> KShortest_heuristic(Graph& graph, int source, int target,unsigned int k, int overlap_threshold);
 };
 
 #endif

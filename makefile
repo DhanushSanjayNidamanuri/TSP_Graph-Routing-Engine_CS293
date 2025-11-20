@@ -33,8 +33,8 @@ P2_SRCS := $(wildcard $(P2_DIR)/*.cpp)
 P2_OBJS = $(P2_SRCS:$(P2_DIR)/%.cpp=$(P2_OBJ_DIR)/%.o)
 
 
-phase2:  $(P2_OBJS) 
-	@$(CXX) $(CXXFLAGS) -o phase1 $(P2_OBJS)
+phase2:  $(P2_OBJS) P2_generate_testcases
+	@$(CXX) $(CXXFLAGS) -o phase2 $(P2_OBJS)
 	@echo "Phase 2 executable successfully built"
 $(P2_OBJ_DIR)/%.o: $(P2_DIR)/%.cpp $(wildcard $(P2_DIR)/*.hpp)
 	@mkdir -p $(dir $@)

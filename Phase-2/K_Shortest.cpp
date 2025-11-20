@@ -25,11 +25,11 @@ public:
     }
 };
 //A* for finding the shortest path
-std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, string mode){
+std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode){
     if(source == target){
         return {{source}, 0.0};
     }
-    auto heuristic = [&](int node1, int node2) {
+    auto heuristic = [&](unsigned int node1,unsigned int node2) {
         if(node1 >= graph.node_list.size() || node2 >= graph.node_list.size()) return 0.0;
         double lat1 = graph.node_list[node1].lat, lon1 = graph.node_list[node1].lon;
         double lat2 = graph.node_list[node2].lat, lon2 = graph.node_list[node2].lon;
@@ -40,8 +40,8 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
     };
     
     std::priority_queue<std::pair<double, int>, std::vector<std::pair<double, int>>, decltype(comp)> pq(comp);
-    std::vector<double> g_score(graph.node_list.size(), numeric_limits<double>::max());
-    std::vector<double> f_score(graph.node_list.size(), numeric_limits<double>::max());
+    std::vector<double> g_score(graph.node_list.size(), std::numeric_limits<double>::max());
+    std::vector<double> f_score(graph.node_list.size(), std::numeric_limits<double>::max());
     std::vector<int> prev(graph.node_list.size(), -1);    
 
     g_score[source] = 0.0;
@@ -142,7 +142,7 @@ double overlap_amount(const A_path& path1, const A_path& path2){
     return (common * 100.0) / edges;
 }
 
-std::vector<A_path> paths_selection(std::vector<A_path> candidates, int k, int overlap_threshold){
+std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int k, int overlap_threshold){
     if(candidates.empty() || k<=0) return {};
 
     std::vector<A_path> result;
@@ -191,8 +191,8 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, int k, int o
     return result;
 }
 //Yen's algorithm
-std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& graph, int source, int target, int k , string mode){
-    k = std::min(k, 50);
+std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& graph, int source, int target, unsigned int k , std::string mode){
+    k = std::min(k,(unsigned) 50);
     
     std::vector<std::pair<std::vector<int>, int>> result;
     std::vector<A_path> result_paths;
@@ -205,7 +205,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     
     auto start_time = std::chrono::steady_clock::now();
     //other paths
-    for(int j=1;j<k;j++){
+    for(unsigned int j=1;j<k;j++){
         auto current_time = std::chrono::steady_clock::now();
         auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time);
         if(elapsed.count() > 12000){
@@ -264,9 +264,9 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
 }
 
 //Heuristic
-std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristic(Graph& graph, int source, int target, int k, int overlap_threshold){
-    k = std::min(k, 20);
-    int paths_count = std::min(k*3, 30);
+std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristic(Graph& graph, int source, int target, unsigned int k, int overlap_threshold){
+    k = std::min(k,(unsigned) 20);
+    int paths_count = std::min(k*3,(unsigned) 30);
     auto all_paths = KShortest(graph, source, target, paths_count, "distance");
     if(all_paths.empty()) return {};
 
@@ -305,7 +305,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristi
                 }
                 return;
             }
-            for(int i=start; i < result_paths.size(); i++){
+            for(unsigned int i=start; i < result_paths.size(); i++){
                 current.push_back(result_paths[i]);
                 backtrack(i+1, current);
                 current.pop_back();
@@ -325,8 +325,8 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristi
 }
 
 //type checking
-KShortestPaths_Result KShortestPaths::findShortest(Graph& graph, string type, int id, int source, int target, int k, string mode, int overlap_threshold){
-    if(k <=0 || source < 0 || target < 0 || source >= graph.node_list.size() || target >= graph.node_list.size()){
+KShortestPaths_Result KShortestPaths::findShortest(Graph& graph, std::string type, int id, int source, int target, int k, std::string mode, int overlap_threshold){
+    if(k <=0 || source < 0 || target < 0 || source >= (int)graph.node_list.size() || target >= (int)graph.node_list.size()){
         return KShortestPaths_Result(id, {});
     }
     if(type == "k_shortest_paths"){

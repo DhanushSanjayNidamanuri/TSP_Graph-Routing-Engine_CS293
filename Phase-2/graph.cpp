@@ -104,11 +104,13 @@ void Graph::multi_source_dijkstra_outOf(std::vector<int> srcs){
 }
 void Graph::preprocess_LM(){
     int no_of_landmarks=std::min(1024,node_count);
-    nearest_landmark.resize(node_count);
+    nearest_into_landmark.resize(node_count);
+    nearest_outOf_landmark.resize(node_count);
     std::vector<int> landmarkID_to_nodeID(no_of_landmarks);
     if(no_of_landmarks==node_count){
-        for(int i=0;i<nearest_landmark.size();i++){
-            nearest_landmark[i]=std::make_pair(i,0);
+        for(unsigned int i=0;i<nearest_into_landmark.size();i++){
+            nearest_into_landmark[i]=std::make_pair(i,0);
+            nearest_outOf_landmark[i]=std::make_pair(i,0);
             landmarkID_to_nodeID[i]=i;
             node_list[i].is_landmark=true;
         }
