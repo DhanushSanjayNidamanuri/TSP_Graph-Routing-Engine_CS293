@@ -16,7 +16,7 @@ void Graph::addEdge(const Edge& edge) {
 }
 
 bool Graph::removeEdge(int id) {
-    if(edge_list.find(id)==edge_list.end()) return false;
+    if(edge_list.find(id)==edge_list.end()||!edge_list[id].isOpen) return false;
     Edge edge=edge_list[id];
     adjacency_list[edge.u][id].isOpen=false;
     if(!edge.oneway) adjacency_list[edge.v][id].isOpen=false;
