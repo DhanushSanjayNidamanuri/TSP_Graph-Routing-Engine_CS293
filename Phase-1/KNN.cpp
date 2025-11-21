@@ -51,25 +51,14 @@ std::vector<int> KNN::findKNN_ShortestPath(const Graph& graph, double lat, doubl
     pq.push(std::make_pair(0,closest_id));
     int count=0;
 
-    auto normalize = [](std::string s) {
-    s.erase(0, s.find_first_not_of(" \t\r\n"));
-    s.erase(s.find_last_not_of(" \t\r\n") + 1);
-    s.erase(std::remove_if(s.begin(), s.end(),
-    [](unsigned char c){ return c < 32 || c > 126; }),
-    s.end());
-    return s;};
-
     while(!pq.empty() && count<k) {
         auto [dist,u]=pq.top();
         pq.pop();
         if(visited[u]) continue;
         visited[u]=true;
-        for(auto poi_u:graph.node_list[u].pois) {
-            if(normalize(poi_u) == normalize(poi)) {
-                count++;
-                K_nearest.push_back(u);
-                break;
-            }
+        if(std::find(graph.node_list[u].pois.begin(),graph.node_list[u].pois.end(),poi)!=graph.node_list[u].pois.end()) {
+            count++;
+            K_nearest.push_back(u);
         }
         for(auto [id,edge]:graph.adjacency_list[u]) {
             if(!edge.isOpen) continue;
