@@ -5,8 +5,6 @@ SHELL := /bin/bash
 CXX = g++
 CXXFLAGS = -g -Wall -Wextra -std=c++20 -Wno-unused-parameter -Werror -O3
 
-# Executable name
-EXEC = compare
 
 # Phase 1 
 P1_DIR = Phase-1
@@ -46,7 +44,20 @@ P2_generate_testcases:
 
 
 # Phase 3
-phase3:
+
+P3_DIR = Phase-3
+P3_OBJ_DIR= Phase-3/obj
+P3_SRCS := $(wildcard $(P3_DIR)/*.cpp)
+P3_OBJS = $(P3_SRCS:$(P3_DIR)/%.cpp=$(P3_OBJ_DIR)/%.o)
+
+phase3: $(P3_OBJS) P3_generate_testcases
+	@$(CXX) $(CXXFLAGS) -o phase3 $(P3_OBJS)
+	@echo "Phase 3 executable successfully built"
+$(P3_OBJ_DIR)/%.o: $(P3_DIR)/%.cpp $(wildcard $(P3_DIR)/*.hpp)
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+P3_generate_testcases:
+	@python3 $(P3_DIR)/testcase_generator.py
 
 
 
@@ -72,6 +83,6 @@ clean:
 	rm -f phase1 phase2 phase3
 	rm -f $(P1_OBJ_DIR)/*
 	rm -f $(P2_OBJ_DIR)/*
-
-.PHONY: phase1 phase2 phase3 p1_generate_testcases clean 
+	rm -f $(P3_OBJ_DIR)/*
+.PHONY: phase1 phase2 phase3 clean 
 
