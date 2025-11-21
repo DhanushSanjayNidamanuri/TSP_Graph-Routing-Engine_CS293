@@ -79,7 +79,7 @@ void Graph::dijkstra_FarLM(std::vector<double>& distances,int src){
         distances[u]=dist;
         for(auto& e:adjacency_list[u]){
             int v =(e.u==u) ? e.v : e.u;
-            if(((!e.oneway) || (e.u == u)) && distances[v]>dist+e.length){
+            if(((!e.oneway) || (e.u == u)) ){
                 pq.push(std::make_pair(dist+e.length,v));
             }
         }
@@ -157,15 +157,30 @@ void Graph::preprocess_LM(){
         }
     }
     else{
-        std::vector<double> dmin(node_count,std::numeric_limits<double>::infinity());
-        landmarkID_to_nodeID[0]=0;
-        node_list[0].is_landmark=true;
-        dijkstra_FarLM(dmin,0);
-        for(int i=1;i<no_of_landmarks;i++){
-            landmarkID_to_nodeID[i] = std::max_element(dmin.begin(), dmin.end())-dmin.begin();
-            node_list[landmarkID_to_nodeID[i]].is_landmark=true;
-            dijkstra_FarLM(dmin,landmarkID_to_nodeID[i]);
+        std::vector<double> dmin(node_count);
+        std::vector<int> degrees(node_count);
+        int maxi=0;
+        for (int i = 0; i < node_count; i++) {
+            dmin[i] =std::numeric_limits<double>::max()/200;
+            degrees[i]=adjacency_list[i].size();maxi=std::max(degrees[i],maxi);
         }
+        landmarkID_to_nodeID[0] = 0;
+        node_list[0].is_landmark = true;
+        dijkstra_FarLM(dmin, 0);
+        std::vector<double> score(node_count);
+        for (int lm = 1; lm < no_of_landmarks; lm++) {
+            // ---- compute selection score for every node ----
+            for (int i = 0; i < node_count; i++) {
+                score[i] = dmin[i] * degrees[i];        
+            }
+            // ---- pick node with maximum score ----
+            int best = std::max_element(score.begin(), score.end()) - score.begin();
+            landmarkID_to_nodeID[lm] = best;
+            node_list[best].is_landmark = true;
+            // ---- update dmin with Dijkstra from new LM ----
+            dijkstra_FarLM(dmin, best);
+        }
+
         for(auto x:landmarkID_to_nodeID){
             for(auto y:landmarkID_to_nodeID){
                 landmark_to_landmark[x][y]=-1;
@@ -194,16 +209,6 @@ void Graph::preprocess_LM(){
         }
         multi_source_dijkstra_into(landmarkID_to_nodeID);
         multi_source_dijkstra_outOf(landmarkID_to_nodeID);
-        int total=node_count,count1=0,count2=0;
-        for(auto [x,y]:nearest_into_landmark){
-            if(y<0)count1++;
-        }
-        for(auto [x,y]:nearest_outOf_landmark){
-            if(y<0)count2++;
-        }
-        std::cout<<total<<"\n";
-        std::cout<<count1<<"\n";
-        std::cout<<count2<<"\n";
     }
 };
 

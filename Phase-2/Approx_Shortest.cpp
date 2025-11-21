@@ -67,7 +67,7 @@ ApproxShortest_Result ApproxShortest::findApprox(Graph& graph, int id, std::vect
         else if((src_lm_dist+dest_lm_dist)==0){
             dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
         }
-        else if((lm_to_lm)/(src_lm_dist+dest_lm_dist)>=tuning_factor ||  avg_time_left<time_budget/(total_queries*2)){
+        else if(((lm_to_lm)/(src_lm_dist+dest_lm_dist))>=tuning_factor ){
            dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
         }
         else{
