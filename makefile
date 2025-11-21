@@ -78,6 +78,14 @@ $(P2_OBJ_DIR)/%.o: $(P2_DIR)/%.cpp $(wildcard $(P2_DIR)/*.hpp)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
+phase3_notest: $(P3_OBJS)
+	@$(CXX) $(CXXFLAGS) -o phase3 $(P3_OBJS)
+	@echo "Phase 3 executable successfully built"
+$(P3_OBJ_DIR)/%.o: $(P3_DIR)/%.cpp $(wildcard $(P3_DIR)/*.hpp)
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+
 # Clean target
 clean:
 	rm -f phase1 phase2 phase3
