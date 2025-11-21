@@ -17,6 +17,10 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     std::string type = query.value("type", "");
     int id = query.value("id", -1);
     out["id"] = id;
+
+    if(node_list.size() > 5000 || adjacency_list.size() > 5000){
+        std::cerr<< "WARNING: Graph exceeds 5000 nodes/edge constraint for KSP"<<std::endl;
+    }
     if(type=="k_shortest_paths" || type=="k_shortest_paths_heuristic"){
         KShortestPaths temp;
 
@@ -25,6 +29,11 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         int k = query.value("k", 0);
         std::string mode = query.value("mode", "distance");
         int overlap_threshold = query.value("overlap_threshold", 0);
+        if(type == "k_shortest_paths" && (k <2 || k>20)){
+            k = std::min(std::max(k,2), 20);
+        }else if(type == "k_shortest_paths_heuristic" && (k<2 || k>7)){
+            k = std::min(std::max(k,2), 20);
+        }
         KShortestPaths_Result tempout=temp.findShortest(*this,type,id,source,target,k,mode,overlap_threshold);
         
         std::vector<nlohmann::json> tempdists;
