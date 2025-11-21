@@ -9,6 +9,24 @@
 #include <algorithm>
 class Graph;
 class Node;
+
+struct Order {
+    int id;
+    int p;
+    int d;
+    double depDist;
+};
+
+struct DriverRoute {
+    std::vector<int> route;
+    std::vector<Order> orders;
+};
+
+struct Solution {
+    std::vector<DriverRoute> drivers;
+    double total_latency = 0;
+};
+
 class TSP_Result {
 public:
     double time;
@@ -19,6 +37,7 @@ public:
 class TSP {
 public:
     TSP_RESULT solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet);
+    Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,int,int>>& orders,int numDrivers,int depot);
 };
 
 #endif

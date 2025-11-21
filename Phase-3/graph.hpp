@@ -35,7 +35,7 @@ class Graph{
     std::vector<Node> node_list;
     int node_count;
     std::vector<std::vector<Edge>> adjacency_list;
-    std::vector<std::vector<float>> distances;
+    std::vector<std::vector<double>> apsp_times;
 public:
     
     Graph(int node_count=0): node_count(node_count){
