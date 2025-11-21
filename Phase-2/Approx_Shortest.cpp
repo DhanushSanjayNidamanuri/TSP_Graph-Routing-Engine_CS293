@@ -29,9 +29,9 @@ double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,i
                 auto [u_lm,u_lm_dist]=graph.nearest_into_landmark[u];
                 auto [dest_lm,dest_lm_dist]=graph.nearest_outOf_landmark[target];
                 double lm_to_lm=graph.landmark_to_landmark[u_lm][dest_lm];
-                if (lm_to_lm<0)return upper_bound;
-                if(upper_bound<0)upper_bound=std::numeric_limits<double>::infinity();
+                if (lm_to_lm<0 || u_lm_dist<0 || dest_lm_dist<0)return upper_bound;
                 double temp=dist+u_lm_dist+lm_to_lm+dest_lm_dist;
+                if(upper_bound<0)return temp;
                 return std::min(temp,upper_bound);
             }
         }
@@ -48,7 +48,7 @@ double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,i
 
 
 ApproxShortest_Result ApproxShortest::findApprox(Graph& graph, int id, std::vector<std::pair<int,int>>& queries, double time_budget, double max_error){
-    double tuning_factor=6-(0.15*(max_error-5));
+    double tuning_factor=3-(0.15*(max_error-5));
     std::vector<std::tuple<int,int,double>> dists;
     auto total_time=0;
     int total_queries=queries.size();
@@ -71,7 +71,7 @@ ApproxShortest_Result ApproxShortest::findApprox(Graph& graph, int id, std::vect
            dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
         }
         else{
-            double temp=Hybrid_A_Star(graph,avg_time_left,source,target,lm_to_lm+src_lm_dist+dest_lm_dist);
+            double temp=Hybrid_A_Star(graph,avg_time_left*4,source,target,lm_to_lm+src_lm_dist+dest_lm_dist);
             dists.push_back(std::make_tuple(source,target,temp));
         }
         auto end_time = std::chrono::high_resolution_clock::now();

@@ -194,6 +194,16 @@ void Graph::preprocess_LM(){
         }
         multi_source_dijkstra_into(landmarkID_to_nodeID);
         multi_source_dijkstra_outOf(landmarkID_to_nodeID);
+        int total=node_count,count1=0,count2=0;
+        for(auto [x,y]:nearest_into_landmark){
+            if(y<0)count1++;
+        }
+        for(auto [x,y]:nearest_outOf_landmark){
+            if(y<0)count2++;
+        }
+        std::cout<<total<<"\n";
+        std::cout<<count1<<"\n";
+        std::cout<<count2<<"\n";
     }
 };
 
