@@ -25,7 +25,7 @@ double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,i
         if(u==target){
             return dist;
         }
-        if(expansion%512==0){
+        if(expansion%64==0){
             auto present_time= std::chrono::high_resolution_clock::now();
             if((std::chrono::duration_cast<std::chrono::milliseconds>(present_time - start_time).count()>(time_limit*19)/20)){
                 auto [u_lm,u_lm_dist]=graph.nearest_into_landmark[u];
