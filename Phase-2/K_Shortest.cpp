@@ -56,7 +56,7 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
     auto timeout_check = [&]() {
         auto current_time = std::chrono::steady_clock::now();
         auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(current_time - start_time);
-        return elapsed.count() > 5000; 
+        return elapsed.count() > g_astar_max_ms.load(); 
     };
 
     auto is_forbidden = [&](int u, int v){
@@ -240,7 +240,7 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
 
     while(result.size() < k && result.size() <candidates.size()){
         auto current_time = std::chrono::steady_clock::now();
-        auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(current_time - start_time);
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time);
        
         if(elapsed.count() > 5000){
             break;
@@ -304,7 +304,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     auto start_time = std::chrono::steady_clock::now();
     auto timeout_check = [&](){
         auto current_time = std::chrono::steady_clock::now();
-        auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(current_time - start_time);
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time);
         return elapsed.count() > 15000;
     };
 
@@ -353,7 +353,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
 
         auto& path = current.nodes;
         auto now = std::chrono::steady_clock::now();
-        int elapsed_ms = static_cast<int>(std::chrono::duration_cast<std::chrono::microseconds>(now - start_time).count());
+        int elapsed_ms = static_cast<int>(std::chrono::duration_cast<std::chrono::milliseconds>(now - start_time).count());
         int remaining_ms = 15000 - elapsed_ms;
         if(remaining_ms < 100) break; 
 

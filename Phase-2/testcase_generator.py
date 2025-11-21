@@ -17,18 +17,18 @@ os.chdir(pwd)
 
 
 #5000 nodes---------------->
-# latDOWN = 19.0395
-# latUP = 19.0532
-# longLEFT = 72.8235
-# longRIGHT = 72.8404
+latDOWN = 19.0395
+latUP = 19.0532
+longLEFT = 72.8235
+longRIGHT = 72.8404
 #-------------------------->
 
 
 #100k nodes----------------->
-latDOWN   = 19.030500
-latUP     = 19.170500
-longLEFT  = 72.805000
-longRIGHT = 72.945000
+#latDOWN   = 19.030500
+#latUP     = 19.170500
+#longLEFT  = 72.805000
+#longRIGHT = 72.945000
 #-------------------------->
 query = f"""
 [out:json][timeout:1000];
