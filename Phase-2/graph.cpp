@@ -123,8 +123,8 @@ void Graph::multi_source_dijkstra_outOf(std::vector<int> srcs){
 }
 void Graph::preprocess_LM(){
     int no_of_landmarks=std::min(1024,node_count);
-    nearest_into_landmark.resize(node_count);
-    nearest_outOf_landmark.resize(node_count);
+    nearest_into_landmark.resize(node_count,std::make_pair(-1,-1));
+    nearest_outOf_landmark.resize(node_count,std::make_pair(-1,-1));
     std::vector<int> landmarkID_to_nodeID(no_of_landmarks);
     if(no_of_landmarks==node_count){
         for(unsigned int i=0;i<nearest_into_landmark.size();i++){
@@ -176,12 +176,13 @@ void Graph::preprocess_LM(){
             std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
             std::vector<bool> visited(node_count,false);
             pq.push(std::make_pair(0,landmarkID_to_nodeID[i]));
-            while(!pq.empty() && count<no_of_landmarks){
+            while(!pq.empty()){
                 auto [dist,u]=pq.top();pq.pop();
                 if(visited[u])continue;
                 visited[u]=true;
                 if(node_list[u].is_landmark){
                     landmark_to_landmark[landmarkID_to_nodeID[i]][u]=dist;count++;
+                    if(count==no_of_landmarks)break;
                 }
                 for(auto& e:adjacency_list[u]){
                     int v =(e.u==u) ? e.v : e.u;

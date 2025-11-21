@@ -9,7 +9,7 @@ int ApproxShortest::heuristic_distance(const Node& a, const Node& b) {
 
 double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,int target,double upper_bound){
     std::priority_queue<std::tuple<double,double,int>,std::vector<std::tuple<double,double,int>>,std::greater<std::tuple<double,double,int>>> pq;
-    double temp=heuristic_distance(graph.node_list[source],graph.node_list[target]);
+    int temp=heuristic_distance(graph.node_list[source],graph.node_list[target]);
     pq.push(std::make_tuple(temp,temp,source));
     std::vector<bool> visited(graph.node_count,false);
     int expansion=0;
@@ -25,7 +25,7 @@ double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,i
         }
         if(expansion%128==0){
             auto present_time= std::chrono::high_resolution_clock::now();
-            if(!(std::chrono::duration_cast<std::chrono::milliseconds>(present_time - start_time).count()>(time_limit*1)/20)){
+            if((std::chrono::duration_cast<std::chrono::milliseconds>(present_time - start_time).count()>(time_limit*19)/20)){
                 auto [u_lm,u_lm_dist]=graph.nearest_into_landmark[u];
                 auto [dest_lm,dest_lm_dist]=graph.nearest_outOf_landmark[target];
                 double lm_to_lm=graph.landmark_to_landmark[u_lm][dest_lm];
@@ -60,13 +60,12 @@ ApproxShortest_Result ApproxShortest::findApprox(Graph& graph, int id, std::vect
         double lm_to_lm=graph.landmark_to_landmark[src_lm][dest_lm];
 
         double avg_time_left=(time_budget-total_time)/(total_queries-i);
-
-        if((src_lm_dist+dest_lm_dist)==0){
-            dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
-        }
-        else if(lm_to_lm<0){
-            double temp=Hybrid_A_Star(graph,avg_time_left,source,target,lm_to_lm+src_lm_dist+dest_lm_dist);
+        if(src_lm_dist<0 || lm_to_lm<0 || dest_lm_dist<0){
+            double temp=Hybrid_A_Star(graph,avg_time_left,source,target,-1);
             dists.push_back(std::make_tuple(source,target,temp));
+        }
+        else if((src_lm_dist+dest_lm_dist)==0){
+            dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
         }
         else if((lm_to_lm)/(src_lm_dist+dest_lm_dist)>=tuning_factor ||  avg_time_left<time_budget/(total_queries*2)){
            dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
