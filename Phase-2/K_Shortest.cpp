@@ -9,18 +9,38 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
+#include <atomic>
+#include <cstdint>
+
+static std::atomic<int> g_astar_max_ms(5000);
+
+static inline uint64_t path_hash64(const std::vector<int>& nodes){
+    uint64_t h = 1469598103934665603ull;
+    for (int v : nodes) {
+        h ^= static_cast<uint64_t>(v) + 0x9e3779b97f4a7c15ULL + (h<<6) + (h>>2);
+        h *= 1099511628211ULL;
+    }
+    h ^= h >> 33;
+    h *= 0xff51afd7ed558ccdULL;
+    h ^= h >> 33;
+    h *= 0xc4ceb9fe1a85ec53ULL;
+    h ^= h >> 33;
+    return h;
+}
 
 class A_path{
 public:
     std::vector<int> nodes;
     double distance;
     std::unordered_set<long long> edges;
+    uint64_t h64;
 
     A_path(std::vector<int>& vec, double dist): nodes(vec), distance(dist){
         for(size_t i=0; i<nodes.size()-1; i++){
             long long id = nodes[i] * 10000 + nodes[i+1];
             edges.insert(id);
         }
+        h64 = path_hash64(nodes);
     }
     bool operator>(const A_path& other) const{
         return distance > other.distance;
@@ -31,6 +51,13 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
     if(source == target){
         return {{source}, 0.0};
     }
+
+    auto start_time = std::chrono::steady_clock::now();
+    auto timeout_check = [&]() {
+        auto current_time = std::chrono::steady_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time);
+        return elapsed.count() > 5000; 
+    };
 
     auto is_forbidden = [&](int u, int v){
         for(auto& forbidden : removedEdges){
@@ -60,12 +87,22 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
     f_score[source] = heuristic(source, target);
     pq.push({f_score[source], source});
 
+    const int max_expansions = 200000;
+    int expansions = 0;
+
     while(!pq.empty()){
+        if(timeout_check()){
+            return {{}, -1.0};
+        }
         auto [curr_f, node] = pq.top();
         pq.pop();
 
         if(visited[node]) continue;
         visited[node]=true;
+
+        if(++expansions > max_expansions){
+            return {{}, -1.0};
+        }
         //reached
         if(node == target) break;
         //was better earlier than now
@@ -194,9 +231,12 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
     if(candidates.empty() || k<=0) return {};
 
     std::vector<A_path> result;
+    result.reserve(k);
     result.push_back(candidates[0]);
 
     auto start_time = std::chrono::steady_clock::now();
+
+    //size_t cand_count = candidates.size();
 
     while(result.size() < k && result.size() <candidates.size()){
         auto current_time = std::chrono::steady_clock::now();
@@ -206,7 +246,7 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
             break;
         }
        
-        double best_penalty = 1e9;
+        double best_penalty = 1e18;
         int best_index = -1;
 
         for(size_t idx=0; idx< candidates.size(); idx++){
@@ -218,32 +258,32 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
                 }
             }
             if(already_selected) continue;
-
-            std::vector<A_path> temp_result = result;
-            temp_result.push_back(candidates[idx]);
             
             double total_penalty = 0.0;
-            double shortest_distance = temp_result[0].distance;
+            double shortest_distance = result[0].distance;
             
-            for(size_t i=0; i<temp_result.size(); i++){
+            for(size_t i=0; i<result.size(); i++){
                 int overlap_penalty = 0;
-                for(size_t j=0; j<temp_result.size(); j++){
-                    if(i != j){
-                        double overlap = overlap_amount(temp_result[i], temp_result[j]);
-                        if(overlap > overlap_threshold){
-                            overlap_penalty++;
-                        }
-                    }
-                }
-                double diff_per = ((temp_result[i].distance - shortest_distance)/shortest_distance)*100.0;
+                double overlap = overlap_amount(result[i], candidates[idx]);
+                if(overlap > overlap_threshold) overlap_penalty++;
+                double diff_per = ((result[i].distance - shortest_distance)/shortest_distance)*100.0;
                 double distance_penalty = (diff_per/100.0) + 0.1;
-
-                double path_penalty = overlap_penalty * distance_penalty;
-                total_penalty += path_penalty;
+                total_penalty += overlap_penalty * distance_penalty;
             }
+            {
+                double diff_per = ((candidates[idx].distance - shortest_distance)/shortest_distance)*100.0;
+                double distance_penalty = (diff_per/100.0) + 0.1;
+                int overlap_penalty = 0;
+                for(const auto& rp : result){
+                    double ov = overlap_amount(candidates[idx], rp);
+                    if(ov > overlap_threshold) overlap_penalty++;
+                }
+                total_penalty += overlap_penalty * distance_penalty;
+            }
+
             if(total_penalty < best_penalty){
                 best_penalty = total_penalty;
-                best_index = idx;
+                best_index = static_cast<int>(idx);
             }
         }
         if(best_index != -1){
@@ -262,6 +302,17 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     std::priority_queue<A_path, std::vector<A_path>, std::greater<A_path>> candidates;
 
     auto start_time = std::chrono::steady_clock::now();
+    auto timeout_check = [&](){
+        auto current_time = std::chrono::steady_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time);
+        return elapsed.count() > 15000;
+    };
+
+    std::unordered_set<uint64_t> candidates_hashes;
+    candidates_hashes.reserve(4096);
+    std::unordered_set<uint64_t> result_hashes;
+    result_hashes.reserve(64);
+    g_astar_max_ms.store(4000);
 
     // Get first shortest path
     auto first_path = AstarShortestPath(graph, source, target, mode, {});
@@ -275,37 +326,54 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     double first_dist = path_distance(graph, first_path.first);
     A_path first_a_path(first_path.first, first_dist);
     candidates.push(first_a_path);
+    candidates_hashes.insert(first_a_path.h64);
     result.push_back({first_path.first, static_cast<int>(first_dist)});
+    result_hashes.insert(path_hash64(first_path.first));
 
     
     while(result.size() < k && !candidates.empty()) {
-        auto current_time = std::chrono::steady_clock::now();
-        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time);
-        if(elapsed.count() > 15000){
-            std::cout<<"TIMEOUT"<<std::endl;
+        if(timeout_check()){
+            std::cout<<"TIMEOUT IN MAIN LOOP"<<std::endl;
             break;
         }
 
         A_path current = candidates.top();
         candidates.pop();
+        candidates_hashes.erase(current.h64);
 
         if(!is_simple(current.nodes)){
             continue;
         }
         
-        if(!AlreadyFound(current.nodes, result)) {
+        uint64_t curh = current.h64;
+        if(result_hashes.find(curh) == result_hashes.end()){
             result.push_back({current.nodes, static_cast<int>(current.distance)});
+            result_hashes.insert(curh);
         }
 
         auto& path = current.nodes;
+        auto now = std::chrono::steady_clock::now();
+        int elapsed_ms = static_cast<int>(std::chrono::duration_cast<std::chrono::milliseconds>(now - start_time).count());
+        int remaining_ms = 15000 - elapsed_ms;
+        if(remaining_ms < 100) break; 
+
+        
+        int per_astar_ms = std::min(remaining_ms / 4, 3000);
+        per_astar_ms = std::max(per_astar_ms, 200); 
+        g_astar_max_ms.store(per_astar_ms);
+
         for(size_t i = 0; i < path.size() - 1; i++) {
+            if(timeout_check()) break;
             int spurNode = path[i];
-            std::vector<int> rootPath(path.begin(), path.begin() + i + 1);
+            std::vector<int> rootPath;
+            rootPath.reserve(i+1);
+            rootPath.insert(rootPath.end(), path.begin(), path.begin() + i + 1);
 
             if(!is_simple(rootPath)){
                 continue;
             }
             std::vector<std::pair<int, int>> removedEdges;
+            removedEdges.reserve(result.size());
             for(auto& res_path : result){
                 if(i < res_path.first.size()-1){
                     bool matching_pre = true;
@@ -324,7 +392,9 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
             auto tempPathResult = AstarShortestPath(graph, spurNode, target, mode, removedEdges);
 
             if(!tempPathResult.first.empty() && tempPathResult.second>=0){
-                std::vector<int> totalPath = rootPath;
+                std::vector<int> totalPath;
+                totalPath.reserve(rootPath.size() + tempPathResult.first.size());
+                totalPath = rootPath;
                 totalPath.insert(totalPath.end(), tempPathResult.first.begin()+1, tempPathResult.first.end());
 
                 if(!is_simple(totalPath)){
@@ -334,8 +404,10 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
                 if(totalDist<0) continue;
 
                 A_path new_candidate(totalPath, totalDist);
-                if(!AlreadyInA(totalPath, candidates) && !AlreadyFound(totalPath, result)){
+                if(result_hashes.find(new_candidate.h64) == result_hashes.end() &&
+                   candidates_hashes.find(new_candidate.h64) == candidates_hashes.end()){
                     candidates.push(new_candidate);
+                    candidates_hashes.insert(new_candidate.h64);
                 }
             }
         }
@@ -348,7 +420,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristi
     k = std::min(k,(unsigned) 7);
     int paths_count = std::min(k*2,(unsigned) 20);
 
-    auto all_paths = KShortest(graph, source, target, paths_count, "distance");
+    auto all_paths = KShortest(graph, source, target, static_cast<unsigned int>(paths_count), "distance");
     if(all_paths.empty()) return {};
 
     std::vector<std::pair<std::vector<int>, int>> simple_paths;
@@ -360,15 +432,16 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristi
     if(simple_paths.empty()) return {};
 
     std::vector<A_path> result_paths;
+    result_paths.reserve(simple_paths.size());
     for(auto& path : simple_paths){
-        result_paths.push_back(A_path(path.first, path.second));
+        std::vector<int> tmp = path.first;
+        result_paths.emplace_back(tmp, path.second);
     }
 
-    std::vector<A_path> best_selection;
-
-    best_selection = paths_selection(result_paths, k , overlap_threshold);
+    std::vector<A_path> best_selection = paths_selection(result_paths, k , overlap_threshold);
 
     std::vector<std::pair<std::vector<int>, int>> result;
+    result.reserve(best_selection.size());
     for(auto& path : best_selection){
         result.push_back({path.nodes, static_cast<int>(path.distance)});
     }
