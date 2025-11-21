@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -g -Wall -Wextra -std=c++20 -Wno-unused-parameter -Werror 
+CXXFLAGS = -g -Wall -Wextra -std=c++20 -Wno-unused-parameter -Werror -O3
 
 # Executable name
 EXEC = compare
@@ -50,12 +50,20 @@ phase3:
 
 
 
+
+phase2_notest:  $(P2_OBJS) 
+	@$(CXX) $(CXXFLAGS) -o phase2 $(P2_OBJS)
+	@echo "Phase 2 executable successfully built without testcases"
+$(P2_OBJ_DIR)/%.o: $(P2_DIR)/%.cpp $(wildcard $(P2_DIR)/*.hpp)
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+
 # Clean target
 clean:
-	rm phase1 phase2 phase3
-	rm $(P1_OBJ_DIR)/*
-	rm $(P2_OBJ_DIR)/*
-	rm $(P3_OBJ_DIR)/*
+	rm -f phase1 phase2 phase3
+	rm -f $(P1_OBJ_DIR)/*
+	rm -f $(P2_OBJ_DIR)/*
 
 .PHONY: phase1 phase2 phase3 p1_generate_testcases clean 
 

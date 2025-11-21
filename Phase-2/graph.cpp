@@ -67,7 +67,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
             nlohmann::json inner_json;
             inner_json["source"]=x;
             inner_json["target"]=y;
-            inner_json["approx_shortest_distance"]=z;
+            inner_json["approx_shortest_distance"]=std::round(z * 1e6) / 1e6;
             tempdists.push_back(inner_json);
         }
         out["distances"]=tempdists;
@@ -88,7 +88,7 @@ void Graph::dijkstra_FarLM(std::vector<double>& distances,int src){
         distances[u]=dist;
         for(auto& e:adjacency_list[u]){
             int v =(e.u==u) ? e.v : e.u;
-            if(((!e.oneway) || (e.u == u)) && distances[v]>dist+e.length){
+            if(((!e.oneway) || (e.u == u)) ){
                 pq.push(std::make_pair(dist+e.length,v));
             }
         }
@@ -132,8 +132,8 @@ void Graph::multi_source_dijkstra_outOf(std::vector<int> srcs){
 }
 void Graph::preprocess_LM(){
     int no_of_landmarks=std::min(1024,node_count);
-    nearest_into_landmark.resize(node_count);
-    nearest_outOf_landmark.resize(node_count);
+    nearest_into_landmark.resize(node_count,std::make_pair(-1,-1));
+    nearest_outOf_landmark.resize(node_count,std::make_pair(-1,-1));
     std::vector<int> landmarkID_to_nodeID(no_of_landmarks);
     if(no_of_landmarks==node_count){
         for(unsigned int i=0;i<nearest_into_landmark.size();i++){
@@ -166,15 +166,30 @@ void Graph::preprocess_LM(){
         }
     }
     else{
-        std::vector<double> dmin(node_count,std::numeric_limits<double>::infinity());
-        landmarkID_to_nodeID[0]=0;
-        node_list[0].is_landmark=true;
-        dijkstra_FarLM(dmin,0);
-        for(int i=1;i<no_of_landmarks;i++){
-            landmarkID_to_nodeID[i] = std::max_element(dmin.begin(), dmin.end())-dmin.begin();
-            node_list[landmarkID_to_nodeID[i]].is_landmark=true;
-            dijkstra_FarLM(dmin,landmarkID_to_nodeID[i]);
+        std::vector<double> dmin(node_count);
+        std::vector<int> degrees(node_count);
+        int maxi=0;
+        for (int i = 0; i < node_count; i++) {
+            dmin[i] =std::numeric_limits<double>::max()/200;
+            degrees[i]=adjacency_list[i].size();maxi=std::max(degrees[i],maxi);
         }
+        landmarkID_to_nodeID[0] = 0;
+        node_list[0].is_landmark = true;
+        dijkstra_FarLM(dmin, 0);
+        std::vector<double> score(node_count);
+        for (int lm = 1; lm < no_of_landmarks; lm++) {
+            // ---- compute selection score for every node ----
+            for (int i = 0; i < node_count; i++) {
+                score[i] = dmin[i] * degrees[i];        
+            }
+            // ---- pick node with maximum score ----
+            int best = std::max_element(score.begin(), score.end()) - score.begin();
+            landmarkID_to_nodeID[lm] = best;
+            node_list[best].is_landmark = true;
+            // ---- update dmin with Dijkstra from new LM ----
+            dijkstra_FarLM(dmin, best);
+        }
+
         for(auto x:landmarkID_to_nodeID){
             for(auto y:landmarkID_to_nodeID){
                 landmark_to_landmark[x][y]=-1;
@@ -185,12 +200,13 @@ void Graph::preprocess_LM(){
             std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
             std::vector<bool> visited(node_count,false);
             pq.push(std::make_pair(0,landmarkID_to_nodeID[i]));
-            while(!pq.empty() && count<no_of_landmarks){
+            while(!pq.empty()){
                 auto [dist,u]=pq.top();pq.pop();
                 if(visited[u])continue;
                 visited[u]=true;
                 if(node_list[u].is_landmark){
                     landmark_to_landmark[landmarkID_to_nodeID[i]][u]=dist;count++;
+                    if(count==no_of_landmarks)break;
                 }
                 for(auto& e:adjacency_list[u]){
                     int v =(e.u==u) ? e.v : e.u;

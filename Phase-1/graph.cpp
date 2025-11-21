@@ -4,6 +4,9 @@ void Graph::addNode(const Node& node) {
     node_list.push_back(node);
     node_count++;
     adjacency_list.push_back(std::unordered_map<int,Edge> ());
+    for(std::string poi : node.pois) {
+        pois[poi].push_back(node.id);
+    }
 }
 
 void Graph::addEdge(const Edge& edge) {
@@ -13,7 +16,7 @@ void Graph::addEdge(const Edge& edge) {
 }
 
 bool Graph::removeEdge(int id) {
-    if(edge_list.find(id)==edge_list.end()) return false;
+    if(edge_list.find(id)==edge_list.end()||!edge_list[id].isOpen) return false;
     Edge edge=edge_list[id];
     adjacency_list[edge.u][id].isOpen=false;
     if(!edge.oneway) adjacency_list[edge.v][id].isOpen=false;
@@ -21,13 +24,14 @@ bool Graph::removeEdge(int id) {
     return true;
 }
 
-bool Graph::modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile) {
+bool Graph::modifyEdge(int id, double length, double average_time, std::vector<double> speed_profile, std::string road_type) {
     if(edge_list.find(id)==edge_list.end()) return false;
     Edge edge=edge_list[id];
     edge.isOpen=true;
     edge.length=length;
     edge.average_time=average_time;
     edge.speed_profile=speed_profile;
+    edge.road_type=road_type;
     edge_list[id]=edge;
     adjacency_list[edge.u][edge.id]=edge;
     if(!edge.oneway) adjacency_list[edge.v][edge.id]=edge;
@@ -55,7 +59,11 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         if(query["patch"].find("average_time")!=query["patch"].end()){
             average_time=query["patch"]["average_time"].get<double>();
         }
-        bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile);
+        std::string road_type=edge_list[query["edge_id"]].road_type;
+        if(query["patch"].find("road_type")!=query["patch"].end()){
+            road_type=query["patch"]["road_type"].get<std::string>();
+        }
+        bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile,road_type);
         out["id"]=query["id"];
         out["done"]=done;
         return out;
