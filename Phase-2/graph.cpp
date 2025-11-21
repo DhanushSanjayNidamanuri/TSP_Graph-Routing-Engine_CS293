@@ -122,7 +122,7 @@ void Graph::multi_source_dijkstra_outOf(std::vector<int> srcs){
     }
 }
 void Graph::preprocess_LM(){
-    int no_of_landmarks=std::min(1024,node_count);
+    int no_of_landmarks=std::min(4096,node_count);
     nearest_into_landmark.resize(node_count,std::make_pair(-1,-1));
     nearest_outOf_landmark.resize(node_count,std::make_pair(-1,-1));
     std::vector<int> landmarkID_to_nodeID(no_of_landmarks);
@@ -163,6 +163,7 @@ void Graph::preprocess_LM(){
         for (int i = 0; i < node_count; i++) {
             dmin[i] =std::numeric_limits<double>::max()/200;
             degrees[i]=adjacency_list[i].size();maxi=std::max(degrees[i],maxi);
+            if(degrees[i]==0)node_list[i].isolated=true;
         }
         landmarkID_to_nodeID[0] = 0;
         node_list[0].is_landmark = true;
@@ -210,6 +211,7 @@ void Graph::preprocess_LM(){
         multi_source_dijkstra_into(landmarkID_to_nodeID);
         multi_source_dijkstra_outOf(landmarkID_to_nodeID);
     }
+    
 };
 
 
