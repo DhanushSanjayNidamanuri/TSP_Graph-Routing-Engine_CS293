@@ -7,6 +7,8 @@
 #include <queue>
 #include <map>
 #include <algorithm>
+#include <unordered_set>
+
 class Graph;
 class Node;
 class Edge;
@@ -25,7 +27,9 @@ public:
     std::vector<std::pair<std::vector<int>,int>> KShortest_heuristic(Graph& graph, int source, int target,unsigned int k, int overlap_threshold);
 };
 
-std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode);
+std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode, const std::vector<std::pair<int, int>>& removedEdges={});
 double path_distance(Graph& graph, std::vector<int>& path);
+bool is_path(const std::vector<int>& path);
+bool samePaths(const std::vector<int>& path1, const std::vector<int>& path2);
 
 #endif

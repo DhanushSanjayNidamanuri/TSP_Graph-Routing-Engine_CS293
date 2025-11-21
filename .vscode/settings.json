@@ -79,7 +79,8 @@
         "valarray": "cpp",
         "variant": "cpp",
         "queue": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "xtree": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

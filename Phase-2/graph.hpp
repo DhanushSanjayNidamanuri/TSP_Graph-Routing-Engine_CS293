@@ -66,7 +66,8 @@ public:
     friend class ApproxShortest;
     friend class ApproxShortest_Result;
     friend double path_distance(Graph& graph, std::vector<int>& path);
-    friend std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode);
+    friend std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, int target, std::string mode, const std::vector<std::pair<int, int>>& removedEdges);
+    
     Graph(int node_count=0): node_count(node_count){
         adjacency_list.resize(node_count);node_list.resize(node_count);
         // processed_incoming_edges.resize(node_count);processed_outgoing_edges.resize(node_count);
