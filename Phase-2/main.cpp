@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
 
     json meta = queries_json["meta"];
     std::vector<json> results;
-
+    double out=0;
     for (const auto& query : queries_json["events"]) {
         auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -76,8 +76,10 @@ int main(int argc, char* argv[]) {
 
         auto end_time = std::chrono::high_resolution_clock::now();
         result["processing_time"] = std::chrono::duration<double, std::milli>(end_time - start_time).count();
+        out+=std::chrono::duration<double, std::milli>(end_time - start_time).count();
         results.push_back(result);
     }
+    std::cout<<out<<"\n";
 
     std::ofstream output_file(argv[3]);
     if (!output_file.is_open()) {

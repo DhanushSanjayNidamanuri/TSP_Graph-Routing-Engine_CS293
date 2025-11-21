@@ -18,6 +18,7 @@ public:
     int id;    
     double lat, lon;
     bool is_landmark=false;
+    bool isolated=false;
     // std::vector<std::string> pois;
     Node(){};
     Node(int id, double lat, double lon) : id(id), lat(lat), lon(lon) {};

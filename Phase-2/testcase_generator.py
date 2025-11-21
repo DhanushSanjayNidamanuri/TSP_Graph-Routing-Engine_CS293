@@ -8,12 +8,28 @@ import random
 #Working directory
 pwd = Path(__file__).parent.resolve()
 os.chdir(pwd)
+# #1000 nodes---------------->
+# latDOWN=19.069276
+# latUP=19.076739
+# longLEFT=72.824315
+# longRIGHT=72.838874
+#-------------------------->
 
-latDOWN=19.069276
-latUP=19.076739
-longLEFT=72.824315
-longRIGHT=72.838874
 
+#5000 nodes---------------->
+# latDOWN = 19.0395
+# latUP = 19.0532
+# longLEFT = 72.8235
+# longRIGHT = 72.8404
+#-------------------------->
+
+
+#100k nodes----------------->
+latDOWN   = 19.030500
+latUP     = 19.170500
+longLEFT  = 72.805000
+longRIGHT = 72.945000
+#-------------------------->
 query = f"""
 [out:json][timeout:1000];
 (
@@ -194,7 +210,7 @@ Phase1_like_queries=[]
 phase_1_count=0
 for i in range(no_of_queries_per_type):
     source=random.sample(range(node_counter),3)
-    no_of_queries=int(random.uniform(0,5))
+    no_of_queries=int(random.uniform(1,5))
     sources=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]
     targets=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]
     accpetable_error=round(random.uniform(5,15),2)

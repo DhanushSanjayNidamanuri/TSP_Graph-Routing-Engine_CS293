@@ -8,7 +8,7 @@ pwd = Path(__file__).parent.resolve()
 os.chdir(pwd)
 REAL_FILE = "output.json"
 APPROX_FILE = "output_approx.json"
-
+QUERIES_FILE = "Phase-2/testcases/queries_test1.json"
 # ------------------------------------------------------------
 # Parse REAL output
 # ------------------------------------------------------------
@@ -27,10 +27,22 @@ def parse_real(data):
 # ------------------------------------------------------------
 def parse_approx(data):
     rows = []
+
     for r in data["results"]:
         for d in r["distances"]:
             approx = d["approx_shortest_distance"]
             rows.append(( approx))
+
+    return rows
+
+def parse_queries():
+    rows=[]
+    with open(QUERIES_FILE) as f:
+        queries_data = json.load(f)
+        for r in queries_data["events"]:
+            threshold=r["acceptable_error_pct"]
+            for q in r["queries"]:
+                rows.append(threshold)
     return rows
 
 # ------------------------------------------------------------
@@ -47,19 +59,15 @@ df_real = pd.DataFrame(parse_real(real_data),
 
 df_approx = pd.DataFrame(parse_approx(approx_data),
                          columns=["approx"])
-
+df_queries=pd.DataFrame(parse_queries(),columns=["threshold"])
 # Merge 
-df = pd.concat([df_real, df_approx], axis=1)
+df = pd.concat([df_real, df_approx,df_queries], axis=1)
 
 # ------------------------------------------------------------
 # Compute errors
 # ------------------------------------------------------------
 
-df["abs_error_percentage"] = np.where(
-    (df["approx"] < 0) & (df["real"] >= 0),
-    100.0,
-    ((df["approx"] - df["real"]) / df["real"]) * 100
-)
+df["abs_error_percentage"] =((df["approx"] - df["real"]) / df["real"]) * 100
 df["approx paths given"]=((df["abs_error_percentage"] > 0) & (df["abs_error_percentage"] != 100) )
 # ------------------------------------------------------------
 # Summary
@@ -69,9 +77,7 @@ summary = {
     "max_error": float(df["abs_error_percentage"].max()),
     "min_error": float(df["abs_error_percentage"].min()),
     "mean_error": float(df["abs_error_percentage"].mean()),
-    "threshold_violations_5%": int((df["abs_error_percentage"] > 5).sum()),
-    "threshold_violations_10%": int((df["abs_error_percentage"] > 10).sum()),
-    "threshold_violations_15%": int((df["abs_error_percentage"] > 15).sum()),
+    "threshold_violations": int((df["abs_error_percentage"] > df["threshold"]).sum())+int(( df["abs_error_percentage"] < 0).sum()),
     "No of approx paths given":((df["abs_error_percentage"] > 0) & (df["abs_error_percentage"] != 100) ).sum(),
     "Incorretly_No_Path_given":((df["approx"] < 0) & (df["real"] >= 0 )).sum()
 }
