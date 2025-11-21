@@ -35,7 +35,7 @@ class Graph{
     std::vector<Node> node_list;
     int node_count;
     std::vector<std::vector<Edge>> adjacency_list;
-
+    std::vector<std::vector<float>> distances;
 public:
     
     Graph(int node_count=0): node_count(node_count){
@@ -44,7 +44,7 @@ public:
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
     void preprocess();
-    void dijkstra_FarLM(std::vector<double>& distances,int src);
+    void dijkstra(std::vector<double>& distances,int src);
     nlohmann::json query_handler(const nlohmann::json& query);
 };
 #endif

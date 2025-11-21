@@ -57,7 +57,7 @@ double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,i
 
 
 ApproxShortest_Result ApproxShortest::findApprox(Graph& graph, int id, std::vector<std::pair<int,int>>& queries, double time_budget, double max_error){
-    double tuning_factor=(200/max_error) +1;
+    double tuning_factor=(180/max_error) +1;
     std::vector<std::tuple<int,int,double>> dists;
     auto total_time=0;
     int total_queries=queries.size();
@@ -83,7 +83,7 @@ ApproxShortest_Result ApproxShortest::findApprox(Graph& graph, int id, std::vect
            dists.push_back(std::make_tuple(source,target,lm_to_lm+src_lm_dist+dest_lm_dist));
         }
         else{
-            double temp=Hybrid_A_Star(graph,avg_time_left*4,source,target,lm_to_lm+src_lm_dist+dest_lm_dist);
+            double temp=Hybrid_A_Star(graph,avg_time_left,source,target,lm_to_lm+src_lm_dist+dest_lm_dist);
             dists.push_back(std::make_tuple(source,target,temp));
         }
         auto end_time = std::chrono::high_resolution_clock::now();
