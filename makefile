@@ -51,6 +51,14 @@ phase3:
 
 
 
+phase1_notest:  $(P1_OBJS)
+	@$(CXX) $(CXXFLAGS) -o phase1 $(P1_OBJS)
+	@echo "Phase 1 executable successfully built without testcases"
+$(P1_OBJ_DIR)/%.o: $(P1_DIR)/%.cpp $(wildcard $(P1_DIR)/*.hpp)
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+
 phase2_notest:  $(P2_OBJS) 
 	@$(CXX) $(CXXFLAGS) -o phase2 $(P2_OBJS)
 	@echo "Phase 2 executable successfully built without testcases"
