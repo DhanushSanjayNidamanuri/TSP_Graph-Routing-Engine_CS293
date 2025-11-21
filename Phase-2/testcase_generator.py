@@ -239,7 +239,7 @@ for i in range(no_of_queries_per_type):
     #         }
     #     })
     #     phase_1_count+=1
-    # query_count+=1
+    query_count+=1
     # #<--------------------------------------------------------------->
 random.shuffle(queries)
 # #<----------------------ADDED FOR VERIFICATION------------------>
