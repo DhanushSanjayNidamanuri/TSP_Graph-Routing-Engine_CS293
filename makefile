@@ -80,7 +80,7 @@ $(P2_OBJ_DIR)/%.o: $(P2_DIR)/%.cpp $(wildcard $(P2_DIR)/*.hpp)
 
 phase3_notest: $(P3_OBJS)
 	@$(CXX) $(CXXFLAGS) -o phase3 $(P3_OBJS)
-	@echo "Phase 3 executable successfully built"
+	@echo "Phase 3 executable successfully built without testcases"
 $(P3_OBJ_DIR)/%.o: $(P3_DIR)/%.cpp $(wildcard $(P3_DIR)/*.hpp)
 	@mkdir -p $(dir $@)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
