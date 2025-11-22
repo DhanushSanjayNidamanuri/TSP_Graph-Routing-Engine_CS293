@@ -65,25 +65,16 @@ P3_generate_testcases:
 phase1_notest:  $(P1_OBJS)
 	@$(CXX) $(CXXFLAGS) -o phase1 $(P1_OBJS)
 	@echo "Phase 1 executable successfully built without testcases"
-$(P1_OBJ_DIR)/%.o: $(P1_DIR)/%.cpp $(wildcard $(P1_DIR)/*.hpp)
-	@mkdir -p $(dir $@)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
 phase2_notest:  $(P2_OBJS) 
 	@$(CXX) $(CXXFLAGS) -o phase2 $(P2_OBJS)
 	@echo "Phase 2 executable successfully built without testcases"
-$(P2_OBJ_DIR)/%.o: $(P2_DIR)/%.cpp $(wildcard $(P2_DIR)/*.hpp)
-	@mkdir -p $(dir $@)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
 phase3_notest: $(P3_OBJS)
 	@$(CXX) $(CXXFLAGS) -o phase3 $(P3_OBJS)
 	@echo "Phase 3 executable successfully built without testcases"
-$(P3_OBJ_DIR)/%.o: $(P3_DIR)/%.cpp $(wildcard $(P3_DIR)/*.hpp)
-	@mkdir -p $(dir $@)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
 # Clean target
