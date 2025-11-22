@@ -17,10 +17,10 @@ os.chdir(pwd)
 
 
 #5000 nodes---------------->
-latDOWN = 19.0395
-latUP = 19.0532
-longLEFT = 72.8235
-longRIGHT = 72.8404
+latDOWN = 19.04397
+latUP = 19.05693
+longLEFT = 72.86562
+longRIGHT = 72.90974
 #-------------------------->
 #10k nodes----------------->
 # latDOWN   = 19.048800
