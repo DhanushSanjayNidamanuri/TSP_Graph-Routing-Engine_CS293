@@ -41,6 +41,8 @@ class TSP {
 public:
     TSP_Result solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet);
     Solution greedy_build(const Graph& graph,const std::vector<std::tuple<int,int,int>>& orders,int numDrivers,int depot);
+    Solution LNS(Solution& initial,Graph& graph,double time_budget);
+    void remove_order_from_driver(DriverRoute& route,const Order& order);
 };
 
 #endif

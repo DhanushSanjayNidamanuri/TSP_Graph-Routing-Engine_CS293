@@ -34,7 +34,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     out["metrics"]["total_delivery_time_s"]=std::round(out_res.time* 1e6) / 1e6;
     return out;
 }
-void Graph::dijkstra(std::vector<double>& times,int src){
+void Graph::dijkstra(std::vector<double>& times,int src,,std::vector<int>& parent){
     std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
     pq.push(std::make_pair(0,src));
     std::vector<bool> visited(node_count,false);
@@ -54,8 +54,10 @@ void Graph::dijkstra(std::vector<double>& times,int src){
 
 void Graph::preprocess(){
     apsp_times.resize(node_count);
+    apsp_times.resize(node_count);
     for(int i=0;i<node_count;i++){
         apsp_times[i].resize(node_count,-1);
+        apsp_next[i].resize(node_count,-1);
     }
     for(int i=0;i<node_count;i++){
         dijkstra(apsp_times[i],i);
