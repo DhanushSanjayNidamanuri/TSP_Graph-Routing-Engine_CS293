@@ -34,7 +34,7 @@ double ShortestPath::Expected_time(Edge& edge,double start_time){
     int present_speed_profile_id=int(start_time/900)%96;
     double travesal_time=0;
     double distance=edge.length;
-    double delta=((present_speed_profile_id+1))*900-start_time%86400;
+    double delta=((present_speed_profile_id+1))*900-(int)start_time%86400;
     if(edge.length<=delta*edge.speed_profile[present_speed_profile_id]){
         return start_time+edge.length/edge.speed_profile[present_speed_profile_id];
     }
