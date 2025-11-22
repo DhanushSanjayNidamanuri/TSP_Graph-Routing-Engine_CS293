@@ -43,6 +43,7 @@ public:
     Solution greedy_build(const Graph& graph,const std::vector<std::tuple<int,int,int>>& orders,int numDrivers,int depot);
     Solution LNS(Solution& initial,Graph& graph,double time_budget);
     void remove_order_from_driver(DriverRoute& route,const Order& order);
+    std::vector<int> get_path(const Graph& graph,int A,int B);
 };
 
 #endif

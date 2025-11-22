@@ -47,7 +47,7 @@ void Graph::dijkstra(std::vector<double>& times,int src,std::vector<int>& parent
         for(auto& e:adjacency_list[u]){
             int v =(e.u==u) ? e.v : e.u;
             if(((!e.oneway) || (e.u == u)) && !visited[v]){
-                pq.push(std::make_pair(time+e.average_time,v,u));
+                pq.push(std::make_tuple(time+e.average_time,v,u));
             }
         }
     }
@@ -55,13 +55,13 @@ void Graph::dijkstra(std::vector<double>& times,int src,std::vector<int>& parent
 
 void Graph::preprocess(){
     apsp_times.resize(node_count);
-    apsp_times.resize(node_count);
+    apsp_next.resize(node_count);
     for(int i=0;i<node_count;i++){
         apsp_times[i].resize(node_count,-1);
         apsp_next[i].resize(node_count,-1);
     }
     for(int i=0;i<node_count;i++){
-        dijkstra(apsp_times[i],i);
+        dijkstra(apsp_times[i],i,apsp_next[i]);
     }
     
 };

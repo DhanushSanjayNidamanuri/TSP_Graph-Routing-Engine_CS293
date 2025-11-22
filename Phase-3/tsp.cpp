@@ -1,11 +1,11 @@
 #include "tsp.hpp"
-std::vector<int> Graph::get_path(int A,int B){
+std::vector<int> TSP::get_path(const Graph& graph,int A,int B){
     std::vector<int> path;
-    if(apsp_times[A][B]<0)return path;
+    if(graph.apsp_times[A][B]<0)return path;
     int cur=B;
     path.push_back(B);
     while(cur!=A){
-        cur=apsp_next[A][cur];
+        cur=graph.apsp_next[A][cur];
         path.push_back(cur);
     }
     std::reverse(path.begin(),path.end());
@@ -78,7 +78,27 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
                     bestPos=i+1;
                 }
             }
-            route.insert(route.begin()+bestPos,pickup);
+            int left = route[bestPos-1];
+            int right = (bestPos < (int)route.size()) ? route[bestPos] : -1;
+
+            std::vector<int> outpath = get_path(graph, left, pickup);
+            std::vector<int> inpath;
+            if(right != -1)
+            inpath = get_path(graph, pickup, right);
+            std::vector<int> new_route;
+            for(int i=0;i<bestPos-1;i++){
+                new_route.push_back(route[i]);
+            }
+            for(int i=1;i<(int)outpath.size();i++){
+                new_route.push_back(outpath[i]);
+            }
+            for(int i=1;i<(int)inpath.size();i++){
+                new_route.push_back(inpath[i]);
+            }
+            for(int i=bestPos+1;i<(int)route.size();i++){
+                new_route.push_back(route[i]);
+            }
+            route=new_route;
 
 
             // Inserting drop after pickup
@@ -100,7 +120,25 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
                     bestDropPos = j;
                 }
             }
-            route.insert(route.begin() + bestDropPos, dropoff);
+            std::vector<int> outpath1 = get_path(graph, route[bestDropPos-1], dropoff);
+            std::vector<int> inpath1;
+            if(bestDropPos < (int)route.size())
+                inpath1 = get_path(graph, dropoff, route[bestDropPos]);
+
+            std::vector<int> new_route1;
+            for(int i=0;i<bestDropPos-1;i++){
+                new_route1.push_back(route[i]);
+            }
+            for(int i=1;i<(int)outpath1.size();i++){
+                new_route1.push_back(outpath1[i]);
+            }
+            for(int i=1;i<(int)inpath1.size();i++){
+                new_route1.push_back(inpath1[i]);
+            }
+            for(int i=bestDropPos+1;i<(int)route.size();i++){
+                new_route1.push_back(route[i]);
+            }
+            route=new_route1;
         }
     }
 
@@ -125,38 +163,7 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
     return S;
 }
 
-void TSP::remove_order_from_driver(DriverRoute& route,const Order& order){
-    for(int i=0;i<(int)D.route.size();i++){
-        if(D.route[i]==o.pickup || D.route[i]==o.dropoff){
-            D.route.erase(D.route.begin()+i);
-            i--;
-        }
-    }
-    for(int i=0;i<(int)D.orders.size();i++){
-        if(D.orders[i].id==o.id){
-            D.orders.erase(D.orders.begin()+i);
-            break;
-        }
-    }
-}
 
-
-Solution TSP::LNS(Solution& initial,Graph& graph,double time_budget){
-    Solution best=initial;
-    Solution current=initial;
-    auto start_time= std::chrono::high_resolution_clock::now();
-    auto present_time= std::chrono::high_resolution_clock::now();
-    int K=2;
-    while(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-start_time).count()<time_budget){
-        current=best;
-        destroy_random(current,K);
-        repair(current,graph);
-        for(auto& D:current.drivers)two_opt(D,graph);
-        current.total_latency=compute_latency(current,graph);
-        if(current.total_latency<best.total_latency)best=current;
-    }
-    return best;
-}
 
 TSP_Result TSP::solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet){
     Solution initial_sol=greedy_build(graph,orders,fleet.first,fleet.second);
