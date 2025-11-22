@@ -198,7 +198,7 @@ for i in range(no_of_queries_per_type):
 # approx_shortest_path
 Phase1_like_queries=[]
 phase_1_count=0
-for i in range(int(no_of_queries_per_type/50)):
+for i in range(int(no_of_queries_per_type)):
     source=random.sample(range(node_counter),3)
     no_of_queries=int(random.uniform(1,16))
     sources=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]

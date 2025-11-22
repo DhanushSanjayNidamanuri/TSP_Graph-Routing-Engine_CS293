@@ -36,7 +36,7 @@ class Graph{
     int node_count;
     std::vector<std::vector<Edge>> adjacency_list;
     std::vector<std::vector<double>> apsp_times;
-    std::vector<std::vector<double>> apsp_next;
+    std::vector<std::vector<int>> apsp_next;
 public:
     friend class TSP;
     Graph(int node_count=0): node_count(node_count){
@@ -45,7 +45,7 @@ public:
     void addNode(const Node& node);
     void addEdge(const Edge& edge);
     void preprocess();
-    void dijkstra(std::vector<double>& distances,int src,,std::vector<int>& parent);
+    void dijkstra(std::vector<double>& distances,int src,std::vector<int>& parent);
     nlohmann::json query_handler(const nlohmann::json& query);
     std::vector<int> get_path(int A,int B);
 };
