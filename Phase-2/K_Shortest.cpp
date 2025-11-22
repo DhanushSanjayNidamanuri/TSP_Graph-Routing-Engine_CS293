@@ -11,6 +11,7 @@
 #include <iostream>
 #include <atomic>
 #include <cstdint>
+#define _USE_MATH_DEFINES
 
 static std::atomic<int> g_astar_max_ms(5000);
 
@@ -68,11 +69,25 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
         return false;
     };
     auto heuristic = [&](unsigned int node1,unsigned int node2) {
-        if(node1 >= graph.node_list.size() || node2 >= graph.node_list.size()) return 0.0;
-        double lat1 = graph.node_list[node1].lat, lon1 = graph.node_list[node1].lon;
-        double lat2 = graph.node_list[node2].lat, lon2 = graph.node_list[node2].lon;
-        return sqrt(pow(lat1-lat2, 2) + pow(lon1-lon2, 2)) * 111000.0; 
-    };
+    if(node1 >= graph.node_list.size() || node2 >= graph.node_list.size()) return 0.0;
+    
+    double lat1 = graph.node_list[node1].lat, lon1 = graph.node_list[node1].lon;
+    double lat2 = graph.node_list[node2].lat, lon2 = graph.node_list[node2].lon;
+    
+    lat1 *= M_PI / 180.0;
+    lon1 *= M_PI / 180.0;
+    lat2 *= M_PI / 180.0;
+    lon2 *= M_PI / 180.0;
+    
+    double dlat = lat2 - lat1;
+    double dlon = lon2 - lon1;
+    double a = std::sin(dlat / 2) * std::sin(dlat / 2) + 
+               std::cos(lat1) * std::cos(lat2) * 
+               std::sin(dlon / 2) * std::sin(dlon / 2);
+    double c = 2 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
+    
+    return 6371000.0 * c;  // meters
+};
     auto comp = [](const std::pair<double, int>& a, const std::pair<double, int>& b){
         return a.first > b.first;
     };
@@ -290,6 +305,10 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
             break;
         }
     }
+    std::sort(result.begin(), result.end(),
+    [](const A_path& a, const A_path& b) {
+        return a.distance < b.distance;
+    });
     return result;
 }
 //Yen's algorithm
@@ -410,7 +429,10 @@ std::vector<std::pair<std::vector<int>, double>> KShortestPaths::KShortest(Graph
             }
         }
     }
-    
+    std::sort(result.begin(), result.end(), 
+        [](const std::pair<std::vector<int>, double>& a, const std::pair<std::vector<int>, double>& b) {
+            return a.second < b.second;
+    });
     return result;
 }
 //Heuristic
@@ -443,6 +465,10 @@ std::vector<std::pair<std::vector<int>, double>> KShortestPaths::KShortest_heuri
     for(auto& path : best_selection){
         result.push_back({path.nodes, path.distance});
     }
+    std::sort(result.begin(), result.end(), 
+        [](const std::pair<std::vector<int>, double>& a, const std::pair<std::vector<int>, double>& b) {
+            return a.second < b.second;
+    });
     return result;
 }
 

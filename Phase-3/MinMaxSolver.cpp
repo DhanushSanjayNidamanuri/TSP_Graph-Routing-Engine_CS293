@@ -6,7 +6,7 @@
 double MinMaxSolver::calculate_time(Graph& graph, std::vector<int>& route){
     double total_time = 0.0;
     for(size_t i=1; i<route.size(); i++){
-        total_time += graph.apsp_times[route[i-1]route[i]];
+        total_time += graph.apsp_times[route[i-1]][route[i]];
     }
     return total_time;
 }
@@ -32,7 +32,7 @@ std::vector<std::tuple<int, std::vector<int>, std::vector<int>>> MinMaxSolver::s
 
         //trying all combinations and permutations
         for(int d_id = 0; d_id < num_drivers; d_id++){
-            auto current_route = std::get<1>(assignments[drivers[d_id]]);
+            auto current_route = std::get<1>(assignments[d_id]);
             auto current_order_ids = std::get<2>(assignments[d_id]);
 
             //new route
@@ -41,13 +41,13 @@ std::vector<std::tuple<int, std::vector<int>, std::vector<int>>> MinMaxSolver::s
             new_route.push_back(dropoff);
 
             std::vector<int> new_order_ids = current_order_ids;
-            new_route_ids.push_back(order_id);
+            new_order_ids.push_back(order_id);
 
             //new max delivery time
             double new_max_time = 0.0;
             for(int d=0; d < num_drivers; d++){
                 double driver_time;
-                if(d == driver_id){
+                if(d == d_id){
                     driver_time = calculate_time(graph, new_route);
                 }else{
                     driver_time = calculate_time(graph, std::get<1>(assignments[d]));
