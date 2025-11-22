@@ -68,39 +68,19 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
         }
         return false;
     };
-    auto heuristic = [&](unsigned int node1,unsigned int node2) {
-    if(node1 >= graph.node_list.size() || node2 >= graph.node_list.size()) return 0.0;
     
-    double lat1 = graph.node_list[node1].lat, lon1 = graph.node_list[node1].lon;
-    double lat2 = graph.node_list[node2].lat, lon2 = graph.node_list[node2].lon;
-    
-    lat1 *= M_PI / 180.0;
-    lon1 *= M_PI / 180.0;
-    lat2 *= M_PI / 180.0;
-    lon2 *= M_PI / 180.0;
-    
-    double dlat = lat2 - lat1;
-    double dlon = lon2 - lon1;
-    double a = std::sin(dlat / 2) * std::sin(dlat / 2) + 
-               std::cos(lat1) * std::cos(lat2) * 
-               std::sin(dlon / 2) * std::sin(dlon / 2);
-    double c = 2 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
-    
-    return 6371000.0 * c;  // meters
-};
     auto comp = [](const std::pair<double, int>& a, const std::pair<double, int>& b){
         return a.first > b.first;
     };
     
+    // DIJKSTRA: Only distance (no f_score)
     std::priority_queue<std::pair<double, int>, std::vector<std::pair<double, int>>, decltype(comp)> pq(comp);
-    std::vector<double> g_score(graph.node_list.size(), std::numeric_limits<double>::max());
-    std::vector<double> f_score(graph.node_list.size(), std::numeric_limits<double>::max());
+    std::vector<double> dist(graph.node_list.size(), std::numeric_limits<double>::max());
     std::vector<int> prev(graph.node_list.size(), -1);    
     std::vector<bool> visited(graph.node_list.size(), false);
 
-    g_score[source] = 0.0;
-    f_score[source] = heuristic(source, target);
-    pq.push({f_score[source], source});
+    dist[source] = 0.0;
+    pq.push({dist[source], source});  // Push actual distance
 
     const int max_expansions = 200000;
     int expansions = 0;
@@ -109,24 +89,23 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
         if(timeout_check()){
             return {{}, -1.0};
         }
-        auto [curr_f, node] = pq.top();
+        auto [curr_dist, node] = pq.top();  // This is actual distance now
         pq.pop();
 
         if(visited[node]) continue;
-        visited[node]=true;
+        visited[node] = true;
 
         if(++expansions > max_expansions){
             return {{}, -1.0};
         }
-        //reached
+        
         if(node == target) break;
-        //was better earlier than now
-        if(curr_f > f_score[node]) continue;
+        
+        if(curr_dist > dist[node]) continue;
 
         for(Edge& edge : graph.adjacency_list[node]){
-            //if not here, then the other is neighbor
             int v = (edge.u == node) ? edge.v : edge.u;
-            //one-way, when the entrance the other side
+            
             if(edge.oneway && edge.u != node) continue;
 
             if(is_forbidden(node, v)){
@@ -134,27 +113,28 @@ std::pair<std::vector<int>, double> AstarShortestPath(Graph& graph, int source, 
             }
 
             double weight = (mode == "time") ? edge.average_time : edge.length;
-            double dist_new = g_score[node] + weight;
+            double new_dist = dist[node] + weight;
 
-            if(dist_new < g_score[v]){
-                g_score[v] = dist_new;
-                f_score[v] = dist_new + heuristic(v, target);
+            if(new_dist < dist[v]){
+                dist[v] = new_dist;
                 prev[v] = node;
-                pq.push({f_score[v], v});
+                pq.push({dist[v], v});  // Push actual distance
             }
         }
     }
+    
     if(prev[target] == -1){
         return {{}, -1.0};
     }
-    //returning path
+    
     std::vector<int> result;
-    for(int node = target; node!=-1; node = prev[node]){
+    for(int node = target; node != -1; node = prev[node]){
         result.push_back(node);
     }
     std::reverse(result.begin(), result.end());
 
-    return {result, g_score[target]};
+    return {result, dist[target]};
+
 }
 
 double path_distance(Graph& graph, std::vector<int>& path){
