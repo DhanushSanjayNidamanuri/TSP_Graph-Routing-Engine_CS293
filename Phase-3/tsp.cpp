@@ -78,9 +78,13 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
                     bestPos=i+1;
                 }
             }
-            std::vector<int> outpath=get_path(graph,route[bestPos-1],pickup);
+            int left = route[bestPos-1];
+            int right = (bestPos < (int)route.size()) ? route[bestPos] : -1;
+
+            std::vector<int> outpath = get_path(graph, left, pickup);
             std::vector<int> inpath;
-            if(bestPos+1<(int)route.size())inpath=get_path(graph,pickup,route[bestPos]);
+            if(right != -1)
+            inpath = get_path(graph, pickup, right);
             std::vector<int> new_route;
             for(int i=0;i<bestPos-1;i++){
                 new_route.push_back(route[i]);
@@ -116,21 +120,23 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
                     bestDropPos = j;
                 }
             }
-            std::vector<int> outpath1=get_path(graph,route[bestDropPos-1],pickup);
+            std::vector<int> outpath1 = get_path(graph, route[bestDropPos-1], dropoff);
             std::vector<int> inpath1;
-            if(bestDropPos+1<(int)route.size())inpath1=get_path(graph,pickup,route[bestDropPos+1]);
+            if(bestDropPos < (int)route.size())
+                inpath1 = get_path(graph, dropoff, route[bestDropPos]);
+
             std::vector<int> new_route1;
             for(int i=0;i<bestDropPos-1;i++){
-                new_route.push_back(route[i]);
+                new_route1.push_back(route[i]);
             }
             for(int i=1;i<(int)outpath1.size();i++){
-                new_route.push_back(outpath1[i]);
+                new_route1.push_back(outpath1[i]);
             }
             for(int i=1;i<(int)inpath1.size();i++){
-                new_route.push_back(inpath1[i]);
+                new_route1.push_back(inpath1[i]);
             }
-            for(int i=bestDropPos+2;i<(int)route.size();i++){
-                new_route.push_back(route[i]);
+            for(int i=bestDropPos+1;i<(int)route.size();i++){
+                new_route1.push_back(route[i]);
             }
             route=new_route1;
         }
