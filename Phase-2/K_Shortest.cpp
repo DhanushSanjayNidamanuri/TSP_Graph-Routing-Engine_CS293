@@ -184,7 +184,7 @@ bool samePaths(const std::vector<int>& path1, const std::vector<int>& path2){
     return true;
 }
 //for checking does this already exist 
-bool AlreadyFound(const std::vector<int>& path, const std::vector<std::pair<std::vector<int>, int>>& results){
+bool AlreadyFound(const std::vector<int>& path, const std::vector<std::pair<std::vector<int>, double>>& results){
     for(auto& x : results){
         if(samePaths(path, x.first)){
             return true;
@@ -235,8 +235,6 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
     result.push_back(candidates[0]);
 
     auto start_time = std::chrono::steady_clock::now();
-
-    //size_t cand_count = candidates.size();
 
     while(result.size() < k && result.size() <candidates.size()){
         auto current_time = std::chrono::steady_clock::now();
@@ -295,10 +293,10 @@ std::vector<A_path> paths_selection(std::vector<A_path> candidates, unsigned int
     return result;
 }
 //Yen's algorithm
-std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& graph, int source, int target, unsigned int k, std::string mode) {
+std::vector<std::pair<std::vector<int>, double>> KShortestPaths::KShortest(Graph& graph, int source, int target, unsigned int k, std::string mode) {
     k = std::min(k, (unsigned)20);
     
-    std::vector<std::pair<std::vector<int>, int>> result;
+    std::vector<std::pair<std::vector<int>, double>> result;
     std::priority_queue<A_path, std::vector<A_path>, std::greater<A_path>> candidates;
 
     auto start_time = std::chrono::steady_clock::now();
@@ -327,7 +325,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     A_path first_a_path(first_path.first, first_dist);
     candidates.push(first_a_path);
     candidates_hashes.insert(first_a_path.h64);
-    result.push_back({first_path.first, static_cast<int>(first_dist)});
+    result.push_back({first_path.first, first_dist});
     result_hashes.insert(path_hash64(first_path.first));
 
     
@@ -347,7 +345,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
         
         uint64_t curh = current.h64;
         if(result_hashes.find(curh) == result_hashes.end()){
-            result.push_back({current.nodes, static_cast<int>(current.distance)});
+            result.push_back({current.nodes, static_cast<double>(current.distance)});
             result_hashes.insert(curh);
         }
 
@@ -416,14 +414,14 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     return result;
 }
 //Heuristic
-std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristic(Graph& graph, int source, int target, unsigned int k, int overlap_threshold){
+std::vector<std::pair<std::vector<int>, double>> KShortestPaths::KShortest_heuristic(Graph& graph, int source, int target, unsigned int k, int overlap_threshold){
     k = std::min(k,(unsigned) 7);
     int paths_count = std::min(k*2,(unsigned) 20);
 
     auto all_paths = KShortest(graph, source, target, static_cast<unsigned int>(paths_count), "distance");
     if(all_paths.empty()) return {};
 
-    std::vector<std::pair<std::vector<int>, int>> simple_paths;
+    std::vector<std::pair<std::vector<int>, double>> simple_paths;
     for(auto& path : all_paths){
         if(is_simple(path.first)){
             simple_paths.push_back(path);
@@ -440,10 +438,10 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest_heuristi
 
     std::vector<A_path> best_selection = paths_selection(result_paths, k , overlap_threshold);
 
-    std::vector<std::pair<std::vector<int>, int>> result;
+    std::vector<std::pair<std::vector<int>, double>> result;
     result.reserve(best_selection.size());
     for(auto& path : best_selection){
-        result.push_back({path.nodes, static_cast<int>(path.distance)});
+        result.push_back({path.nodes, path.distance});
     }
     return result;
 }
