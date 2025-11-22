@@ -9,10 +9,32 @@ import random
 pwd = Path(__file__).parent.resolve()
 os.chdir(pwd)
 
-latDOWN  = 19.070
-latUP    = 19.085
-longLEFT = 72.825
-longRIGHT= 72.845
+# #1000 nodes---------------->
+# latDOWN=19.069276
+# latUP=19.076739
+# longLEFT=72.824315
+# longRIGHT=72.838874
+#-------------------------->
+
+
+#5000 nodes---------------->
+# latDOWN = 19.0395
+# latUP = 19.0532
+# longLEFT = 72.8235
+# longRIGHT = 72.8404
+#-------------------------->
+#10k nodes----------------->
+# latDOWN   = 19.048800
+# latUP     = 19.082800
+# longLEFT  = 72.825200
+# longRIGHT = 72.863200
+#-------------------------->
+#100k nodes----------------->
+latDOWN   = 19.030500
+latUP     = 19.170500
+longLEFT  = 72.805000
+longRIGHT = 72.945000
+#-------------------------->
 query = f"""
 [out:json][timeout:1000];
 (

@@ -19,7 +19,7 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     out["id"] = id;
 
     if(node_list.size() > 5000 || adjacency_list.size() > 5000){
-        std::cerr<< "WARNING: Graph exceeds 5000 nodes/edge constraint for KSP"<<std::endl;
+        //std::cerr<< "WARNING: Graph exceeds 5000 nodes/edge constraint for KSP"<<std::endl;
     }
     if(type=="k_shortest_paths" || type=="k_shortest_paths_heuristic"){
         KShortestPaths temp;

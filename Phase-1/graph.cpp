@@ -45,19 +45,30 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
         if(query["type"]=="remove_edge"){
             try {
                 bool done=removeEdge(query["edge_id"]);
-                out["id"]=query["id"];
                 out["done"]=done;
+            }
+            catch(const std::exception& e) {
+                try {
+                    out["id"]=query["id"];
+                }
+                catch(const std::exception& e) {
+                    out["id"]=-1;
+                }
+                out["done"]="error";
                 return out;
             }
-            catch(std::exception& e) {
+            try {
                 out["id"]=query["id"];
-                out["exception"]=e.what();
-                return out;
             }
+            catch(const std::exception& e) {
+                out["id"]=-1;
+                out["done"]="error";
+            }
+            return out;
         }
         else if(query["type"]=="modify_edge"){
             try {
-                int length=edge_list[query["edge_id"]].length;
+                double length=edge_list[query["edge_id"]].length;
                 if(query["patch"].find("length")!=query["patch"].end()){
                     length=query["patch"]["length"];
                 }
@@ -74,15 +85,26 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
                     road_type=query["patch"]["road_type"].get<std::string>();
                 }
                 bool done=modifyEdge(query["edge_id"],length,average_time,speed_profile,road_type);
-                out["id"]=query["id"];
                 out["done"]=done;
+            }
+            catch(const std::exception& e) {
+                try {
+                    out["id"]=query["id"];
+                }
+                catch(const std::exception& e) {
+                    out["id"]=-1;
+                }
+                out["done"]="error";
                 return out;
             }
-            catch(std::exception& e) {
+            try {
                 out["id"]=query["id"];
-                out["exception"]=e.what();
-                return out;
             }
+            catch(const std::exception& e) {
+                out["id"]=-1;
+                out["done"]="error";
+            }
+            return out;
         }
         else if(query["type"]=="shortest_path"){
             try {
@@ -96,9 +118,14 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
                 out["path"]=tempout.path;
                 return out;
             }
-            catch(std::exception& e) {
-                out["id"]=query["id"];
-                out["exception"]=e.what();
+            catch(const std::exception& e) {
+                try {
+                    out["id"]=query["id"];
+                }
+                catch(const std::exception& e) {
+                    out["id"]=-1;
+                }
+                out["done"]="error";
                 return out;
             }
         }
@@ -110,16 +137,29 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
                 out["nodes"]=tempout.node_ids;
                 return out;
             }
-            catch(std::exception& e) {
+            catch(const std::exception& e) {
+                try {
+                    out["id"]=query["id"];
+                }
+                catch(const std::exception& e) {
+                    out["id"]=-1;
+                }
+                out["done"]="error";
+                return out;
             }
         }
         else{
             return out;
         }
     }
-    catch(std::exception& e) {
-        out["id"]=query["id"];
-        out["exception"]="Missing or incorrect type field";
+    catch(const std::exception& e) {
+        try {
+            out["id"]=query["id"];
+        }
+        catch(const std::exception& e) {
+            out["id"]=-1;
+        }
+        out["exception"]="type";
         return out;
     }
     return out;

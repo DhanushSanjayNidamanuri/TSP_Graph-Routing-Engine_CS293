@@ -169,7 +169,7 @@ double path_distance(Graph& graph, std::vector<int>& path){
             }
         }
         if(!edge_found){
-            std::cerr<<"ERROR : NO EDGE FOUND";
+            //std::cerr<<"ERROR : NO EDGE FOUND";
             return -1.0;
         }
     }
@@ -321,7 +321,7 @@ std::vector<std::pair<std::vector<int>, int>> KShortestPaths::KShortest(Graph& g
     }
     
     if(!is_simple(first_path.first)){
-        std::cerr<<"LOOP SPOTTED"<<std::endl;
+        //std::cerr<<"LOOP SPOTTED"<<std::endl;
     }
     double first_dist = path_distance(graph, first_path.first);
     A_path first_a_path(first_path.first, first_dist);
