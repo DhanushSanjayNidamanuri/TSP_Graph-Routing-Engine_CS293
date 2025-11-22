@@ -7,6 +7,8 @@
 #include <queue>
 #include <map>
 #include <algorithm>
+#define _USE_MATH_DEFINES
+#include <cmath>
 class Graph;
 class Node;
 class Edge;
@@ -28,8 +30,8 @@ public:
     bool Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>& visited, std::unordered_map<std::string,bool>& fb_types);
 
     double Expected_time(Edge& edge,double start_time);
-    int heuristic_distance(const Node& a, const Node& b);
-    int heuristic_time(const Node& a,const Node& b);
+    double heuristic_distance(const Node& a, const Node& b);
+    double heuristic_time(const Node& a,const Node& b);
     std::vector<int> Backtrack(int u,std::vector<int>& parent);
 };
 
