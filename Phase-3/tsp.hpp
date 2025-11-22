@@ -12,9 +12,11 @@ class Node;
 
 struct Order {
     int id;
-    int p;
-    int d;
-    double depDist;
+    int pickup;
+    int dropoff;
+    double time_2_reach;
+    Order(){};
+    Order(int id,int pickup,int dropoff,double time_2_reach):id(id),pickup(pickup),dropoff(dropoff),time_2_reach(time_2_reach){};
 };
 
 struct DriverRoute {
