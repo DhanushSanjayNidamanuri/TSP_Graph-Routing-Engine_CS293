@@ -14,67 +14,92 @@ void Graph::addEdge(const Edge& edge) {
 nlohmann::json Graph::query_handler(const nlohmann::json& query){
     nlohmann::json out;
 
-    std::string type = query.value("type", "");
-    int id = query.value("id", -1);
-    out["id"] = id;
-
-    if(node_list.size() > 5000 || adjacency_list.size() > 5000){
-        //std::cerr<< "WARNING: Graph exceeds 5000 nodes/edge constraint for KSP"<<std::endl;
-    }
-    if(type=="k_shortest_paths" || type=="k_shortest_paths_heuristic"){
-        KShortestPaths temp;
-
-        int source = query.value("source", -1);
-        int target = query.value("target", -1);
-        int k = query.value("k", 0);
-        std::string mode = query.value("mode", "distance");
-        int overlap_threshold = query.value("overlap_threshold", 0);
-        if(type == "k_shortest_paths" && (k <2 || k>20)){
-            k = std::min(std::max(k,2), 20);
-        }else if(type == "k_shortest_paths_heuristic" && (k<2 || k>7)){
-            k = std::min(std::max(k,2), 20);
+    try {
+        int id=-1;
+        std::string type = query.value("type", "");
+        try {
+            id = query.value("id", -1);
+            out["id"] = id;
         }
-        KShortestPaths_Result tempout=temp.findShortest(*this,type,id,source,target,k,mode,overlap_threshold);
-        
-        std::vector<nlohmann::json> tempdists;
-        for(auto [x,y]:tempout.paths){
-            nlohmann::json inner_json;
-            inner_json["path"]=x;
-            inner_json["length"]=y;
-            tempdists.push_back(inner_json);
+        catch(const std::exception& e) {
+            out["id"]=-1;
+            out["done"]="error";
         }
-        out["paths"]=tempdists;
-        
-    }
-    else if(type=="approx_shortest_path"){
-        ApproxShortest temp;
-        std::vector<std::pair<int,int>> queries_temp;
-        if(query.contains("queries") && query["queries"].is_array()) {
-            for(auto& x : query["queries"]) {
-                int src = x.value("source", -1);
-                int tgt = x.value("target", -1);
-                queries_temp.push_back(std::make_pair(src, tgt));
+
+        try {
+            if(node_list.size() > 5000 || adjacency_list.size() > 5000){
+                //std::cerr<< "WARNING: Graph exceeds 5000 nodes/edge constraint for KSP"<<std::endl;
+            }
+            if(type=="k_shortest_paths" || type=="k_shortest_paths_heuristic"){
+                KShortestPaths temp;
+
+                int source = query.value("source", -1);
+                int target = query.value("target", -1);
+                int k = query.value("k", 0);
+                std::string mode = query.value("mode", "distance");
+                int overlap_threshold = query.value("overlap_threshold", 0);
+                if(type == "k_shortest_paths" && (k <2 || k>20)){
+                    k = std::min(std::max(k,2), 20);
+                }else if(type == "k_shortest_paths_heuristic" && (k<2 || k>7)){
+                    k = std::min(std::max(k,2), 20);
+                }
+                KShortestPaths_Result tempout=temp.findShortest(*this,type,id,source,target,k,mode,overlap_threshold);
+                
+                std::vector<nlohmann::json> tempdists;
+                for(auto [x,y]:tempout.paths){
+                    nlohmann::json inner_json;
+                    inner_json["path"]=x;
+                    inner_json["length"]=y;
+                    tempdists.push_back(inner_json);
+                }
+                out["paths"]=tempdists;
+                
+            }
+            else if(type=="approx_shortest_path"){
+                ApproxShortest temp;
+                std::vector<std::pair<int,int>> queries_temp;
+                if(query.contains("queries") && query["queries"].is_array()) {
+                    for(auto& x : query["queries"]) {
+                        int src = x.value("source", -1);
+                        int tgt = x.value("target", -1);
+                        queries_temp.push_back(std::make_pair(src, tgt));
+                    }
+                }
+                
+                int time_budget = query.value("time_budget_ms", 100);
+                double acceptable_error = query.value("acceptable_error_pct", 10.0);
+
+                ApproxShortest_Result tempout=temp.findApprox(*this,id,queries_temp,time_budget,acceptable_error);
+                
+                std::vector<nlohmann::json> tempdists;
+                for(auto [x,y,z]:tempout.distances){
+                    nlohmann::json inner_json;
+                    inner_json["source"]=x;
+                    inner_json["target"]=y;
+                    inner_json["approx_shortest_distance"]=std::round(z * 1e6) / 1e6;
+                    tempdists.push_back(inner_json);
+                }
+                out["distances"]=tempdists;
+                
+            }
+            else{
+                out["error"] = "Unknown query type";
             }
         }
-        
-        int time_budget = query.value("time_budget_ms", 100);
-        double acceptable_error = query.value("acceptable_error_pct", 10.0);
-
-        ApproxShortest_Result tempout=temp.findApprox(*this,id,queries_temp,time_budget,acceptable_error);
-        
-        std::vector<nlohmann::json> tempdists;
-        for(auto [x,y,z]:tempout.distances){
-            nlohmann::json inner_json;
-            inner_json["source"]=x;
-            inner_json["target"]=y;
-            inner_json["approx_shortest_distance"]=std::round(z * 1e6) / 1e6;
-            tempdists.push_back(inner_json);
+        catch(const std::exception& e) {
+            out["id"]=query["id"];
+            out["done"]="error";
         }
-        out["distances"]=tempdists;
-        
     }
-    else{
-        out["error"] = "Unknown query type";
+    catch(const std::exception& e) {
+        try {
+            out["id"]=query["id"];
+        }
+        catch(const std::exception& e) {
+            out["id"]=-1;
+        }
+        out["done"]="error";
+        return out;
     }
     return out;
     
