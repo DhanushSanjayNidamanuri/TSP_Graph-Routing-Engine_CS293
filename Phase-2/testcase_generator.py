@@ -29,10 +29,10 @@ longRIGHT = 72.8404
 # longRIGHT = 72.863200
 #-------------------------->
 #100k nodes----------------->
-# latDOWN   = 19.030500
-# latUP     = 19.170500
-# longLEFT  = 72.805000
-# longRIGHT = 72.945000
+#latDOWN   = 19.030500
+#latUP     = 19.170500
+#longLEFT  = 72.805000
+#longRIGHT = 72.945000
 #-------------------------->
 query = f"""
 [out:json][timeout:1000];
