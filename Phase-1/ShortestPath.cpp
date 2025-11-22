@@ -1,20 +1,22 @@
 #include "ShortestPath.hpp"
 
-int ShortestPath::heuristic_time(const Node& a, const Node& b) {
-    double mean_lat = (a.lat + b.lat) * 0.5 * 3.14159265358979323846 / 180.0;
-    double dx = (b.lon - a.lon) * 111320.0 * std::cos(mean_lat);
-    double dy = (b.lat - a.lat) * 111320.0;
-    double distance_m = std::sqrt(dx * dx + dy * dy);
-    double time_seconds = distance_m / 40;
-    return static_cast<int>(time_seconds);
+double ShortestPath::heuristic_time(const Node& a, const Node& b) {
+    double time_seconds = heuristic_distance(a,b)/ 60;
+    return (time_seconds);
 }
 
-int ShortestPath::heuristic_distance(const Node& a, const Node& b) {
-    double mean_lat = (a.lat + b.lat) * 0.5 *  3.14159265358979323846 / 180.0;
-    double dx = (b.lon - a.lon) * 111320.0 * std::cos(mean_lat);
-    double dy = (b.lat - a.lat)*111320.0;
-    double ans=std::sqrt(dx * dx + dy * dy);
-    return int(ans);
+double ShortestPath::heuristic_distance(const Node& a, const Node& b) {
+    double lat1=a.lat,lon1=a.lon,lat2=a.lat,lon2=a.lon;
+    lat1 *= M_PI / 180.0;
+    lon1 *= M_PI / 180.0;
+    lat2 *= M_PI / 180.0;
+    lon2 *= M_PI / 180.0;
+    double dlat = lat2 - lat1;
+    double dlon = lon2 - lon1;
+    double d= std::sin(dlat / 2) * std::sin(dlat / 2) + std::cos(lat1) * std::cos(lat2) * std::sin(dlon / 2) * std::sin(dlon / 2);
+    double c = 2 * std::atan2(std::sqrt(d), std::sqrt(1 - d));
+    return 6371.0*c;
+
     }
 bool ShortestPath::Is_Usable_Now(Node& destination,Edge& edge,std::vector<bool>& visited, std::unordered_map<std::string,bool>& fb_types){
     if(!destination.isValid)return false;
@@ -32,6 +34,15 @@ double ShortestPath::Expected_time(Edge& edge,double start_time){
     int present_speed_profile_id=int(start_time/900)%96;
     double travesal_time=0;
     double distance=edge.length;
+    double delta=((present_speed_profile_id+1))*900-start_time%86400;
+    if(edge.length<=delta*edge.speed_profile[present_speed_profile_id]){
+        return start_time+edge.length/edge.speed_profile[present_speed_profile_id];
+    }
+    travesal_time+=delta;
+    distance-=delta*edge.speed_profile[present_speed_profile_id];
+    present_speed_profile_id+=1;
+    present_speed_profile_id%=96;
+
     while(distance>0){
         if(900*edge.speed_profile[present_speed_profile_id]<=distance){
             distance-=900*edge.speed_profile[present_speed_profile_id];

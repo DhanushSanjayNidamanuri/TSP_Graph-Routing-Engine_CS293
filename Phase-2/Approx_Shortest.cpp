@@ -1,12 +1,16 @@
 #include "Approx_Shortest.hpp"
-int ApproxShortest::heuristic_distance(const Node& a, const Node& b) {
-    double mean_lat = (a.lat + b.lat) * 0.5 *  3.14159265358979323846 / 180.0;
-    double dx = (b.lon - a.lon) * 111320.0 * std::cos(mean_lat);
-    double dy = (b.lat - a.lat)*111320.0;
-    double ans=std::sqrt(dx * dx + dy * dy);
-    return int(ans);
+double ApproxShortest::heuristic_distance(const Node& a, const Node& b) {
+    double lat1=a.lat,lon1=a.lon,lat2=a.lat,lon2=a.lon;
+    lat1 *= M_PI / 180.0;
+    lon1 *= M_PI / 180.0;
+    lat2 *= M_PI / 180.0;
+    lon2 *= M_PI / 180.0;
+    double dlat = lat2 - lat1;
+    double dlon = lon2 - lon1;
+    double d= std::sin(dlat / 2) * std::sin(dlat / 2) + std::cos(lat1) * std::cos(lat2) * std::sin(dlon / 2) * std::sin(dlon / 2);
+    double c = 2 * std::atan2(std::sqrt(d), std::sqrt(1 - d));
+    return 6371.0*c;
     }
-
 double ApproxShortest::Hybrid_A_Star(Graph& graph,double time_limit,int source,int target,double upper_bound){
     std::priority_queue<std::tuple<double,double,int>,std::vector<std::tuple<double,double,int>>,std::greater<std::tuple<double,double,int>>> pq;
     int temp=heuristic_distance(graph.node_list[source],graph.node_list[target]);

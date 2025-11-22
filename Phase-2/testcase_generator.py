@@ -23,16 +23,16 @@ os.chdir(pwd)
 # longRIGHT = 72.8404
 #-------------------------->
 #10k nodes----------------->
-latDOWN   = 19.048800
-latUP     = 19.082800
-longLEFT  = 72.825200
-longRIGHT = 72.863200
+# latDOWN   = 19.048800
+# latUP     = 19.082800
+# longLEFT  = 72.825200
+# longRIGHT = 72.863200
 #-------------------------->
 #100k nodes----------------->
-# latDOWN   = 19.030500
-# latUP     = 19.170500
-# longLEFT  = 72.805000
-# longRIGHT = 72.945000
+latDOWN   = 19.030500
+latUP     = 19.170500
+longLEFT  = 72.805000
+longRIGHT = 72.945000
 #-------------------------->
 query = f"""
 [out:json][timeout:1000];
@@ -169,52 +169,52 @@ queries=[]
 query_count=0
 no_of_queries_per_type=max(int(node_counter/20),10)
 #k shortest paths(distance)
-for i in range(no_of_queries_per_type):
-     source,destination=random.sample(range(node_counter),2)
-     k=random.randint(2,5)
-     queries.append({
-             "type": "k_shortest_paths",
-             "id": query_count,
-             "source": source,
-             "target": destination,
-             "k":k,
-             "mode": "distance",
-         })
-     query_count+=1
+# for i in range(no_of_queries_per_type):
+#      source,destination=random.sample(range(node_counter),2)
+#      k=random.randint(2,5)
+#      queries.append({
+#              "type": "k_shortest_paths",
+#              "id": query_count,
+#              "source": source,
+#              "target": destination,
+#              "k":k,
+#              "mode": "distance",
+#          })
+#      query_count+=1
 #k shortest paths(time)
-for i in range(no_of_queries_per_type):
-     source,destination=random.sample(range(node_counter),2)
-     k=random.randint(2,5)
-     k=max(k,1)
-     queries.append({
-             "type": "k_shortest_paths",
-             "id": query_count,
-             "source": source,
-             "target": destination,
-             "k":k,
-             "mode": "time",
-         })
-     query_count+=1
+# for i in range(no_of_queries_per_type):
+#      source,destination=random.sample(range(node_counter),2)
+#      k=random.randint(2,5)
+#      k=max(k,1)
+#      queries.append({
+#              "type": "k_shortest_paths",
+#              "id": query_count,
+#              "source": source,
+#              "target": destination,
+#              "k":k,
+#              "mode": "time",
+#          })
+#      query_count+=1
 #k_shortest_paths_heuristic
-for i in range(no_of_queries_per_type):
-     source,destination=random.sample(range(node_counter),2)
-     k=random.randint(2,5)
-     overlap_threshold=random.randint(20,80)
-     queries.append({
-         "type": "k_shortest_paths_heuristic",
-         "id": query_count,
-         "source": source,
-         "target": destination,
-         "k": k,
-         "heuristic": overlap_threshold
-         })
-     query_count+=1
+# for i in range(no_of_queries_per_type):
+#      source,destination=random.sample(range(node_counter),2)
+#      k=random.randint(2,5)
+#      overlap_threshold=random.randint(20,80)
+#      queries.append({
+#          "type": "k_shortest_paths_heuristic",
+#          "id": query_count,
+#          "source": source,
+#          "target": destination,
+#          "k": k,
+#          "heuristic": overlap_threshold
+#          })
+#      query_count+=1
 # approx_shortest_path
 Phase1_like_queries=[]
 phase_1_count=0
-for i in range(no_of_queries_per_type):
+for i in range(int(no_of_queries_per_type/50)):
     source=random.sample(range(node_counter),3)
-    no_of_queries=int(random.uniform(1,5))
+    no_of_queries=int(random.uniform(1,16))
     sources=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]
     targets=[random.sample(range(node_counter),1)[0] for i in range(no_of_queries)]
     accpetable_error=round(random.uniform(5,15),2)
@@ -222,38 +222,38 @@ for i in range(no_of_queries_per_type):
         "type": "approx_shortest_path",
         "id": query_count,
         "queries": [{"source": sources[i],"target": targets[i]} for i in range(no_of_queries) ],
-        "time_budget_ms": 5*no_of_queries,
+        "time_budget_ms": 3*no_of_queries,
         "acceptable_error_pct": accpetable_error
     })
     # #<----------------------ADDED FOR VERIFICATION------------------>
-    # for i in range(no_of_queries):
-    #     Phase1_like_queries.append({
-    #         "type":"shortest_path",
-    #         "id":phase_1_count,
-    #         "source":int(sources[i]),
-    #         "target":int(targets[i]),
-    #         "mode": "distance",
-    #         "constraints": {
-    #             "forbidden_nodes": [],
-    #             "forbidden_road_types": [] 
-    #         }
-    #     })
-    #     phase_1_count+=1
-    # query_count+=1
+    for i in range(no_of_queries):
+        Phase1_like_queries.append({
+            "type":"shortest_path",
+            "id":phase_1_count,
+            "source":int(sources[i]),
+            "target":int(targets[i]),
+            "mode": "distance",
+            "constraints": {
+                "forbidden_nodes": [],
+                "forbidden_road_types": [] 
+            }
+        })
+        phase_1_count+=1
+    query_count+=1
     # #<--------------------------------------------------------------->
-random.shuffle(queries)
+#random.shuffle(queries)
 # #<----------------------ADDED FOR VERIFICATION------------------>
-# # Save file
-# output_file = "../Phase-1/testcases/test1.json"
-# with open(output_file, "w", encoding="utf-8") as f:
-#     json.dump(custom_json, f, indent=2)
-# queries_phase1like_json = {
-#     "meta": {"id": "testcase_1_queries"},
-#     "events":Phase1_like_queries
-# }
-# output_file = "../Phase-1/testcases/queries_test1.json"
-# with open(output_file, "w", encoding="utf-8") as f:
-#     json.dump(queries_phase1like_json, f, indent=2)
+# Save file
+output_file = "../Phase-1/testcases/test1.json"
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(custom_json, f, indent=2)
+queries_phase1like_json = {
+    "meta": {"id": "testcase_1_queries"},
+    "events":Phase1_like_queries
+}
+output_file = "../Phase-1/testcases/queries_test1.json"
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(queries_phase1like_json, f, indent=2)
 # #<--------------------------------------------------------------->
 queries_json = {
     "meta": {"id": "testcase_1_queries"},
