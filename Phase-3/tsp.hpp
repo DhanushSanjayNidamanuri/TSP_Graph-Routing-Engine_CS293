@@ -33,13 +33,14 @@ class TSP_Result {
 public:
     double time;
     std::vector<std::tuple<int,std::vector<int>,std::vector<int>>> assignments;
-    TSP_Result(double time, std::vector<std::tuple<int,int,double>> assignments) : time(time), assignments(assignments) {};
+    TSP_Result(){};
+    TSP_Result(double time, std::vector<std::tuple<int,std::vector<int>,std::vector<int>>> assignments) : time(time), assignments(assignments) {};
 };
 
 class TSP {
 public:
-    TSP_RESULT solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet);
-    Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,int,int>>& orders,int numDrivers,int depot);
+    TSP_Result solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet);
+    Solution greedy_build(const Graph& graph,const std::vector<std::tuple<int,int,int>>& orders,int numDrivers,int depot);
 };
 
 #endif

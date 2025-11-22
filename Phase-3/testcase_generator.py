@@ -155,16 +155,19 @@ print(f"✅ Saved {len(node_map)} nodes and {len(edges)} edges to {output_file}"
 
 #query generating
 queries=[]
-query_count=0
-for i in range(10):
-    source=random.sample(range(node_counter),1)
-    no_deliv_guys=int(random.uniform(1,20))
-    no_of_orders=random.sample(range(node_counter/50),1)
-    pickups=[random.sample(range(node_counter),1)[0] for i in range(no_of_orders)]
-    dropoffs=[random.sample(range(node_counter),1)[0] for i in range(no_of_orders)]
+query_count=1
+for i in range(1):
+    source = random.randrange(node_counter) 
+    no_deliv_guys = random.randint(1, 20)
+    no_of_orders = random.randrange(node_counter // 50) 
+    pickups = [random.randrange(node_counter) for _ in range(no_of_orders)]
+    dropoffs = [random.randrange(node_counter) for _ in range(no_of_orders)]
     queries.append({
-        "orders": [{"order_id":i ,"pickup": pickups[i],"dropoff": dropoffs[i]} for i in range(no_of_orders)],
-        "fleet": {"num_delievery_guys": no_deliv_guys, "depot_node": source },
+        "orders": [ {"order_id": j, "pickup": pickups[j], "dropoff": dropoffs[j]}for j in range(no_of_orders)],
+        "fleet": {
+            "num_delivery_guys": no_deliv_guys,
+            "depot_node": source,
+        },
     })
 queries_json = {
     "meta": {"id": "testcase_1_queries"},

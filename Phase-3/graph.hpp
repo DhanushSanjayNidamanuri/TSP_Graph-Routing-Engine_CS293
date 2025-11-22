@@ -26,8 +26,8 @@ public:
     int id;
     int u, v;
     double length;
-    double average_time;
     bool oneway;
+    double average_time;
     Edge(){};
     Edge(int id, int u, int v, double length, bool oneway,double average_time) : id(id), u(u), v(v), length(length), oneway(oneway),average_time(average_time) {};
 };
@@ -37,7 +37,7 @@ class Graph{
     std::vector<std::vector<Edge>> adjacency_list;
     std::vector<std::vector<double>> apsp_times;
 public:
-    
+    friend class TSP;
     Graph(int node_count=0): node_count(node_count){
         adjacency_list.resize(node_count);node_list.resize(node_count);
     }

@@ -52,9 +52,9 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
             // Insert pickup by finding the best position
             double bestDelta=1e18;
             int bestPos=1; // default insertion at the start
-            for (int i=0; i<route.size(); i++) {
+            for (int i=0; i<(int)route.size(); i++) {
                 int A=route[i];
-                int B=(i+1<route.size())?route[i+1]:-1;
+                int B=(i+1<(int)route.size())?route[i+1]:-1;
                 double before=(B==-1?0 : graph.apsp_times[A][B]);
                 double after=graph.apsp_times[A][pickup] + (B==-1 ? 0:graph.apsp_times[pickup][B]);
                 double delta=after-before;
@@ -70,9 +70,9 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
             int pickPos=std::find(route.begin(), route.end(),pickup) - route.begin();
             bestDelta=1e18;
             int bestDropPos=pickPos+1;//default
-            for (int j = pickPos + 1; j <= route.size(); j++) {
+            for (int j = pickPos + 1; j <= (int)route.size(); j++) {
                 int A = route[j-1];
-                int B = (j < route.size()) ? route[j] : -1;
+                int B = (j < (int)route.size()) ? route[j] : -1;
                 double before = (B == -1 ? 0 : graph.apsp_times[A][B]);
                 double after  = graph.apsp_times[A][dropoff] + (B == -1 ? 0 : graph.apsp_times[dropoff][B]);
                 double delta = after - before;
@@ -97,7 +97,7 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
         for (auto &o:orders2) dropToOrder[o.dropoff] = o.id;
 
         double time=0;
-        for (int i=1; i<route.size(); i++) {
+        for (unsigned int i=1; i<route.size(); i++) {
             int u=route[i-1],v=route[i];
             time+=graph.apsp_times[u][v];
             if (dropToOrder.count(v)) {
@@ -108,12 +108,16 @@ Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,i
     S.total_latency=total;
     return S;
 }
-TSP_RESULT TSP::solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet){
+TSP_Result TSP::solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet){
     Solution initial_sol=greedy_build(graph,orders,fleet.first,fleet.second);
     //TEMP
     TSP_Result out;
     for(int i=0;i<fleet.first;i++){
-        out.assignments.push_back(std::make_tuple(i,initial_sol.drivers[i].route,initial_sol.drivers[i].orders))
+        std::vector<int> order_ids;
+        for(auto& o:initial_sol.drivers[i].orders){
+            order_ids.push_back(o.id);
+        }
+        out.assignments.push_back(std::make_tuple(i,initial_sol.drivers[i].route,order_ids));
     }
     out.time=initial_sol.total_latency;
 
