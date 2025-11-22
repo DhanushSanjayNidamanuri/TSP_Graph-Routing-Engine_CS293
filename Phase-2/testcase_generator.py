@@ -181,20 +181,6 @@ for i in range(no_of_queries_per_type):
              "mode": "distance",
          })
      query_count+=1
-#k shortest paths(time)
-for i in range(no_of_queries_per_type):
-     source,destination=random.sample(range(node_counter),2)
-     k=random.randint(2,5)
-     k=max(k,1)
-     queries.append({
-             "type": "k_shortest_paths",
-             "id": query_count,
-             "source": source,
-             "target": destination,
-             "k":k,
-             "mode": "time",
-         })
-     query_count+=1
 #k_shortest_paths_heuristic
 for i in range(no_of_queries_per_type):
      source,destination=random.sample(range(node_counter),2)

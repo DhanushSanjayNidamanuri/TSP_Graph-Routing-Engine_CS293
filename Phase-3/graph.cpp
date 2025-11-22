@@ -35,18 +35,19 @@ nlohmann::json Graph::query_handler(const nlohmann::json& query){
     return out;
 }
 void Graph::dijkstra(std::vector<double>& times,int src,std::vector<int>& parent){
-    std::priority_queue<std::pair<double,int>,std::vector<std::pair<double,int>>,std::greater<std::pair<double,int>>> pq;
-    pq.push(std::make_pair(0,src));
+    std::priority_queue<std::tuple<double,int,int>,std::vector<std::tuple<double,int,int>>,std::greater<std::tuple<double,int,int>>> pq;
+    pq.push(std::make_tuple(0,src,src));
     std::vector<bool> visited(node_count,false);
     while(!pq.empty()){
-        auto [time,u]=pq.top();pq.pop();
+        auto [time,u,par]=pq.top();pq.pop();
         if(visited[u])continue;
         times[u]=time;
         visited[u]=true;
+        parent[u]=par;
         for(auto& e:adjacency_list[u]){
             int v =(e.u==u) ? e.v : e.u;
             if(((!e.oneway) || (e.u == u)) && !visited[v]){
-                pq.push(std::make_pair(time+e.average_time,v));
+                pq.push(std::make_pair(time+e.average_time,v,u));
             }
         }
     }

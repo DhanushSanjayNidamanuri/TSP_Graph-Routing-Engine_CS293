@@ -1,4 +1,16 @@
 #include "tsp.hpp"
+std::vector<int> Graph::get_path(int A,int B){
+    std::vector<int> path;
+    if(apsp_times[A][B]<0)return path;
+    int cur=B;
+    path.push_back(B);
+    while(cur!=A){
+        cur=apsp_next[A][cur];
+        path.push_back(cur);
+    }
+    std::reverse(path.begin(),path.end());
+    return path;
+}
 
 Solution TSP::greedy_build(const Graph& graph,const std::vector<std::tuple<int,int,int>>& orders,int numDrivers,int depot)
 {
@@ -148,7 +160,7 @@ Solution TSP::LNS(Solution& initial,Graph& graph,double time_budget){
 
 TSP_Result TSP::solve(Graph& graph, std::vector<std::tuple<int,int,int>>& orders,std::pair<int,int> fleet){
     Solution initial_sol=greedy_build(graph,orders,fleet.first,fleet.second);
-    Solution best=LNS(initial_sol,graph,14.0);
+    Solution best=initial_sol;
     TSP_Result out;
     for(int i=0;i<fleet.first;i++){
         std::vector<int> ids;

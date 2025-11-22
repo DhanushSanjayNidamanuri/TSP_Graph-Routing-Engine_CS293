@@ -47,5 +47,6 @@ public:
     void preprocess();
     void dijkstra(std::vector<double>& distances,int src,,std::vector<int>& parent);
     nlohmann::json query_handler(const nlohmann::json& query);
+    std::vector<int> get_path(int A,int B);
 };
 #endif
