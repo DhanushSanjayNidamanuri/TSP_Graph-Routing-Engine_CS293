@@ -6,7 +6,7 @@ double ShortestPath::heuristic_time(const Node& a, const Node& b) {
 }
 
 double ShortestPath::heuristic_distance(const Node& a, const Node& b) {
-    double lat1=a.lat,lon1=a.lon,lat2=a.lat,lon2=a.lon;
+    double lat1=a.lat,lon1=a.lon,lat2=b.lat,lon2=b.lon;
     lat1 *= M_PI / 180.0;
     lon1 *= M_PI / 180.0;
     lat2 *= M_PI / 180.0;

@@ -438,7 +438,7 @@ std::vector<std::pair<std::vector<int>, double>> KShortestPaths::KShortest(Graph
 //Heuristic
 std::vector<std::pair<std::vector<int>, double>> KShortestPaths::KShortest_heuristic(Graph& graph, int source, int target, unsigned int k, int overlap_threshold){
     k = std::min(k,(unsigned) 7);
-    int paths_count = std::min(k*3,(unsigned) 30);
+    int paths_count = (unsigned)200;
 
     auto all_paths = KShortest(graph, source, target, static_cast<unsigned int>(paths_count), "distance");
     if(all_paths.empty()) return {};

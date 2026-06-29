@@ -19,10 +19,10 @@ os.chdir(pwd)
 #5000 nodes---------------->
 #-------------------------->
 #10k nodes----------------->
-latDOWN   = 19.048800
-latUP     = 19.082800
-longLEFT  = 72.825200
-longRIGHT = 72.863200
+latDOWN   = 19.04397
+latUP     = 19.05693
+longLEFT  = 72.86562
+longRIGHT = 72.90974
 #-------------------------->
 #100k nodes----------------->
 #latDOWN   = 19.030500
@@ -180,7 +180,7 @@ for i in range(no_of_queries_per_type):
 #k_shortest_paths_heuristic
 for i in range(no_of_queries_per_type):
      source,destination=random.sample(range(node_counter),2)
-     k=random.randint(2,5)
+     k=random.randint(2,8)
      overlap_threshold=random.randint(20,80)
      queries.append({
          "type": "k_shortest_paths_heuristic",
@@ -188,7 +188,7 @@ for i in range(no_of_queries_per_type):
          "source": source,
          "target": destination,
          "k": k,
-         "heuristic": overlap_threshold
+         "overlap_threshold": overlap_threshold
          })
      query_count+=1
 # approx_shortest_path
